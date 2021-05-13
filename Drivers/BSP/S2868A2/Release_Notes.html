@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Release Notes for S2868A2 BSP</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12 col-lg-4">
+<center>
+<h1 id="release-notes-for-s2868a2-bsp">Release Notes for <mark>S2868A2 BSP</mark></h1>
+<p>Copyright © <span style="background-color: yellow;">2021</span> STMicroelectronics<br />
+</p>
+<a href="https://www.st.com" class="logo"><img src="_htmresc/st_logo_2020.png" alt="ST logo" /></a>
+</center>
+<h1 id="license">License</h1>
+<p>This software component is licensed by ST under BSD 3-Clause, the “License”; You may not use this component except in compliance with the License. You may obtain a copy of the License at:</p>
+<p><a href="https://opensource.org/licenses/BSD-3-Clause"><span style="background-color: yellow;">BSD 3-Clause</span></a></p>
+<h1 id="purpose">Purpose</h1>
+<p>The S2868A2 BSP is a SW component for the STM32Cube. This software implements the BSP v2.0 specifications for the <a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2868a2.html">X-NUCLEO-S2868A2</a> Expansion Board on STM32 for STM’s Radio S2-LP Low data rate and low power sub-1GHz transceiver devices. It is built on top of STM32Cube software technology that ease portability across different STM32 micro-controllers.</p>
+<p>Here is the list of references to user documents:</p>
+<ul>
+<li><a href="https://www.st.com/resource/en/datasheet/s2-lp.pdf">DS11896 Ultra-low power, high performance, sub-1GHz transceiver</a></li>
+<li><a href="https://www.st.com/resource/en/user_manual/dm00656126.pdf">UM2638 Getting started with the X-NUCLEO-S2868A2 Sub-1 GHz 868 MHz RF expansion board based on S2-LP radio for STM32 Nucleo</a></li>
+<li><a href="https://www.st.com/resource/en/schematic_pack/x-nucleo-s2868a2_schematic.pdf">X-NUCLEO-S2868A2 SCHEMATIC</a></li>
+</ul>
+</div>
+<div class="col-sm-12 col-lg-8">
+<h1 id="update-history">Update History</h1>
+<div class="collapse">
+<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>3.0.1 / April 9th 2021</strong></label>
+<div>
+<h2 id="main-changes">Main Changes</h2>
+<h3 id="product-update">Product update</h3>
+<ul>
+<li>Fixed a bug in s2868a2.c file that prevented different GPIO EXTI Lines to be used for the radio through STM32CubeMX.</li>
+<li>Version number has been updated in order to simplify the versioning in STM32CubeMX.</li>
+</ul>
+<h2 id="contents">Contents</h2>
+<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>S2868A2</strong></td>
+<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">[BSD 3-Clause]</a></td>
+<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations">Known Limitations</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No known limitations</td>
+</tr>
+</tbody>
+</table>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.50.9</li>
+<li>ARM Keil v5.32</li>
+<li>STM32CubeIDE v1.6.0</li>
+</ul>
+<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<ul>
+<li>X-NUCLEO-S2868A2 rev. XS2868V2</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<p>N/A</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<ul>
+<li>S2LP Component Driver v2.1.1</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0" checked aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>1.1.0 / Sep 9th 2020</strong></label>
+<div>
+<h2 id="main-changes-1">Main Changes</h2>
+<h3 id="component-release">Component release</h3>
+<p>This is a maintenance release of the S2868A2 BSP Driver, compliant with BSP v2.0.</p>
+<table>
+<caption>Additional features</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BSP v2 compliance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP RADIO APIs implementation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Added API needed for SigFox package</td>
+</tr>
+</tbody>
+</table>
+<p>: Fixed bugs list</p>
+<h2 id="contents-1">Contents</h2>
+<table>
+<caption>Components</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>S2868A2</strong></td>
+<td style="text-align: left;">V1.1.0</td>
+<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">[BSD 3-Clause]</a></td>
+<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<table>
+<caption>Requirements not met or planned in a forthcoming release</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No known limitations</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.50.5</li>
+<li>ARM Keil v5.31</li>
+<li>STM32CubeIDE v1.4.2</li>
+</ul>
+<h2 id="supported-devices-and-boards-1">Supported Devices and Boards</h2>
+<ul>
+<li>X-NUCLEO-S2868A2 rev. XS2868V2</li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<p>N/A</p>
+<h2 id="dependencies-1">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<p>Compatible with S2LP Component Driver v2.1.1</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0" checked aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>1.0.0 / Feb 21st 2020</strong></label>
+<div>
+<h2 id="main-changes-2">Main Changes</h2>
+<h3 id="component-release-1">Component release</h3>
+<p>This is the first release of the S2868A2 BSP Driver, compliant with BSP v2.0.</p>
+<table>
+<caption>Additional features</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BSP v2 compliance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP RADIO APIs implementation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-2">Contents</h2>
+<table>
+<caption>Components</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>S2868A2</strong></td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-2">Known Limitations</h2>
+<table>
+<caption>Requirements not met or planned in a forthcoming release</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No known limitations</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.32.3</li>
+<li>ARM Keil v5.27</li>
+<li>STM32CubeIDE v1.1.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-2">Supported Devices and Boards</h2>
+<ul>
+<li>X-NUCLEO-S2868A2 rev. XS2868V2</li>
+</ul>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<p>New release. No backward compatibility</p>
+<h2 id="dependencies-2">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<p>N/A</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="sticky">
+<div class="columns">
+<div class="column" style="width:95%;">
+<p>For complete documentation on <strong>X-NUCLEO-S868A2</strong> , visit: [<a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2868a2.html">S2868A2</a>]</p>
+</div><div class="column" style="width:5%;">
+
+</div>
+</div>
+</footer>
+</body>
+</html>

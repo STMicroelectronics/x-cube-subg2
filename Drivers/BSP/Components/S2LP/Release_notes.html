@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Release Notes for S2-LP Component Driver</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="_htmresc/mini-st_2020.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <link rel="icon" type="image/x-icon" href="_htmresc/favicon.png" />
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12 col-lg-4">
+<center>
+<h1 id="release-notes-for-s2-lp">Release Notes for <mark>S2-LP</mark></h1>
+<p>Copyright © <span style="background-color: yellow;">2020</span> STMicroelectronics<br />
+</p>
+<a href="https://www.st.com" class="logo"><img src="_htmresc/st_logo_2020.png" alt="ST logo" /></a>
+</center>
+<h1 id="license">License</h1>
+<p>This software component is licensed by ST under BSD 3-Clause, the “License”; You may not use this component except in compliance with the License. You may obtain a copy of the License at:</p>
+<p><a href="https://opensource.org/licenses/BSD-3-Clause"><span style="background-color: yellow;">BSD 3-Clause</span></a></p>
+<h1 id="purpose">Purpose</h1>
+<p>The S2-LP Component Driver is a driver for the STM32Cube. This software implements a Component Driver running on STM32 for STM’s Radio S2-LP Low data rate and low power sub-1GHz transceiver devices. It is built on top of STM32Cube software technology that ease portability across different STM32 micro-controllers.</p>
+<p>Here is the list of references to user documents:</p>
+<ul>
+<li><a href="https://www.st.com/resource/en/datasheet/s2-lp.pdf">DS11896 Ultra-low power, high performance, sub-1GHz transceiver</a></li>
+</ul>
+</div>
+<div class="col-sm-12 col-lg-8">
+<h1 id="update-history">Update History</h1>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>2.1.1 / Sep 9th 2020</strong></label>
+<div>
+<h2 id="main-changes">Main Changes</h2>
+<h3 id="maintenance-release">Maintenance release</h3>
+<p>This is a maintenance release of the S2-LP Component Driver for BSP v2.0.</p>
+<table>
+<caption>Additional features</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BSP v2 compliance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP RADIO APIs implementation</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Fixed bugs list</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fixed Radio Refresh Status implementation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fixed Packet Basic Address Init</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents">Contents</h2>
+<table>
+<caption>Components</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>S2-LP</strong></td>
+<td style="text-align: left;">V2.1.1</td>
+<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">[BSD 3-Clause]</a></td>
+<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations">Known Limitations</h2>
+<table>
+<caption>Requirements not met or planned in a forthcoming release</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No known limitations</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.50.5</li>
+<li>ARM Keil v5.31</li>
+<li>STM32CubeIDE v1.4.2</li>
+</ul>
+<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<ul>
+<li>X-NUCLEO-S2868A1 rev. XS2868V1</li>
+<li>X-NUCLEO-S2868A2 rev. XS2868V2</li>
+<li>X-NUCLEO-S2915A1 rev. XS2915V1</li>
+</ul>
+<h2 id="backward-compatibility">Backward Compatibility</h2>
+<p>N/A</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<ul>
+<li>STM32CubeHAL F4 V1.25.0</li>
+<li>STM32CubeHAL L0 V1.11.3</li>
+<li>STM32CubeHAL L1 V1.10.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>2.1.0 / Feb 21st 2020</strong></label>
+<div>
+<h2 id="main-changes-1">Main Changes</h2>
+<h3 id="maintenance-release-1">Maintenance release</h3>
+<p>This is the first release of the rework of S2-LP Component Driver for BSP v2.0.</p>
+<table>
+<caption>Additional features</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BSP v2 compliance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP RADIO APIs implementation</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Fixed bugs list</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fixed dependency between the Component Driver and the BSP</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fixed STM32CubeIDE warning in Release mode</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Moved S2LP_ConfigRangeExt() at app level</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Modifications to support also 915MHz board</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-1">Contents</h2>
+<table>
+<caption>Components</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>S2-LP</strong></td>
+<td style="text-align: left;">V2.1.0</td>
+<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<table>
+<caption>Requirements not met or planned in a forthcoming release</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No known limitations</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.32</li>
+<li>ARM Keil v5.27</li>
+<li>STM32CubeIDE v1.1.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-1">Supported Devices and Boards</h2>
+<ul>
+<li>X-NUCLEO-S2868A1 rev. XS2868V1</li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<p>N/A</p>
+<h2 id="dependencies-1">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<ul>
+<li>STM32CubeHAL F4 V1.24.1</li>
+<li>STM32CubeHAL L0 V1.11.2</li>
+<li>STM32CubeHAL L1 V1.9.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0" aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>2.0.0 / Dec 6th 2019</strong></label>
+<div>
+<h2 id="main-changes-2">Main Changes</h2>
+<h3 id="component-release">Component release</h3>
+<p>This is the first release of the rework of S2-LP Component Driver for BSP v2.0.</p>
+<table>
+<caption>Additional features</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BSP v2 compliance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP RADIO APIs implementation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-2">Contents</h2>
+<table>
+<caption>Components</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>S2-LP</strong></td>
+<td style="text-align: left;">V2.0.0</td>
+<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-2">Known Limitations</h2>
+<table>
+<caption>Requirements not met or planned in a forthcoming release</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No known limitations</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.32</li>
+<li>ARM Keil v5.27</li>
+<li>STM32CubeIDE v1.1.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-2">Supported Devices and Boards</h2>
+<ul>
+<li>X-NUCLEO-S2868A1 rev. XS2868V1</li>
+</ul>
+<h2 id="backward-compatibility-2">Backward Compatibility</h2>
+<p>N/A</p>
+<h2 id="dependencies-2">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<ul>
+<li>STM32CubeHAL F4 V1.25.0</li>
+<li>STM32CubeHAL L0 V1.11.2</li>
+<li>STM32CubeHAL L1 V1.9.0</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="sticky">
+<div class="columns">
+<div class="column" style="width:95%;">
+<p>For complete documentation on <strong>S2-LP</strong> , visit: [<a href="https://www.st.com/content/st_com/en/products/wireless-transceivers-mcus-and-modules/sub-1ghz-rf/s2-lp.html">S2-LP</a>]</p>
+</div><div class="column" style="width:5%;">
+
+</div>
+</div>
+</footer>
+</body>
+</html>
