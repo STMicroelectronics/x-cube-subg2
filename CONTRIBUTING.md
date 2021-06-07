@@ -23,4 +23,18 @@ When you have checked the previous boxes. You will find two templates Issues (Bu
 
 ### 3. Pull Requests
 
-Pull-requests are **not** accepted on this repository. Please use issues to report any bug or request.
+STMicrolectronics is happy to receive contributions from the community, based on an initial Contributor License Agreement (CLA) procedure.
+
+* If you are an individual writing original source code and you are sure **you own the intellectual property**, then you need to sign an Individual CLA (https://cla.st.com).
+* If you work for a company that wants also to allow you to contribute with your work, your company needs to provide a Corporate CLA (https://cla.st.com) mentioning your GitHub account name.
+* If you are not sure that a CLA (Individual or Corporate) has been signed for your GitHub account you can check here (https://cla.st.com).
+
+Please note that:
+* The Corporate CLA will always take precedence over the Individual CLA.
+* One CLA submission is sufficient, for any project proposed by STMicroelectronics.
+
+#### How to proceed
+
+* We recommend to engage first a communication thru an issue, in order to present your proposal. Just to confirm that it corresponds to STMicroelectronics domain or scope.
+* Then fork the project to your GitHub account to further develop your contribution. Please use the latest commit version.
+* Please, submit one Pull Request for one new feature or proposal. This will ease the analysis and the final merge if accepted.

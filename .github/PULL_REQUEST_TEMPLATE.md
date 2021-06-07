@@ -1,3 +1,5 @@
-## IMPORTANT INFORMATION 
+## IMPORTANT INFORMATION
 
-Pull-requests are **not** accepted on this repository. Please use issues to report any bug or request.
+### Contributor License Agreement (CLA)
+* The Pull Request feature will be considered by STMicroelectronics after the signature of a **Contributor License Agreement (CLA)** by the submitter.
+* If you did not sign such agreement, please follow the steps mentioned in the [CONTRIBUTING.md](https://github.com/STMicroelectronics/STM32CubeL0/blob/master/CONTRIBUTING.md) file.
