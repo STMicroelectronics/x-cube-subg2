@@ -41,13 +41,12 @@
 <div class="col-sm-12 col-lg-8">
 <h1 id="update-history">Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>3.0.1 / April 9th 2021</strong></label>
+<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>4.0.0 / June 21st 2021</strong></label>
 <div>
 <h2 id="main-changes">Main Changes</h2>
 <h3 id="product-update">Product update</h3>
 <ul>
-<li>Fixed a bug in s2915a1.c file (hardcoded GPIO seting).</li>
-<li>Version number has been updated in order to simplify the versioning in STM32CubeMX.</li>
+<li>Moved irq_disable_cnt variable in BSP to cope with “no application” usecase.</li>
 </ul>
 <h2 id="contents">Contents</h2>
 <p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
@@ -63,7 +62,7 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><strong>S2915A1</strong></td>
-<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
+<td style="text-align: left;">V4.0.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">[BSD 3-Clause]</a></td>
 <td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
 </tr>
@@ -88,7 +87,7 @@
 <ul>
 <li>IAR System Workbench v8.50.9</li>
 <li>ARM Keil v5.32</li>
-<li>STM32CubeIDE v1.6.0</li>
+<li>STM32CubeIDE v1.6.1</li>
 </ul>
 <h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
 <ul>
@@ -104,9 +103,72 @@
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section0" checked aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>1.1.0 / Sep 9th 2020</strong></label>
+<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true"><strong>3.0.1 / April 9th 2021</strong></label>
 <div>
 <h2 id="main-changes-1">Main Changes</h2>
+<h3 id="product-update-1">Product update</h3>
+<ul>
+<li>Fixed a bug in s2915a1.c file (hardcoded GPIO seting).</li>
+<li>Version number has been updated in order to simplify the versioning in STM32CubeMX.</li>
+</ul>
+<h2 id="contents-1">Contents</h2>
+<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>S2915A1</strong></td>
+<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">[BSD 3-Clause]</a></td>
+<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations-1">Known Limitations</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No known limitations</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.50.9</li>
+<li>ARM Keil v5.32</li>
+<li>STM32CubeIDE v1.6.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-1">Supported Devices and Boards</h2>
+<ul>
+<li>X-NUCLEO-S2915A1 rev. XS2915V1</li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<p>N/A</p>
+<h2 id="dependencies-1">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<ul>
+<li>S2LP Component Driver v2.1.1</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0" checked aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>1.1.0 / Sep 9th 2020</strong></label>
+<div>
+<h2 id="main-changes-2">Main Changes</h2>
 <h3 id="component-release">Component release</h3>
 <p>This is a maintenance release of the S2915A1 BSP Driver, compliant with BSP v2.0.</p>
 <table>
@@ -129,7 +191,7 @@
 </tbody>
 </table>
 <p>: Fixed bugs list</p>
-<h2 id="contents-1">Contents</h2>
+<h2 id="contents-2">Contents</h2>
 <table>
 <caption>Components</caption>
 <thead>
@@ -145,84 +207,6 @@
 <td style="text-align: left;"><strong>S2915A1</strong></td>
 <td style="text-align: left;">V1.1.0</td>
 <td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">[BSD 3-Clause]</a></td>
-<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
-</tr>
-</tbody>
-</table>
-<p><br />
-</p>
-<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
-<h2 id="known-limitations-1">Known Limitations</h2>
-<table>
-<caption>Requirements not met or planned in a forthcoming release</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Headline</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">No known limitations</td>
-</tr>
-</tbody>
-</table>
-<p><br />
-</p>
-<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
-<ul>
-<li>IAR System Workbench v8.50.5</li>
-<li>ARM Keil v5.31</li>
-<li>STM32CubeIDE v1.4.2</li>
-</ul>
-<h2 id="supported-devices-and-boards-1">Supported Devices and Boards</h2>
-<ul>
-<li>X-NUCLEO-S2915A1 rev. XS2915V1</li>
-</ul>
-<h2 id="backward-compatibility-1">Backward Compatibility</h2>
-<p>N/A</p>
-<h2 id="dependencies-1">Dependencies</h2>
-<p>This software release is compatible with:</p>
-<p>Compatible with S2LP Component Driver v2.1.1</p>
-</div>
-</div>
-<div class="collapse">
-<input type="checkbox" id="collapse-section0" checked aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>1.0.0 / Feb 21st 2020</strong></label>
-<div>
-<h2 id="main-changes-2">Main Changes</h2>
-<h3 id="component-release-1">Component release</h3>
-<p>This is the first release of the S2915A1 BSP Driver, compliant with BSP v2.0.</p>
-<table>
-<caption>Additional features</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Headline</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">BSP v2 compliance</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">BSP RADIO APIs implementation</td>
-</tr>
-</tbody>
-</table>
-<h2 id="contents-2">Contents</h2>
-<table>
-<caption>Components</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>S2915A1</strong></td>
-<td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
 <td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
 </tr>
 </tbody>
@@ -248,17 +232,95 @@
 </p>
 <h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
 <ul>
-<li>IAR System Workbench v8.32.3</li>
-<li>ARM Keil v5.27</li>
-<li>STM32CubeIDE v1.1.0</li>
+<li>IAR System Workbench v8.50.5</li>
+<li>ARM Keil v5.31</li>
+<li>STM32CubeIDE v1.4.2</li>
 </ul>
 <h2 id="supported-devices-and-boards-2">Supported Devices and Boards</h2>
 <ul>
 <li>X-NUCLEO-S2915A1 rev. XS2915V1</li>
 </ul>
 <h2 id="backward-compatibility-2">Backward Compatibility</h2>
-<p>New release. No backward compatibility</p>
+<p>N/A</p>
 <h2 id="dependencies-2">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<p>Compatible with S2LP Component Driver v2.1.1</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section0" checked aria-hidden="true"> <label for="collapse-section0" aria-hidden="true"><strong>1.0.0 / Feb 21st 2020</strong></label>
+<div>
+<h2 id="main-changes-3">Main Changes</h2>
+<h3 id="component-release-1">Component release</h3>
+<p>This is the first release of the S2915A1 BSP Driver, compliant with BSP v2.0.</p>
+<table>
+<caption>Additional features</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">BSP v2 compliance</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP RADIO APIs implementation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-3">Contents</h2>
+<table>
+<caption>Components</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">License</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>S2915A1</strong></td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: left;"><a href=".\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-3">Known Limitations</h2>
+<table>
+<caption>Requirements not met or planned in a forthcoming release</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No known limitations</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.32.3</li>
+<li>ARM Keil v5.27</li>
+<li>STM32CubeIDE v1.1.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-3">Supported Devices and Boards</h2>
+<ul>
+<li>X-NUCLEO-S2915A1 rev. XS2915V1</li>
+</ul>
+<h2 id="backward-compatibility-3">Backward Compatibility</h2>
+<p>New release. No backward compatibility</p>
+<h2 id="dependencies-3">Dependencies</h2>
 <p>This software release is compatible with:</p>
 <p>N/A</p>
 </div>

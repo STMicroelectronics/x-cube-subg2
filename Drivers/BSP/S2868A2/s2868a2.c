@@ -27,6 +27,7 @@
     
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
+volatile int irq_disable_cnt = 0;
 
 GPIO_TypeDef*  aLED_GPIO_PORT[S2868A2_LEDn] = {S2868A2_LED_GPIO_PORT};
 const uint16_t aLED_GPIO_PIN[S2868A2_LEDn] = {S2868A2_LED_GPIO_PIN};

@@ -36,7 +36,21 @@ This middleware provides the ST platform specific implementation for Contiki-NG 
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__1.0.1 / April 9th 2021__</label>
+<label for="collapse-section1" aria-hidden="true">V1.0.2 / 23-June-2021</label>
+<div>			
+
+## Main Changes
+
+### Product update
+
+ -  Renamed bsp_ip_conf.h in subg2_bsp_ip_conf.h
+
+</div>
+:::
+
+::: {.collapse}
+<input type="checkbox" id="collapse-section4" checked aria-hidden="true">
+<label for="collapse-section1" aria-hidden="true">V1.0.1 / 9-April-2021</label>
 <div>			
 
 ## Main Changes
@@ -50,7 +64,7 @@ This middleware provides the ST platform specific implementation for Contiki-NG 
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__1.0.0 / November 15th 2020__</label>
+<label for="collapse-section1" aria-hidden="true">V1.0.0 / 15-November-2020</label>
 <div>			
 
 ## Main Changes

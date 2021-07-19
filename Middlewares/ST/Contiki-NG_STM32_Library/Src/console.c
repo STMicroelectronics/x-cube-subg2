@@ -22,7 +22,7 @@
 #include <stdlib.h>
 #include "console.h"
 #include "main.h"
-#include "bsp_ip_conf.h"
+#include "subg2_bsp_ip_conf.h"
 /* Private typedef -----------------------------------------------------------*/
 /* Private defines -----------------------------------------------------------*/
 /* Private macros ------------------------------------------------------------*/

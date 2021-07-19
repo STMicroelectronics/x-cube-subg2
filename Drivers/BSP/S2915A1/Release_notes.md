@@ -40,6 +40,62 @@ Here is the list of references to user documents:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section4" checked aria-hidden="true">
+<label for="collapse-section1" aria-hidden="true">__4.0.0 / June 21st 2021__</label>
+<div>			
+
+## Main Changes
+
+### Product update
+
+ - Moved irq_disable_cnt variable in BSP to cope with "no application" usecase.
+  
+
+## Contents
+
+<small>The components flagged by "[]{.icon-st-update}" have changed since the
+previous release. "[]{.icon-st-add}" are new.</small>
+
+  Name                                                        Version                                           License                                                                                                       Release note
+  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
+  **S2915A1**                                                 V4.0.0 []{.icon-st-update}                        [[BSD 3-Clause]](https://opensource.org/licenses/BSD-3-Clause)                                                [release note](.\Release_Notes.html)
+
+
+## Known Limitations
+
+
+  Headline
+  ----------------------------------------------------------
+  No known limitations
+
+\
+
+## Development Toolchains and Compilers
+
+- IAR System Workbench v8.50.9
+- ARM Keil v5.32
+- STM32CubeIDE v1.6.1
+
+
+## Supported Devices and Boards
+
+- X-NUCLEO-S2915A1 rev. XS2915V1
+
+
+## Backward Compatibility
+
+N/A
+
+## Dependencies
+
+This software release is compatible with:
+
+- S2LP Component Driver v2.1.1
+
+</div>
+:::
+
+::: {.collapse}
+<input type="checkbox" id="collapse-section4" checked aria-hidden="true">
 <label for="collapse-section1" aria-hidden="true">__3.0.1 / April 9th 2021__</label>
 <div>			
 

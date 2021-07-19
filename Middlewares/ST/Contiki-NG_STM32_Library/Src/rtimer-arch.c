@@ -26,7 +26,7 @@
 #include "dev/watchdog.h"
 
 #include "main.h"
-#include "bsp_ip_conf.h"
+#include "subg2_bsp_ip_conf.h"
 #include "subg2_contiki_it.h"
 
 /** @defgroup Rtimer_arch

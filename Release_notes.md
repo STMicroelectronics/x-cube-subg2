@@ -68,7 +68,102 @@ Here is the list of references to user documents:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__4.1.0 / May 3th 2021__</label>
+<label for="collapse-section1" aria-hidden="true">V4.2.0 / 23-June-2021</label>
+<div>			
+
+## Main Changes
+
+### Product update
+
+ - Moved irq_disable_cnt semaphore variable from applicative code to BSP
+ - Renamed bsp_ip_conf.h in subg2_bsp_ip_conf.h
+ - Add support to Example Selector in STM32CubeMX (so new Projects folders names)
+
+
+## Contents
+
+<small>The components flagged by "[]{.icon-st-update}" have changed since the
+previous release. "[]{.icon-st-add}" are new.</small>
+
+Drivers
+
+  Name                                                        Version                                           License                                                                                                       Release note
+  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
+  **S2868A1**                                                 V4.0.0 []{.icon-st-update}                        [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\BSP\S2868A1\Release_Notes.html)
+  **S2915A1**                                                 V4.0.0 []{.icon-st-update}                        [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\BSP\S2915A1\Release_Notes.html)
+  **S2868A2**                                                 V4.0.0 []{.icon-st-update}                        [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\BSP\S2868A2\Release_Notes.html)
+  **S2LP**                                                    V2.1.1                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\BSP\Components\S2LP\Release_Notes.html)
+  **STM32F4xx CMSIS**                                         V2.6.6                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\CMSIS\Device\ST\STM32F4xx\Release_Notes.html)
+  **STM32F4xx HAL**                                           V1.7.12 []{.icon-st-update}                       [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\STM32F4xx_HAL_Driver\Release_Notes.html)
+  **BSP STM32F4xx_NUCLEO**                                    V1.2.7                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\BSP\STM32F4xx-Nucleo\Release_Notes.html)
+  **STM32L0xx CMSIS**                                         V1.9.1                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\CMSIS\Device\ST\STM32L0xx\Release_Notes.html)
+  **STM32L0xx HAL**                                           V1.10.4                                           [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\STM32L0xx_HAL_Driver\Release_Notes.html)
+  **BSP STM32L0xx_NUCLEO**                                    V2.1.3                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\BSP\STM32L0xx_Nucleo\Release_Notes.html)
+  **STM32L1xx CMSIS**                                         V2.3.2 []{.icon-st-update}                        [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\CMSIS\Device\ST\STM32L1xx\Release_Notes.html)
+  **STM32L1xx HAL**                                           V1.4.4 []{.icon-st-update}                        [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\STM32L1xx_HAL_Driver\Release_Notes.html)
+  **BSP STM32L1xx_NUCLEO**                                    V1.1.3                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [release note](Drivers\BSP\STM32L1xx_Nucleo\Release_Notes.html)
+
+Middlewares
+
+  Name                                                        Version                                           License                                                                                                       Release note
+  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
+  **Contiki-NG_STM32_Library**                                V1.0.2 []{.icon-st-update}                        [SLA0055](http://www.st.com/SLA0055)                                                                          [release note](Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html)
+  **Contiki-NG**                                              V4.6.0                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [LICENSE](Middlewares\Third_Party\Contiki-NG\LICENSE.md)
+  **TinyDTLS** (deliverd in Contiki-NG)                       V4.6.0                                            [EPL](http://www.eclipse.org/legal/epl-v10.html)  and [EDL](http://www.eclipse.org/org/documents/edl-v10.php) [LICENSE](Middlewares\Third_Party\Contiki-NG\os\net\security\tinydtls\LICENSE)
+
+Utilities  
+
+  Name                                                        Version                                           License                                                                                                       Release note
+  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
+  Serial Sniffer Tool                                         V1.0.0                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [readme](Utilities\PC_Software\SerialSniffer\serialsniffer.readme)
+  wpcapslip6 Tool                                             V1.0.0                                            [BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)                                                  [readme](Utilities\PC_Software\wpcapslip6\wpcapslip6.readme)
+
+
+## Known Limitations
+
+
+  Headline
+  ----------------------------------------------------------
+  When using STM32CubeMX SUBG2 pack, the Contiki-NG based projects for STM32CubeIDE must use "Standard C" library instead of the default "Reduced C" (Properties, C/C++ Build, Settings, MCU Settings, Runtime library => Standard C).
+  When using STM32CubeMX SUBG2 pack, do not use "Generate under root" option for STM32CubeIDE for Contiki-NG based projects.
+  On dual-core STM32 series this expansion software can be used on both cores but exclusively
+  On some Windows PC the boards used to run the Border Router and Serial Sniffer applications may need to be connected to a Serial Terminal application (like Teraterm) before using the user space utilities, to work correctly.
+  If using older IAR System Workbench version (8.32.*), "rtimer-arch.h" Contiki-NG file causes an error.
+  When using STM32CubeMX SUBG2 pack, if a project has been generated for P2P, to modify it for a Contiki-NG based application that uses LED or Button, it is required to deselect any application and save the .ioc project file before choosing the new Application.
+  
+\
+
+## Development Toolchains and Compilers
+
+- IAR System Workbench v8.50.9
+- ARM Keil v5.32
+- STM32CubeIDE v1.6.1
+
+
+## Supported Devices and Boards
+
+- NUCLEO-F401RE MB1136 rev.C
+- NUCLEO-L152RE MB1136 rev.C
+- NUCLEO-L053R8 MB1136 rev.C
+- X-NUCLEO-S2868A1 rev. XS2868V1
+- X-NUCLEO-S2915A1 rev. XS2915A1
+- X-NUCLEO-S2868A2
+
+## Backward Compatibility
+
+N/A
+
+## Dependencies
+
+N/A
+
+
+</div>
+:::
+
+::: {.collapse}
+<input type="checkbox" id="collapse-section4" checked aria-hidden="true">
+<label for="collapse-section1" aria-hidden="true">V4.1.0 / 3-May-2021</label>
 <div>			
 
 ## Main Changes
@@ -162,7 +257,7 @@ This software release is compatible with:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__4.0.0 / February 22th 2021__</label>
+<label for="collapse-section1" aria-hidden="true">V4.0.0 / 22-February-2021</label>
 <div>			
 
 ## Main Changes
@@ -247,7 +342,7 @@ This software release is compatible with:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__3.0.1 / December 15th 2020__</label>
+<label for="collapse-section1" aria-hidden="true">V3.0.1 / 15-December-2020</label>
 <div>			
 
 ## Main Changes
@@ -330,7 +425,7 @@ This software release is compatible with:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__3.0.0 / November 15th 2020__</label>
+<label for="collapse-section1" aria-hidden="true">V3.0.0 / 15-November-2020</label>
 <div>			
 
 ## Main Changes
@@ -414,7 +509,7 @@ This software release is compatible with:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__2.0.0 / July 9th 2020__</label>
+<label for="collapse-section1" aria-hidden="true">V2.0.0 / 9-July-2020</label>
 <div>			
 
 ## Main Changes
@@ -496,7 +591,7 @@ This software release is compatible with:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section1" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__1.1.0 / Feb 21st 2020__</label>
+<label for="collapse-section1" aria-hidden="true">V1.1.0 / 21-Feb-2020</label>
 <div>			
 
 ## Main Changes
@@ -581,7 +676,7 @@ This software release is compatible with:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section0"  aria-hidden="true">
-<label for="collapse-section0" aria-hidden="true">__1.0.0 / Dec 6th 2019__</label>
+<label for="collapse-section0" aria-hidden="true">V1.0.0 / 6-Dec-2019</label>
 <div>			
 
 ## Main Changes

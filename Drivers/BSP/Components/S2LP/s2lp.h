@@ -182,6 +182,8 @@ typedef enum
   PA_RX     	  = 0x03,
 } PA_OperationType;
 
+
+
 /* Exported constants --------------------------------------------------------*/    
                                 
 #define S2LPGeneralLibraryVersion() "S2LP_Libraries_v.1.3.0"
