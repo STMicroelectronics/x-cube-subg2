@@ -91,8 +91,8 @@ Contiki-NG, 6LoWPAN, SubGHz_Phy, SPI, SUBGHZ, UART, TIM
 
 
 
-ADDITIONAL_BOARD : X-NUCLEO-S2868A2 https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2868a2.html
-ADDITIONAL_COMP : S2-LP https://www.st.com/content/st_com/en/products/wireless-connectivity/long-range/proprietary-sub-1-ghz-products/s2-lp.html
+
+
 
 @par Hardware and Software environment
 
@@ -103,6 +103,8 @@ ADDITIONAL_COMP : S2-LP https://www.st.com/content/st_com/en/products/wireless-c
     - NUCLEO-F401RE RevC board
     and can be easily tailored to any other supported device and development board.
 
+ADDITIONAL_BOARD : X-NUCLEO-S2868A2 https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2868a2.html
+ADDITIONAL_COMP : S2-LP https://www.st.com/content/st_com/en/products/wireless-connectivity/long-range/proprietary-sub-1-ghz-products/s2-lp.html
 
 @par How to use it?
 
