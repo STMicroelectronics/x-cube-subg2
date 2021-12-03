@@ -1,5 +1,7 @@
 # X-CUBE-SUBG2 Firmware Package
 
+![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-cube-subg2.svg?color=brightgreen)
+
 The X-CUBE-SUBG2 software package is an expansion for STM32Cube. This software provides drivers running on STM32 for STM's Radio S2-LP Low data rate and low power sub-1GHz transceiver devices. It is built on top of STM32Cube software technology that ease portability across different STM32 micro-controllers. This Expansion Firmware is built over the X-NUCLEO-S2868A1, X-NUCLEO-S2868A2 or X-NUCLEO-S2915A1 Expansion Board. This Expansion Board can be plugged on the Arduino UNO R3 connectors of any STM32 Nucleo board. The user can mount the ST Morpho connectors if required. The Expansion Board can be easily stacked in order to evaluate different devices with Sub 1GHz communication.
 
 **X-CUBE-SUBG2 software features**:
