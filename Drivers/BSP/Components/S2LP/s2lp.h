@@ -229,7 +229,7 @@ ModeExtRef S2LP_GetExtRef(void);
 void S2LP_SetExternalSmpsMode(SFunctionalState xNewState);
 void S2LP_RefreshStatus(void);
 void S2LP_StrobeCommand(S2LP_CMD_ xCommandCode);
-void S2LP_RcoCalibration(void);
+int32_t S2LP_RcoCalibration(void);
 void S2LP_EnableRangeExtMode(void);
 void S2LP_TCXOInit(void);
 /** @defgroup SPI_Exported_Macros       SPI Exported Macros

@@ -270,9 +270,9 @@ void S2LP_RefreshStatus(void)
 }
 /**
   * @brief  FunctionDescription
-  * @retval None
+  * @retval Error code: S2LP_OK on success, S2LP_ERROR on error during calibration of RCO.
   */
-void S2LP_RcoCalibration(void)
+int32_t S2LP_RcoCalibration(void)
 {
   uint8_t tmp[2],tmp2;
 
@@ -286,21 +286,23 @@ void S2LP_RcoCalibration(void)
 
   do
   {
-    S2LP_ReadRegister(MC_STATE1_ADDR, 1, tmp);
-  }
-  while((tmp[0]& RCO_CAL_OK_REGMASK)==0);   /* Wait until RC_CAL_OK becomes 1 */
-  
-  
+    S2LP_RefreshStatus();
+    if(g_xStatus.ERROR_LOCK) {
+      return S2LP_ERROR;
+    }
+  } while(g_xStatus.RCCAL_OK == 0);   /* Wait until RC_CAL_OK becomes 1 */
+
   S2LP_ReadRegister(RCO_CALIBR_OUT4_ADDR, 2, tmp);
   S2LP_ReadRegister(RCO_CALIBR_CONF2_ADDR, 1, &tmp2);
-  
-  tmp[1]= (tmp[1] & TEMP_SENSOR_EN_REGMASK) | (tmp2 & 0x7F);
-  
+
+  tmp[1] = (tmp[1] & TEMP_SENSOR_EN_REGMASK) | (tmp2 & 0x7F);
+
   S2LP_WriteRegister(RCO_CALIBR_CONF3_ADDR, 2, tmp);
-  
+
   S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp2);
   tmp2 &= 0xFE;
   S2LP_WriteRegister(XO_RCO_CONF0_ADDR, 1, &tmp2);
+  return S2LP_OK;
 }
 
 /**
