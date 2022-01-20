@@ -86,13 +86,7 @@
 /** @defgroup Types_Private_Variables             Types Private Variables
  * @{
  */
-
-/**
- * @brief  S2LP Status global variable.
- *         This global variable of @ref S2LPStatus type is updated on every SPI transaction
- *         to maintain memory of S2LP Status.
- */
-volatile S2LPStatus g_xStatus;
+ 
 
 /**
  * @}
@@ -137,43 +131,6 @@ void s_assert_failed(uint8_t* file, uint32_t line)
 #endif
 
 
-/**
- * @brief  Updates the gState (the global variable used to maintain memory of S2LP Status)
- *         reading the MC_STATE register of S2LP.
- * @param  None
- * @retval None
- */
-#if 0 //indar
-void S2LPRefreshStatus(void)
-{
-  uint8_t tempRegValue[2];
-  /* Read the status both from register and from SPI header and exit when they match.
-      This will protect against possible transition state changes */
-  do
-  {
-    /* Reads the MC_STATUS register to update the g_xStatus */
-    g_xStatus = S2LPSpiReadRegisters(MC_STATE0_ADDR, 2, tempRegValue);
-  }
-  while(!((((uint8_t*)&g_xStatus)[0])==tempRegValue[1] && 
-          (((uint8_t*)&g_xStatus)[1]&0x07)==tempRegValue[0])); 
-
-}
-
-#else
-
-void S2LPRefreshStatus(void)
-{
-  uint8_t tempRegValue;
- // do
-  {
-    /* Reads the MC_STATUS register to update the g_xStatus */
-    g_xStatus = S2LPSpiReadRegisters(MC_STATE1_ADDR, 1, &tempRegValue);
-  }
-//  while(!((((uint8_t*)&g_xStatus)[0])==tempRegValue[1] && 
-//          (((uint8_t*)&g_xStatus)[1]&0x07)==tempRegValue[0])); 
-
-}
-#endif
 /**
  * @}
  */

@@ -44,6 +44,7 @@
 #include "s2lp_gpio.h"
 #include "s2lp_timer.h"
 #include "s2lp_fifo.h"
+#include "s2lp_general.h"
 #include "s2lp_packethandler.h"
 #include "s2lp_pktwmbus.h"
 #include "s2lp_pktstack.h"
@@ -152,12 +153,6 @@ typedef struct
   S2LPBus_Delay                Delay;
 } S2LP_IO_t;
 
-typedef enum {
-  MODE_EXT_XO  = 0,
-  MODE_EXT_XIN = 0x80,
-} ModeExtRef;
-
-
 typedef enum
 {
   RANGE_EXT_NONE = 0,
@@ -185,8 +180,20 @@ typedef enum
 
 
 /* Exported constants --------------------------------------------------------*/    
-                                
+
 #define S2LPGeneralLibraryVersion() "S2LP_Libraries_v.1.3.0"
+
+/**
+ * @defgroup Types_Exported_Variables   Types Exported Variables
+ * @{
+ */
+
+extern volatile S2LPStatus g_xStatus;
+
+/**
+ * @}
+ */
+
 /* Exported macros --------------------------------------------------------*/    
 
 
@@ -222,11 +229,6 @@ StatusBytes S2LP_WriteFIFO(uint8_t cNbBytes, uint8_t* pcBuffer);
 StatusBytes S2LP_ReadFIFO(uint8_t cNbBytes, uint8_t* pcBuffer);
 
 
-uint8_t S2LP_GetDevicePN(void);
-uint8_t S2LP_GetVersion(void);
-void S2LP_SetExtRef(ModeExtRef xExtMode);
-ModeExtRef S2LP_GetExtRef(void);
-void S2LP_SetExternalSmpsMode(SFunctionalState xNewState);
 void S2LP_RefreshStatus(void);
 void S2LP_StrobeCommand(S2LP_CMD_ xCommandCode);
 int32_t S2LP_RcoCalibration(void);

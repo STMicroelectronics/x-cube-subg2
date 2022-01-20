@@ -43,6 +43,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* Private variables -------------------------------------------------------------*/
+/**
+ * @brief  S2LP Status global variable.
+ *         This global variable of @ref S2LPStatus type is updated on every SPI transaction
+ *         to maintain memory of S2LP Status.
+ */
 volatile S2LPStatus g_xStatus;
 /*!
  * @brief IO function pointer structure
@@ -170,86 +175,6 @@ StatusBytes S2LP_ReadFIFO(uint8_t cNbBytes, uint8_t* pcBuffer)
   ((uint8_t*)&status)[0]=header[1];
   
   return status;
-}
-
-/**
- * @brief  Set External Reference.
- * @param  xExtMode new state for the external reference.
- *         This parameter can be: MODE_EXT_XO or MODE_EXT_XIN.
- * @retval None.
- */
-void S2LP_SetExtRef(ModeExtRef xExtMode)
-{
-  uint8_t tmp;
-  S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
-  if(xExtMode == MODE_EXT_XO) {
-    tmp &= ~EXT_REF_REGMASK;
-  }
-  else {
-    tmp |= EXT_REF_REGMASK;
-  }
-  g_xStatus = S2LP_WriteRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
-
-}
-
-
-/**
- * @brief  Return External Reference.
- * @param  None.
- * @retval ModeExtRef Settled external reference.
- *         This parameter can be: MODE_EXT_XO or MODE_EXT_XIN.
- */
-ModeExtRef S2LP_GetExtRef(void)
-{
-  uint8_t tmp;
-  g_xStatus = S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
-  return (ModeExtRef)(tmp & EXT_REF_REGMASK);
-}
-
-
-/**
- * @brief  Return device part number.
- * @param  None.
- * @retval Device part number.
- */
-uint8_t S2LP_GetDevicePN(void)
-{
-  uint8_t tmp;
-  g_xStatus = S2LP_ReadRegister(DEVICE_INFO1_ADDR, 1, &tmp);
-  return tmp;
-}
-
-/**
- * @brief  Return S2LP version.
- * @param  None.
- * @retval S2LP version.
- */
-uint8_t S2LP_GetVersion(void)
-{
-  uint8_t tmp;
-  S2LP_ReadRegister(DEVICE_INFO0_ADDR, 1, &tmp);
-  return tmp;
-}
-
-
-/**
-* @brief  Disable or enable the internal SMPS.
-* @param  xNewState if this value is S_DISABLE the external SMPS is enabled and a vlotage must be provided from outside.
-*               In this case the internal SMPS will be disabled.
-* @retval None.
-*/
-void S2LP_SetExternalSmpsMode(SFunctionalState xNewState)
-{
-  uint8_t tmp;
-  
-  S2LP_ReadRegister(PM_CONF4_ADDR, 1, &tmp);
-  
-  if(xNewState == S_ENABLE) {
-    tmp |= EXT_SMPS_REGMASK;
-  } else {
-    tmp &= ~EXT_SMPS_REGMASK;
-  }
-  g_xStatus = S2LP_WriteRegister(PM_CONF4_ADDR, 1, &tmp);
 }
 
 /**

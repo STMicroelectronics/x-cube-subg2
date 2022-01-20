@@ -99,7 +99,6 @@ typedef enum {
  * @defgroup General_Exported_Macros            General Exported Macros
  * @{
  */
-#define S2LPGeneralLibraryVersion() "S2LP_Libraries_v.1.3.0"
 
 
 /**
@@ -111,13 +110,12 @@ typedef enum {
  * @defgroup General_Exported_Functions         General Exported Functions
  * @{
  */
-
-uint8_t S2LPGeneralGetDevicePN(void);
-uint8_t S2LPGeneralGetVersion(void);
-void S2LPGeneralSetExtRef(ModeExtRef xExtMode);
-ModeExtRef S2LPGeneralGetExtRef(void);
-void S2LPRadioSetExternalSmpsMode(SFunctionalState xNewState);
-void S2LPRefreshStatus(void);
+ 
+uint8_t S2LP_GetDevicePN(void);
+uint8_t S2LP_GetVersion(void);
+void S2LP_SetExtRef(ModeExtRef xExtMode);
+ModeExtRef S2LP_GetExtRef(void);
+void S2LP_SetExternalSmpsMode(SFunctionalState xNewState);
 
 /**
  * @}

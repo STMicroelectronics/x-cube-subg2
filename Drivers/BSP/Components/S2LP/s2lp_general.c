@@ -64,7 +64,7 @@
  * @defgroup General_Private_Defines            General Private Defines
  * @{
  */
-
+#define s_assert_param(expr) ((void)0U)
 /**
  *@}
  */
@@ -114,19 +114,19 @@
  *         This parameter can be: MODE_EXT_XO or MODE_EXT_XIN.
  * @retval None.
  */
-void S2LPGeneralSetExtRef(ModeExtRef xExtMode)
+void S2LP_SetExtRef(ModeExtRef xExtMode)
 {
   uint8_t tmp;
   s_assert_param(IS_MODE_EXT(xExtMode));
 
-  S2LPSpiReadRegisters(XO_RCO_CONF0_ADDR, 1, &tmp);
+  S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
   if(xExtMode == MODE_EXT_XO) {
     tmp &= ~EXT_REF_REGMASK;
   }
   else {
     tmp |= EXT_REF_REGMASK;
   }
-  g_xStatus = S2LPSpiWriteRegisters(XO_RCO_CONF0_ADDR, 1, &tmp);
+  g_xStatus = S2LP_WriteRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
 
 }
 
@@ -137,10 +137,10 @@ void S2LPGeneralSetExtRef(ModeExtRef xExtMode)
  * @retval ModeExtRef Settled external reference.
  *         This parameter can be: MODE_EXT_XO or MODE_EXT_XIN.
  */
-ModeExtRef S2LPGeneralGetExtRef(void)
+ModeExtRef S2LP_GetExtRef(void)
 {
   uint8_t tmp;
-  g_xStatus = S2LPSpiReadRegisters(XO_RCO_CONF0_ADDR, 1, &tmp);
+  g_xStatus = S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
   return (ModeExtRef)(tmp & EXT_REF_REGMASK);
 }
 
@@ -150,10 +150,10 @@ ModeExtRef S2LPGeneralGetExtRef(void)
  * @param  None.
  * @retval Device part number.
  */
-uint8_t S2LPGeneralGetDevicePN(void)
+uint8_t S2LP_GetDevicePN(void)
 {
   uint8_t tmp;
-  g_xStatus = S2LPSpiReadRegisters(DEVICE_INFO1_ADDR, 1, &tmp);
+  g_xStatus = S2LP_ReadRegister(DEVICE_INFO1_ADDR, 1, &tmp);
   return tmp;
 }
 
@@ -162,10 +162,10 @@ uint8_t S2LPGeneralGetDevicePN(void)
  * @param  None.
  * @retval S2LP version.
  */
-uint8_t S2LPGeneralGetVersion(void)
+uint8_t S2LP_GetVersion(void)
 {
   uint8_t tmp;
-  S2LPSpiReadRegisters(DEVICE_INFO0_ADDR, 1, &tmp);
+  S2LP_ReadRegister(DEVICE_INFO0_ADDR, 1, &tmp);
   return tmp;
 }
 
@@ -176,19 +176,19 @@ uint8_t S2LPGeneralGetVersion(void)
 *               In this case the internal SMPS will be disabled.
 * @retval None.
 */
-void S2LPRadioSetExternalSmpsMode(SFunctionalState xNewState)
+void S2LP_SetExternalSmpsMode(SFunctionalState xNewState)
 {
   uint8_t tmp;
   s_assert_param(IS_SFUNCTIONAL_STATE(xNewState));
   
-  S2LPSpiReadRegisters(PM_CONF4_ADDR, 1, &tmp);
+  S2LP_ReadRegister(PM_CONF4_ADDR, 1, &tmp);
   
   if(xNewState == S_ENABLE) {
     tmp |= EXT_SMPS_REGMASK;
   } else {
     tmp &= ~EXT_SMPS_REGMASK;
   }
-  g_xStatus = S2LPSpiWriteRegisters(PM_CONF4_ADDR, 1, &tmp);
+  g_xStatus = S2LP_WriteRegister(PM_CONF4_ADDR, 1, &tmp);
 }
 
 /**

@@ -32,9 +32,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * This module provide some types definitions which will be used in
- * all the modules of this library. Here is defined also the global
- * variable @ref g_xStatus which contains the status of S2-LP and
- * is updated every time an SPI transaction occurs.
+ * all the modules of this library.
  *
  *
  * <h2><center>&copy; COPYRIGHT 2019 STMicroelectronics</center></h2>
@@ -162,7 +160,6 @@ typedef struct {
  * @{
  */
 
-extern volatile S2LPStatus g_xStatus;
 
 /**
  * @}
