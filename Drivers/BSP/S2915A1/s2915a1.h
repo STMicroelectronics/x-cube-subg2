@@ -4,17 +4,16 @@
   * @author  SRA Team
   * @brief   driver S2915A1 header file
   ******************************************************************************
- * @attention
- *
- * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
- * All rights reserved.</center></h2>
- *
- * This software component is licensed by ST under BSD 3-Clause license,
- * the "License"; You may not use this file except in compliance with the
- * License. You may obtain a copy of the License at:
- *                        opensource.org/licenses/BSD-3-Clause
- *
- ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2021 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
  */
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __S2915A1_H__
@@ -48,6 +47,8 @@ typedef enum
     RADIO_MODE_EXTI_IN,           /*!< Work as EXTI */
     RADIO_MODE_GPIO_OUT,          /*!< Work as GPIO output */
 }S2915A1_RADIO_GPIO_Mode;  
+
+//Below type is currently unused with new implementation
 /* MCU GPIO pin Edge */
 typedef enum                                                                                          
 {
@@ -328,16 +329,16 @@ uint8_t S2915A1_RADIO_CheckShutdown( void ) ;
   * @param operation the operating mode selection
   * @retval None
   */
-void S2915A1_RADIO_RangeExtOperate(PA_OperationType operation);
+void S2915A1_RADIO_RangeExtOperate(FEM_OperationType operation);
 
 /**
-  * @brief  Function for Radio IO initialization
+  * @brief  Legacy API to change settings at runtime
   * @param  xGpio the GPIO 
   * @param  xGpioMode the gpio mode
   * @param  xGpioEdge the gpio edge
   * @retval None
   */
-void S2915A1_RADIO_GPIO_Init( S2915A1_RADIO_GPIO_TypeDef xGpio, S2915A1_RADIO_GPIO_Mode xGpioMode , S2915A1_RADIO_GPIO_EDGE_Mode xGpioEdge) ;
+void S2915A1_RADIO_GPIO_Init_Update( S2915A1_RADIO_GPIO_TypeDef xGpio, S2915A1_RADIO_GPIO_Mode xGpioMode , S2915A1_RADIO_GPIO_EDGE_Mode xGpioEdge);
 
 /**
   * @brief  Function to bypass the FEM
@@ -352,10 +353,10 @@ void S2915A1_FEM_SetBypass(uint8_t bypass_mode);
   */
 uint8_t S2915A1_FEM_GetBypass(void);
 
+void FEM_Operation(FEM_OperationType operation);
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __S2915A1_H__*/
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

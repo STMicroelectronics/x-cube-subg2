@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under ODE Software License Agreement
-  * SLA0094, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0094
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -30,10 +29,13 @@ void Contiki_SysTick_Handler(void);
 void TIM_platform_rtimer_schedule(rtimer_clock_t t);
 void TIM_platform_rtimer_init(void);
 
+#if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)
+void SUBG2_RTIMER_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim);
+void SUBG2_RTIMER_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
+#endif /*USE_HAL_TIM_REGISTER_CALLBACKS*/
+
 #ifdef __cplusplus
 }
 #endif
 
 #endif /*SUBG2_CONTIKI_IT_H*/
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

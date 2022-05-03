@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under ODE Software License Agreement
-  * SLA0094, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0094
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -54,10 +53,10 @@
 
 /*LED_GREEN comes from BSP and is and index==0, LEDS_GREEN will be defined in
  Contiki-NG LED module starting from LEDS_CONF_GREEN and is a bitfield */
-#define LEDS_CONF_GREEN  ((uint8_t) (((uint8_t)1) << LED_GREEN)) /*Nucleo LED*/
-#define LEDS_CONF_RED    ((uint8_t) 2) /*Radio LED if available*/
-#define LEDS_CONF_BLUE   ((uint8_t) 4) /*Not used*/
-#define LEDS_CONF_YELLOW ((uint8_t) 8) /*Not used*/
+#define LEDS_CONF_GREEN  ((1) << LED_GREEN) /*Nucleo LED*/
+#define LEDS_CONF_RED    (2) /*Radio LED if available*/
+#define LEDS_CONF_BLUE   (4) /*Not used*/
+#define LEDS_CONF_YELLOW (8) /*Not used*/
 
 #endif /*!PLATFORM_HAS_LEDS*/
 
@@ -130,5 +129,3 @@ extern volatile clock_time_t ticks;
 #endif /* PLATFORM_CONF_H__ */
 /*---------------------------------------------------------------------------*/
 /** @} */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

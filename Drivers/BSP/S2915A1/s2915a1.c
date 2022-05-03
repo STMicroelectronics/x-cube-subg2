@@ -4,23 +4,21 @@
   * @author  SRA Team
   * @brief   driver s2915A1 board
   ******************************************************************************
- * @attention
- *
- * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
- * All rights reserved.</center></h2>
- *
- * This software component is licensed by ST under BSD 3-Clause license,
- * the "License"; You may not use this file except in compliance with the
- * License. You may obtain a copy of the License at:
- *                        opensource.org/licenses/BSD-3-Clause
- *
- ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2021 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
  */
   
 /* Includes ------------------------------------------------------------------*/
 #include "s2915a1.h"
 #include "s2lp.h"
-
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -30,8 +28,12 @@
 /* Private variables ---------------------------------------------------------*/
 volatile int irq_disable_cnt = 0;
 
+#if (S2915A1_LEDn > 0)
 GPIO_TypeDef*  aLED_GPIO_PORT[S2915A1_LEDn] = {S2915A1_LED_GPIO_PORT};
 const uint16_t aLED_GPIO_PIN[S2915A1_LEDn] = {S2915A1_LED_GPIO_PIN};
+const uint32_t aLED_GPIO_PULL_MODE[S2915A1_LEDn] = 	{S2915A1_LED_GPIO_PULL_MODE};
+const uint32_t aLED_GPIO_SPEED[S2915A1_LEDn] = 	{S2915A1_LED_GPIO_SPEED};
+#endif /*S2915A1_LEDn > 0*/
 
 EXTI_HandleTypeDef S2915A1_RADIO_GPIO_hexti[S2915A1_RADIO_GPIOn - 1] = {
 #if (USE_S2915A1_RADIO_GPIO_0 == 1) 
@@ -49,7 +51,35 @@ EXTI_HandleTypeDef S2915A1_RADIO_GPIO_hexti[S2915A1_RADIO_GPIOn - 1] = {
 };
 
 /* Private function prototypes -----------------------------------------------*/
+static const S2915A1_RADIO_GPIO_Mode S2915A1_RADIO_GPIO_MODE[S2915A1_RADIO_GPIOn - 1] = {
+#if (USE_S2915A1_RADIO_GPIO_0 == 1)
+    S2915A1_RADIO_GPIO_0_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_1 == 1)
+    S2915A1_RADIO_GPIO_1_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_2 == 1)
+    S2915A1_RADIO_GPIO_2_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_3 == 1)
+    S2915A1_RADIO_GPIO_3_MODE,
+#endif
+ };
 
+static const uint32_t S2915A1_RADIO_GPIO_EDGE_MODE[S2915A1_RADIO_GPIOn - 1] = {
+#if (USE_S2915A1_RADIO_GPIO_0 == 1)
+    S2915A1_RADIO_GPIO_0_EXTI_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_1 == 1)
+    S2915A1_RADIO_GPIO_1_EXTI_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_2 == 1)
+    S2915A1_RADIO_GPIO_2_EXTI_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_3 == 1)
+    S2915A1_RADIO_GPIO_3_EXTI_MODE,
+#endif
+ };
 
 static const uint32_t S2915A1_RADIO_GPIO_EXTI_LINE[S2915A1_RADIO_GPIOn - 1] = {
 #if (USE_S2915A1_RADIO_GPIO_0 == 1) 
@@ -80,6 +110,21 @@ static const uint32_t S2915A1_RADIO_GPIO_IT_PRIO [S2915A1_RADIO_GPIOn - 1] = {
     S2915A1_RADIO_GPIO_3_IT_PRIO, 
 #endif
  };
+
+static const uint32_t S2915A1_RADIO_GPIO_IT_SUBPRIO [S2915A1_RADIO_GPIOn - 1] = {
+#if (USE_S2915A1_RADIO_GPIO_0 == 1)
+    S2915A1_RADIO_GPIO_0_IT_SUBPRIO,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_1 == 1)
+    S2915A1_RADIO_GPIO_1_IT_SUBPRIO,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_2 == 1)
+    S2915A1_RADIO_GPIO_2_IT_SUBPRIO,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_3 == 1)
+    S2915A1_RADIO_GPIO_3_IT_SUBPRIO, 
+#endif
+ };
   
 static const IRQn_Type S2915A1_RADIO_GPIO_IRQn [S2915A1_RADIO_GPIOn - 1]   = {
 #if (USE_S2915A1_RADIO_GPIO_0 == 1) 
@@ -95,6 +140,39 @@ static const IRQn_Type S2915A1_RADIO_GPIO_IRQn [S2915A1_RADIO_GPIOn - 1]   = {
     S2915A1_RADIO_GPIO_3_IRQn  
 #endif
  }; 
+ 
+static const uint32_t S2915A1_RADIO_GPIO_SPEED[S2915A1_RADIO_GPIOn] = {
+#if (USE_S2915A1_RADIO_GPIO_0 == 1)
+    S2915A1_RADIO_GPIO_0_SPEED,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_1 == 1)
+    S2915A1_RADIO_GPIO_1_SPEED,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_2 == 1)
+    S2915A1_RADIO_GPIO_2_SPEED,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_3 == 1)
+    S2915A1_RADIO_GPIO_3_SPEED,  
+#endif
+    S2915A1_RADIO_GPIO_SDN_SPEED
+ };
+
+static const uint32_t S2915A1_RADIO_GPIO_PULL_MODE[S2915A1_RADIO_GPIOn] = {
+#if (USE_S2915A1_RADIO_GPIO_0 == 1)
+    S2915A1_RADIO_GPIO_0_PULL_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_1 == 1)
+    S2915A1_RADIO_GPIO_1_PULL_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_2 == 1)
+    S2915A1_RADIO_GPIO_2_PULL_MODE,
+#endif
+#if (USE_S2915A1_RADIO_GPIO_3 == 1)
+    S2915A1_RADIO_GPIO_3_PULL_MODE,  
+#endif
+   S2915A1_RADIO_GPIO_SDN_PULL_MODE
+ };
+
 static GPIO_TypeDef* S2915A1_RADIO_GPIO_PORT[S2915A1_RADIO_GPIOn] = {
 #if (USE_S2915A1_RADIO_GPIO_0 == 1) 
   S2915A1_RADIO_GPIO_0_PORT,
@@ -132,19 +210,19 @@ static void GPIO_DeInit(void);
 int32_t S2915A1_SPI_SendRecvWrapper(uint8_t *pTxData, uint8_t *pRxData, uint16_t Length);
 static int32_t EEPROM_WaitEndWriteOperation(uint32_t Instance);
 static uint8_t _isBypassEnabled = 0;
+static void S2915A1_RADIO_GPIO_Init( S2915A1_RADIO_GPIO_TypeDef xGpio, S2915A1_RADIO_GPIO_Mode xGpioMode); 
 
 /* Exported functions ---------------------------------------------------------*/
-
 /**
-  * @brief  Function for Radio IO initialization
+  * @brief  Legacy API to change settings at runtime
   * @param  xGpio the GPIO 
   * @param  xGpioMode the gpio mode
   * @param  xGpioEdge the gpio edge
   * @retval None
   */
-void S2915A1_RADIO_GPIO_Init( S2915A1_RADIO_GPIO_TypeDef xGpio, S2915A1_RADIO_GPIO_Mode xGpioMode , S2915A1_RADIO_GPIO_EDGE_Mode xGpioEdge) 
+void S2915A1_RADIO_GPIO_Init_Update( S2915A1_RADIO_GPIO_TypeDef xGpio, S2915A1_RADIO_GPIO_Mode xGpioMode , S2915A1_RADIO_GPIO_EDGE_Mode xGpioEdge)  
 {
-   GPIO_InitTypeDef GPIO_InitStructure, EXTI_InitStructure;
+  GPIO_InitTypeDef GPIO_InitStructure, EXTI_InitStructure;
   
   /* Enable Radio GPIO clock */
   switch(xGpio)
@@ -207,6 +285,65 @@ void S2915A1_RADIO_GPIO_Init( S2915A1_RADIO_GPIO_TypeDef xGpio, S2915A1_RADIO_GP
 }
 
 /**
+  * @brief  Function for Radio IO initialization
+  * @param  xGpio the GPIO 
+  * @param  xGpioMode the gpio mode
+  * @retval None
+  */
+void S2915A1_RADIO_GPIO_Init( S2915A1_RADIO_GPIO_TypeDef xGpio, S2915A1_RADIO_GPIO_Mode xGpioMode)
+{
+   GPIO_InitTypeDef GPIO_InitStructure, EXTI_InitStructure;
+  
+  /* Enable Radio GPIO clock */
+  switch(xGpio)
+  {
+#if (USE_S2915A1_RADIO_GPIO_0 == 1) 
+  case S2915A1_RADIO_GPIO_0:
+    S2915A1_RADIO_GPIO_0_GPIO_CLK_ENABLE();
+    break;
+#endif    
+#if (USE_S2915A1_RADIO_GPIO_1 == 1)  
+  case S2915A1_RADIO_GPIO_1:
+    S2915A1_RADIO_GPIO_1_GPIO_CLK_ENABLE();
+    break;
+#endif 
+#if (USE_S2915A1_RADIO_GPIO_2 == 1)  
+  case S2915A1_RADIO_GPIO_2:
+    S2915A1_RADIO_GPIO_2_GPIO_CLK_ENABLE();
+    break;
+#endif
+#if (USE_S2915A1_RADIO_GPIO_3 == 1) 
+  case S2915A1_RADIO_GPIO_3:
+    S2915A1_RADIO_GPIO_3_GPIO_CLK_ENABLE();
+    break;
+#endif
+  case S2915A1_RADIO_GPIO_SDN:
+    S2915A1_RADIO_GPIO_SDN_CLOCK_ENABLE();
+    break;
+  }
+  
+  /* GPIO Init */
+  if (xGpioMode == RADIO_MODE_EXTI_IN) {
+	/* Configures MCU GPIO EXTI line */
+	EXTI_InitStructure.Pin = S2915A1_RADIO_GPIO_PIN[xGpio];
+	EXTI_InitStructure.Mode = S2915A1_RADIO_GPIO_EDGE_MODE[xGpio];
+    EXTI_InitStructure.Pull = S2915A1_RADIO_GPIO_PULL_MODE[xGpio];
+    HAL_GPIO_Init(S2915A1_RADIO_GPIO_PORT[xGpio], &EXTI_InitStructure);   
+  }  else {
+	  /* Configures MCU GPIO */
+	  if(xGpioMode == RADIO_MODE_GPIO_OUT){
+		GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+	    GPIO_InitStructure.Speed = S2915A1_RADIO_GPIO_SPEED[xGpio];
+	  } else {
+		GPIO_InitStructure.Mode = GPIO_MODE_INPUT;
+	  }
+	  GPIO_InitStructure.Pull = S2915A1_RADIO_GPIO_PULL_MODE[xGpio];
+	  GPIO_InitStructure.Pin = S2915A1_RADIO_GPIO_PIN[xGpio];
+	  HAL_GPIO_Init(S2915A1_RADIO_GPIO_PORT[xGpio], &GPIO_InitStructure);
+  }
+}
+
+/**
   * @brief  DeInit GPIO.
   * @param  None
   * @retval None
@@ -240,8 +377,8 @@ static void S2915A1_SPI_CS_Init()
   GPIO_InitTypeDef GPIO_InitStruct;
   S2915A1_RADIO_SPI_NSS_CLK_ENABLE();
   
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;  
+  GPIO_InitStruct.Pull = S2915A1_RADIO_SPI_NSS_PULL_MODE;
+  GPIO_InitStruct.Speed = S2915A1_RADIO_SPI_NSS_SPEED;
   GPIO_InitStruct.Pin = S2915A1_RADIO_SPI_NSS_PIN;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   HAL_GPIO_Init(S2915A1_RADIO_SPI_NSS_PORT, &GPIO_InitStruct);
@@ -315,6 +452,7 @@ static int32_t EEPROM_WaitEndWriteOperation(uint32_t Instance)
   */
 int32_t S2915A1_LED_Init(Led_t Led)
 {
+#if (S2915A1_LEDn > 0)
   GPIO_InitTypeDef  GPIO_InitStruct;
   
   /* Enable the GPIO_LED Clock */
@@ -323,11 +461,12 @@ int32_t S2915A1_LED_Init(Led_t Led)
   /* Configure the GPIO_LED pin */
   GPIO_InitStruct.Pin = aLED_GPIO_PIN[Led];
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStruct.Pull = aLED_GPIO_PULL_MODE[Led];
+  GPIO_InitStruct.Speed = aLED_GPIO_SPEED[Led];
   
   HAL_GPIO_Init(aLED_GPIO_PORT[Led], &GPIO_InitStruct);
-  
+#endif /*(S2915A1_LEDn > 0)*/  
+
   return S2915A1_ERROR_NONE;
 }
 
@@ -338,7 +477,10 @@ int32_t S2915A1_LED_Init(Led_t Led)
 */
 int32_t S2915A1_LED_On(Led_t Led)
 {
+#if (S2915A1_LEDn > 0)
   HAL_GPIO_WritePin(aLED_GPIO_PORT[Led], aLED_GPIO_PIN[Led], GPIO_PIN_SET); 
+#endif /* (S2915A1_LEDn > 0) */
+
   return S2915A1_ERROR_NONE;  
 }
 
@@ -349,7 +491,10 @@ int32_t S2915A1_LED_On(Led_t Led)
 */
 int32_t S2915A1_LED_Off(Led_t Led)
 {
+#if (S2915A1_LEDn > 0)
   HAL_GPIO_WritePin(aLED_GPIO_PORT[Led], aLED_GPIO_PIN[Led], GPIO_PIN_RESET); 
+#endif /*(S2915A1_LEDn > 0)*/ 
+
   return S2915A1_ERROR_NONE;
 }
 
@@ -360,7 +505,9 @@ int32_t S2915A1_LED_Off(Led_t Led)
 */
 int32_t S2915A1_LED_Toggle(Led_t Led)
 {
+#if (S2915A1_LEDn > 0)
   HAL_GPIO_TogglePin(aLED_GPIO_PORT[Led], aLED_GPIO_PIN[Led]);
+#endif /*(S2915A1_LEDn > 0)*/ 
   return S2915A1_ERROR_NONE;
 }
 
@@ -373,7 +520,11 @@ int32_t S2915A1_LED_Toggle(Led_t Led)
   */
 int32_t S2915A1_LED_GetState(Led_t Led)
 {
+#if (S2915A1_LEDn > 0)
   return (int32_t)HAL_GPIO_ReadPin(aLED_GPIO_PORT[Led], aLED_GPIO_PIN[Led]);
+#else
+  return 0;
+#endif /*(S2915A1_LEDn > 0)*/
 }
 /******************************* S2LP Radio Low level Services *****************/
 
@@ -392,9 +543,13 @@ int32_t S2915A1_RADIO_Init( void )
    IOCtx.Delay = S2915A1_Delay;
    
    S2LP_RegisterBusIO(&IOCtx);
-   S2915A1_RADIO_GPIO_Init(S2915A1_RADIO_GPIO_SDN, RADIO_MODE_GPIO_OUT, DEFAULT);
+   S2915A1_RADIO_GPIO_Init(S2915A1_RADIO_GPIO_SDN, RADIO_MODE_GPIO_OUT);
    S2915A1_SPI_CS_Init();
-   S2915A1_RADIO_GPIO_Init(S2915A1_RADIO_GPIO, RADIO_MODE_EXTI_IN, FALLING);
+
+   for (uint32_t GPIO = 0; GPIO < (S2915A1_RADIO_GPIOn - 1); GPIO++)
+   {
+		S2915A1_RADIO_GPIO_Init((S2915A1_RADIO_GPIO_TypeDef) GPIO, S2915A1_RADIO_GPIO_MODE[GPIO]);
+   }
   
   return S2915A1_ERROR_NONE;
 }
@@ -500,10 +655,17 @@ int32_t S2915A1_RADIO_IoIrqEnable(GpioIrqHandler **irqHanlder)
 {
   for (uint32_t GPIO = 0; GPIO < (S2915A1_RADIO_GPIOn - 1); GPIO++)
   {
-    HAL_EXTI_GetHandle(&S2915A1_RADIO_GPIO_hexti[GPIO], S2915A1_RADIO_GPIO_EXTI_LINE[GPIO]);  
-    HAL_EXTI_RegisterCallback(&S2915A1_RADIO_GPIO_hexti[GPIO],  HAL_EXTI_COMMON_CB_ID, irqHanlder[GPIO]);
-    HAL_NVIC_SetPriority(S2915A1_RADIO_GPIO_IRQn[GPIO], S2915A1_RADIO_GPIO_IT_PRIO[GPIO], 0x00);
-    HAL_NVIC_EnableIRQ( S2915A1_RADIO_GPIO_IRQn[GPIO]);    
+	  if (S2915A1_RADIO_GPIO_MODE[GPIO] == RADIO_MODE_EXTI_IN)
+	  {
+		/* For S2915A1 board the above check could be skipped, but we keep it to be in line with the 
+		 * coding of S2868Ax boards. */
+		HAL_EXTI_GetHandle(&S2915A1_RADIO_GPIO_hexti[GPIO], S2915A1_RADIO_GPIO_EXTI_LINE[GPIO]);  
+		HAL_EXTI_RegisterCallback(&S2915A1_RADIO_GPIO_hexti[GPIO],  HAL_EXTI_COMMON_CB_ID, irqHanlder[GPIO]);
+
+		HAL_NVIC_SetPriority(S2915A1_RADIO_GPIO_IRQn[GPIO], S2915A1_RADIO_GPIO_IT_PRIO[GPIO], S2915A1_RADIO_GPIO_IT_SUBPRIO[GPIO]);
+		
+		HAL_NVIC_EnableIRQ( S2915A1_RADIO_GPIO_IRQn[GPIO]);    
+	  }
   }
   return S2915A1_ERROR_NONE;     
 } 
@@ -516,7 +678,12 @@ int32_t S2915A1_RADIO_IoIrqDisable(GpioIrqHandler **irqHanlder)
 {
   for (uint32_t GPIO = 0; GPIO < (S2915A1_RADIO_GPIOn - 1); GPIO++)
   {
-    HAL_NVIC_DisableIRQ( S2915A1_RADIO_GPIO_IRQn[GPIO]);    
+	if (S2915A1_RADIO_GPIO_MODE[GPIO] == RADIO_MODE_EXTI_IN)
+	{
+		/* For S2915A1 board the above check could be skipped, but we keep it to be in line with the 
+		 * coding of S2868Ax boards. */
+		HAL_NVIC_DisableIRQ( S2915A1_RADIO_GPIO_IRQn[GPIO]);    
+	}
   }
   return S2915A1_ERROR_NONE;     
 } 
@@ -534,8 +701,8 @@ int32_t S2915A1_EEPROM_Init(uint32_t Instance)
   /* Configure SPI pin: CS */
   GPIO_InitStructure.Pin = S2915A1_EEPROM_SPI_CS_PIN;
   GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStructure.Pull = GPIO_PULLUP;
-  GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStructure.Pull = S2915A1_EEPROM_SPI_CS_PULL_MODE;
+  GPIO_InitStructure.Speed = S2915A1_EEPROM_SPI_CS_SPEED;
   HAL_GPIO_Init(S2915A1_EEPROM_SPI_CS_PORT, &GPIO_InitStructure);
   
   /* Enable CS GPIO clock */
@@ -560,8 +727,8 @@ int32_t  S2915A1_EEPROM_DeInit(uint32_t Instance)
   /* Configure SPI pin: CS */
   GPIO_InitStructure.Pin = S2915A1_EEPROM_SPI_CS_PIN;
   GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStructure.Pull = GPIO_PULLUP;
-  GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStructure.Pull = S2915A1_EEPROM_SPI_CS_PULL_MODE;
+  GPIO_InitStructure.Speed = S2915A1_EEPROM_SPI_CS_SPEED;
   HAL_GPIO_DeInit(S2915A1_EEPROM_SPI_CS_PORT, GPIO_InitStructure.Pin);
    
   return S2915A1_ERROR_NONE;    
@@ -786,24 +953,24 @@ void S2915A1_RADIO_RangeExtGpioInit(void)
     /*CSD*/
     S2915A1_PA_CSD_GPIO_CLK();
     GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStructure.Pull = GPIO_NOPULL;
-    GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStructure.Pull = S2915A1_PA_CSD_PULL_MODE;
+    GPIO_InitStructure.Speed = S2915A1_PA_CSD_SPEED;
     GPIO_InitStructure.Pin = S2915A1_PA_CSD_PIN;
     HAL_GPIO_Init(S2915A1_PA_CSD_PORT, &GPIO_InitStructure);
 
     /*CPS*/
     S2915A1_PA_CPS_GPIO_CLK();
     GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStructure.Pull = GPIO_NOPULL;
-    GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStructure.Pull = S2915A1_PA_CPS_PULL_MODE;
+    GPIO_InitStructure.Speed = S2915A1_PA_CPS_SPEED;
     GPIO_InitStructure.Pin = S2915A1_PA_CPS_PIN;
     HAL_GPIO_Init(S2915A1_PA_CPS_PORT, &GPIO_InitStructure);
 
     /*CTX*/
     S2915A1_PA_CTX_GPIO_CLK();
     GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStructure.Pull = GPIO_NOPULL;
-    GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
+    GPIO_InitStructure.Pull = S2915A1_PA_CTX_PULL_MODE;
+    GPIO_InitStructure.Speed = S2915A1_PA_CTX_SPEED;
     GPIO_InitStructure.Pin = S2915A1_PA_CTX_PIN;
     HAL_GPIO_Init(S2915A1_PA_CTX_PORT, &GPIO_InitStructure);
 }
@@ -817,14 +984,14 @@ void S2915A1_RADIO_RangeExtGpioInit(void)
 /*  gpio0 :  PA0 : CSD
     gpio1 :  PA4 : CPS
     gpio2 :  PB0 : CTX */
-void S2915A1_RADIO_RangeExtOperate(PA_OperationType operation)
+void S2915A1_RADIO_RangeExtOperate(FEM_OperationType operation)
 { 
   
   S2915A1_RADIO_RangeExtGpioInit();
   
   switch (operation)
   {
-  case PA_SHUTDOWN:
+  case FEM_SHUTDOWN:
     {
       /* Puts CSD high to turn on PA */
       HAL_GPIO_WritePin(S2915A1_PA_CSD_PORT, S2915A1_PA_CSD_PIN, GPIO_PIN_RESET);
@@ -836,7 +1003,7 @@ void S2915A1_RADIO_RangeExtOperate(PA_OperationType operation)
       HAL_GPIO_WritePin(S2915A1_PA_CPS_PORT, S2915A1_PA_CPS_PIN, GPIO_PIN_SET);
       break;
     }
-  case PA_TX_BYPASS:
+  case FEM_TX_BYPASS:
     {
       /* Puts CSD high to turn on PA */
       HAL_GPIO_WritePin(S2915A1_PA_CSD_PORT, S2915A1_PA_CSD_PIN, GPIO_PIN_SET);
@@ -848,7 +1015,7 @@ void S2915A1_RADIO_RangeExtOperate(PA_OperationType operation)
       HAL_GPIO_WritePin(S2915A1_PA_CPS_PORT, S2915A1_PA_CPS_PIN, GPIO_PIN_RESET);
       break;
     }
-  case PA_TX:
+  case FEM_TX:
     {
       /* Puts CSD high to turn on PA */
       HAL_GPIO_WritePin(S2915A1_PA_CSD_PORT, S2915A1_PA_CSD_PIN, GPIO_PIN_SET);
@@ -863,7 +1030,7 @@ void S2915A1_RADIO_RangeExtOperate(PA_OperationType operation)
         HAL_GPIO_WritePin(S2915A1_PA_CPS_PORT, S2915A1_PA_CPS_PIN, GPIO_PIN_SET);
       break;
     }
-  case PA_RX:
+  case FEM_RX:
     {
       /* Puts CSD high to turn on PA */
       HAL_GPIO_WritePin(S2915A1_PA_CSD_PORT, S2915A1_PA_CSD_PIN, GPIO_PIN_SET);
@@ -900,5 +1067,7 @@ uint8_t S2915A1_FEM_GetBypass(void)
   return _isBypassEnabled;
 }
 
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+__weak void FEM_Operation(FEM_OperationType operation)
+{
+	
+}

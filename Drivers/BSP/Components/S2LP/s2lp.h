@@ -1,57 +1,38 @@
+/**
+ * @file    s2lp.h
+ * @author  ST Microelectronics
+ * @brief   Wrapper of S2LP Library for BUS IO, include file
+ * @details
+ *
+ * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+ * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+ * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+ * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+ * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+ * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+ *
+ * THIS SOURCE CODE IS PROTECTED BY A LICENSE.
+ * FOR MORE INFORMATION PLEASE CAREFULLY READ THE LICENSE AGREEMENT FILE LOCATED
+ * IN THE ROOT DIRECTORY OF THIS FIRMWARE PACKAGE.
+ *
+ * <h2><center>&copy; COPYRIGHT 2021 STMicroelectronics</center></h2>
+ */
 
- /*******************************************************************************
-  * @file    s2lp.h
-  * @brief   Header for driver s2lp.c
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT(c) 2017 STMicroelectronics</center></h2>
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */
 
 #ifndef __S2LP_H__
 #define __S2LP_H__
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "s2lp_regs.h"
-#include "s2lp_pktbasic.h"
-#include "s2lp_commands.h"
-#include "s2lp_csma.h"
-#include "s2lp_gpio.h"
-#include "s2lp_timer.h"
-#include "s2lp_fifo.h"
-#include "s2lp_packethandler.h"
-#include "s2lp_pktwmbus.h"
-#include "s2lp_pktstack.h"
-#include "s2lp_radio.h"
-#include "s2lp_qi.h"
-#include "s2lp_types.h"
-#include "s2lp_radio.h"
-
+#include "S2LP_Regs.h"
+#include "S2LP_Commands.h"
+#include "S2LP_Csma.h"
+#include "S2LP_Gpio.h"
+#include "S2LP_Timer.h"
+#include "S2LP_Fifo.h"
+#include "S2LP_Radio.h"
+#include "S2LP_Qi.h"
+#include "S2LP_Types.h"
 
 /** @addtogroup S2LP_Libraries
  * @{
@@ -111,13 +92,6 @@ typedef S2LPStatus StatusBytes;
   * set to -157, If not avaialble set it to 0 */
 #define XTAL_FREQUENCY_OFFSET                   0
 
-/* This is getting the base frequency from the band defined in the board.
- * For user board, define the desired frequency in Hz (e.g: 868000000) */
-#define BOARD_BASE_FREQUENCY                    (S2LPGetFrequencyBand())
-#define BOARD_FREQUENCY_BAND                    3 /* 868MHz */
-
-
-
 #define S2LP_RX_FIFO_SIZE   128
 #define S2LP_TX_FIFO_SIZE   128
 #define S2LP_CMD_SIZE   2
@@ -129,9 +103,6 @@ typedef S2LPStatus StatusBytes;
 #define READ_HEADER     BUILT_HEADER(HEADER_ADDRESS_MASK, HEADER_READ_MASK)  /*!< macro to build the read header byte*/
 #define COMMAND_HEADER  BUILT_HEADER(HEADER_COMMAND_MASK, HEADER_WRITE_MASK) /*!< macro to build the command header byte*/
 
-
-#define S2LP_MCU_CLOCK  0x88U
-#define S2LP_MODE_DIGITAL_OUTPUT_LP 0x02U
 /* Exported types ------------------------------------------------------------*/
 
 /*!
@@ -152,41 +123,18 @@ typedef struct
   S2LPBus_Delay                Delay;
 } S2LP_IO_t;
 
-typedef enum {
-  MODE_EXT_XO  = 0,
-  MODE_EXT_XIN = 0x80,
-} ModeExtRef;
 
-
+/*Structure to manage External PA */
 typedef enum
 {
-  RANGE_EXT_NONE = 0,
-  RANGE_EXT_SKY_66100_11 = 1,
-  RANGE_EXT_SKYWORKS_SE2435L = 2,
-  RANGE_EXT_SKYWORKS_SKY66420 = 3,
-  RANGE_EXT_SKYWORKS_868 = 4
-} RangeExtType;
-
-typedef enum
-{
-  S2LP_CUT_2_1 = 0x91,
-  S2LP_CUT_2_0 = 0x81,
-  S2LP_CUT_3_0 = 0xC1,
-} S2LPCutType;
-
-typedef enum
-{
-  PA_SHUTDOWN     = 0x00,
-  PA_TX_BYPASS    = 0x01,
-  PA_TX     	  = 0x02,
-  PA_RX     	  = 0x03,
-} PA_OperationType;
-
-
+  FEM_SHUTDOWN	= 0x00,
+  FEM_TX_BYPASS	= 0x01,
+  FEM_TX		= 0x02,
+  FEM_RX		= 0x03,
+} FEM_OperationType;
 
 /* Exported constants --------------------------------------------------------*/    
                                 
-#define S2LPGeneralLibraryVersion() "S2LP_Libraries_v.1.3.0"
 /* Exported macros --------------------------------------------------------*/    
 
 
@@ -211,31 +159,17 @@ int32_t S2LP_RegisterBusIO (S2LP_IO_t *pIO);
 int32_t S2LP_Init( void );
 
 
-StatusBytes S2LP_WriteRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pcBuffer );
+uint16_t S2LP_WriteRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pcBuffer );
 
-StatusBytes S2LP_ReadRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pcBuffer );
+uint16_t S2LP_ReadRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pcBuffer );
 
-StatusBytes S2LP_SendCommand(uint8_t cCommandCode);
+uint16_t S2LP_SendCommand(uint8_t cCommandCode);
 
 StatusBytes S2LP_WriteFIFO(uint8_t cNbBytes, uint8_t* pcBuffer);
 
 StatusBytes S2LP_ReadFIFO(uint8_t cNbBytes, uint8_t* pcBuffer);
 
-
-uint8_t S2LP_GetDevicePN(void);
-uint8_t S2LP_GetVersion(void);
-void S2LP_SetExtRef(ModeExtRef xExtMode);
-ModeExtRef S2LP_GetExtRef(void);
-void S2LP_SetExternalSmpsMode(SFunctionalState xNewState);
-void S2LP_RefreshStatus(void);
-void S2LP_StrobeCommand(S2LP_CMD_ xCommandCode);
 int32_t S2LP_RcoCalibration(void);
-void S2LP_EnableRangeExtMode(void);
-void S2LP_TCXOInit(void);
-/** @defgroup SPI_Exported_Macros       SPI Exported Macros
- * @{
- */
-
 /**
  * @}
  */
@@ -244,13 +178,5 @@ void S2LP_TCXOInit(void);
 /**
  * @}
  */
-
-
-/**
- * @}
- */
-
-
-
 
 #endif /* __S2LP_H__ */

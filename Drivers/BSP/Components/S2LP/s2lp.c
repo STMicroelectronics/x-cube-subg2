@@ -1,49 +1,35 @@
- /*******************************************************************************
-  * @file    s2LP.c
-  * @author  MCD Application Team
-  * @version V1.0.0
-  * @date    12-July-2019
-  * @brief   low level driver s2lp
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; COPYRIGHT(c) 2019 STMicroelectronics</center></h2>
-  *
-  * Redistribution and use in source and binary forms, with or without modification,
-  * are permitted provided that the following conditions are met:
-  *   1. Redistributions of source code must retain the above copyright notice,
-  *      this list of conditions and the following disclaimer.
-  *   2. Redistributions in binary form must reproduce the above copyright notice,
-  *      this list of conditions and the following disclaimer in the documentation
-  *      and/or other materials provided with the distribution.
-  *   3. Neither the name of STMicroelectronics nor the names of its contributors
-  *      may be used to endorse or promote products derived from this software
-  *      without specific prior written permission.
-  *
-  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-  * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-  * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  *
-  ******************************************************************************
-  */
+/**
+ * @file    s2lp.c
+ * @author  ST Microelectronics
+ * @brief   Wrapper of S2LP Library for BUS IO
+ * @details
+ *
+ * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+ * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+ * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+ * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+ * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+ * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+ *
+ * THIS SOURCE CODE IS PROTECTED BY A LICENSE.
+ * FOR MORE INFORMATION PLEASE CAREFULLY READ THE LICENSE AGREEMENT FILE LOCATED
+ * IN THE ROOT DIRECTORY OF THIS FIRMWARE PACKAGE.
+ *
+ * <h2><center>&copy; COPYRIGHT 2021 STMicroelectronics</center></h2>
+ */
+
   
 /* Includes ------------------------------------------------------------------*/
 #include "s2lp.h"
-
+#include "s2lp_sdkapi_mapping.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
 
 /* Private define ------------------------------------------------------------*/
+#define MAX_RCO_ERR 3
+
 /* Private variables -------------------------------------------------------------*/
-volatile S2LPStatus g_xStatus;
 /*!
  * @brief IO function pointer structure
  */
@@ -82,10 +68,10 @@ int32_t S2LP_Init( void )
 * @param  pcBuffer: pointer to the buffer of values have to be written into registers
 * @retval Device status
 */ 
-StatusBytes S2LP_WriteRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pcBuffer )
+uint16_t S2LP_WriteRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pcBuffer )
 {
-	uint8_t header[S2LP_CMD_SIZE]={WRITE_HEADER,cRegAddress};
-    StatusBytes status;
+    uint8_t header[S2LP_CMD_SIZE]={WRITE_HEADER,cRegAddress};
+    uint16_t status;
   
     IO_func.WriteBuffer( header, pcBuffer, cNbBytes );
 
@@ -102,10 +88,10 @@ StatusBytes S2LP_WriteRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* p
 * @param  pcBuffer: pointer to the buffer of registers' values read
 * @retval Device status
 */
-StatusBytes S2LP_ReadRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pcBuffer )
+uint16_t S2LP_ReadRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pcBuffer )
 {
     uint8_t header[S2LP_CMD_SIZE]={READ_HEADER,cRegAddress};
-    StatusBytes status;
+    uint16_t status;
 
     IO_func.WriteBuffer( header, pcBuffer, cNbBytes );
 
@@ -120,10 +106,10 @@ StatusBytes S2LP_ReadRegister(uint8_t cRegAddress, uint8_t cNbBytes, uint8_t* pc
 * @param  cCommandCode: command code to be sent
 * @retval Device status
 */
-StatusBytes S2LP_SendCommand(uint8_t cCommandCode)
+uint16_t S2LP_SendCommand(uint8_t cCommandCode)
 {
   uint8_t header[S2LP_CMD_SIZE]={COMMAND_HEADER,cCommandCode};
-  StatusBytes status;
+  uint16_t status;
 
   IO_func.WriteBuffer( header, NULL, 0 );
   
@@ -172,112 +158,19 @@ StatusBytes S2LP_ReadFIFO(uint8_t cNbBytes, uint8_t* pcBuffer)
   return status;
 }
 
-/**
- * @brief  Set External Reference.
- * @param  xExtMode new state for the external reference.
- *         This parameter can be: MODE_EXT_XO or MODE_EXT_XIN.
- * @retval None.
- */
-void S2LP_SetExtRef(ModeExtRef xExtMode)
-{
-  uint8_t tmp;
-  S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
-  if(xExtMode == MODE_EXT_XO) {
-    tmp &= ~EXT_REF_REGMASK;
-  }
-  else {
-    tmp |= EXT_REF_REGMASK;
-  }
-  g_xStatus = S2LP_WriteRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
 
-}
-
-
-/**
- * @brief  Return External Reference.
- * @param  None.
- * @retval ModeExtRef Settled external reference.
- *         This parameter can be: MODE_EXT_XO or MODE_EXT_XIN.
- */
-ModeExtRef S2LP_GetExtRef(void)
-{
-  uint8_t tmp;
-  g_xStatus = S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
-  return (ModeExtRef)(tmp & EXT_REF_REGMASK);
-}
-
-
-/**
- * @brief  Return device part number.
- * @param  None.
- * @retval Device part number.
- */
-uint8_t S2LP_GetDevicePN(void)
-{
-  uint8_t tmp;
-  g_xStatus = S2LP_ReadRegister(DEVICE_INFO1_ADDR, 1, &tmp);
-  return tmp;
-}
-
-/**
- * @brief  Return S2LP version.
- * @param  None.
- * @retval S2LP version.
- */
-uint8_t S2LP_GetVersion(void)
-{
-  uint8_t tmp;
-  S2LP_ReadRegister(DEVICE_INFO0_ADDR, 1, &tmp);
-  return tmp;
-}
-
-
-/**
-* @brief  Disable or enable the internal SMPS.
-* @param  xNewState if this value is S_DISABLE the external SMPS is enabled and a vlotage must be provided from outside.
-*               In this case the internal SMPS will be disabled.
-* @retval None.
-*/
-void S2LP_SetExternalSmpsMode(SFunctionalState xNewState)
-{
-  uint8_t tmp;
-  
-  S2LP_ReadRegister(PM_CONF4_ADDR, 1, &tmp);
-  
-  if(xNewState == S_ENABLE) {
-    tmp |= EXT_SMPS_REGMASK;
-  } else {
-    tmp &= ~EXT_SMPS_REGMASK;
-  }
-  g_xStatus = S2LP_WriteRegister(PM_CONF4_ADDR, 1, &tmp);
-}
-
-/**
- * @brief  Updates the gState (the global variable used to maintain memory of S2LP Status)
- *         reading the MC_STATE register of S2LP.
- * @param  None
- * @retval None
- */
-
-void S2LP_RefreshStatus(void)
-{
-  uint8_t tempRegValue;
-  do
-  {
-    /* Reads the MC_STATE register to update the g_xStatus */
-    g_xStatus = S2LP_ReadRegister(MC_STATE0_ADDR, 1, &tempRegValue);
-  }  while((tempRegValue>>1)!=g_xStatus.MC_STATE);  
-}
 /**
   * @brief  FunctionDescription
-  * @retval Error code: S2LP_OK on success, S2LP_ERROR on error during calibration of RCO.
+  * @retval Error code:  S2LP_OK on success, S2LP_ERROR on error during calibration of RCO.
   */
 int32_t S2LP_RcoCalibration(void)
 {
   uint8_t tmp[2],tmp2;
+  int32_t nRet = S2LP_OK;
+  uint8_t nErr = 0;
 
   S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp2);
-  tmp2 |= 0x01;
+  tmp2 |= RCO_CALIBRATION_REGMASK;
   S2LP_WriteRegister(XO_RCO_CONF0_ADDR, 1, &tmp2);  /* Enable the RCO CALIB setting bit to 1 */
 
   S2LP_CMD_StrobeStandby();
@@ -286,27 +179,49 @@ int32_t S2LP_RcoCalibration(void)
 
   do
   {
-    S2LP_RefreshStatus();
-    if(g_xStatus.ERROR_LOCK) {
-      return S2LP_ERROR;
-    }
-  } while(g_xStatus.RCCAL_OK == 0);   /* Wait until RC_CAL_OK becomes 1 */
+    S2LPSpiReadRegisters(MC_STATE1_ADDR, 1, tmp);
+    
+    //Check RCO Calibration Error and retry MAX_RCO_ERR times
+    if ((tmp[0]&ERROR_LOCK_REGMASK)==1) 
+    {
+      //Disable TimerCalibrationRco
+      S2LPSpiReadRegisters(XO_RCO_CONF0_ADDR, 1, &tmp2);
+      tmp2 &= ~RCO_CALIBRATION_REGMASK;
+      S2LPSpiWriteRegisters(XO_RCO_CONF0_ADDR, 1, &tmp2);
+      
+      //Enable TimerCalibrationRco
+      S2LPSpiReadRegisters(XO_RCO_CONF0_ADDR, 1, &tmp2);
+      tmp2 |= RCO_CALIBRATION_REGMASK;
+      S2LPSpiWriteRegisters(XO_RCO_CONF0_ADDR, 1, &tmp2);
+      nErr++;
+    }    
+  }
+  while(((tmp[0]&RCO_CAL_OK_REGMASK)==0) && nErr <= MAX_RCO_ERR);
 
-  S2LP_ReadRegister(RCO_CALIBR_OUT4_ADDR, 2, tmp);
-  S2LP_ReadRegister(RCO_CALIBR_CONF2_ADDR, 1, &tmp2);
+  if (nErr < MAX_RCO_ERR)
+  {
+    S2LPSpiReadRegisters(RCO_CALIBR_OUT4_ADDR, 2, tmp);
+    S2LPSpiReadRegisters(RCO_CALIBR_CONF2_ADDR, 1, &tmp2);
+    
+    tmp[1]=(tmp[1]& RFB_IN_0_REGMASK)|(tmp2&(~RFB_IN_0_REGMASK)); 
+    
+    S2LPSpiWriteRegisters(RCO_CALIBR_CONF3_ADDR, 2, tmp);
+    
+    S2LPSpiReadRegisters(XO_RCO_CONF0_ADDR, 1, &tmp2);
+    tmp2 &= ~RCO_CALIBRATION_REGMASK;
+    S2LPSpiWriteRegisters(XO_RCO_CONF0_ADDR, 1, &tmp2);
+  }
+  else
+  {
+    nRet = S2LP_ERROR;
+  }
 
-  tmp[1] = (tmp[1] & TEMP_SENSOR_EN_REGMASK) | (tmp2 & 0x7F);
+  return nRet;
 
-  S2LP_WriteRegister(RCO_CALIBR_CONF3_ADDR, 2, tmp);
-
-  S2LP_ReadRegister(XO_RCO_CONF0_ADDR, 1, &tmp2);
-  tmp2 &= 0xFE;
-  S2LP_WriteRegister(XO_RCO_CONF0_ADDR, 1, &tmp2);
-  return S2LP_OK;
 }
 
 /**
-  * @brief  FunctionDescription
+  * @brief  S2LP_TCXOInit
   * @retval None
   */
 void S2LP_TCXOInit(void)
@@ -316,5 +231,3 @@ void S2LP_TCXOInit(void)
   tmp|=EXT_REF_REGMASK;
   S2LP_WriteRegister(XO_RCO_CONF0_ADDR, 1, &tmp);
 }
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

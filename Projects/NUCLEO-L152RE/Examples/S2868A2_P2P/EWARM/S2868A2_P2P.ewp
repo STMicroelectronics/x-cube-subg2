@@ -356,8 +356,9 @@
           <state>$PROJ_DIR$/../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy</state>
           <state>$PROJ_DIR$/../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include</state>
           <state>$PROJ_DIR$/../../../../../Drivers/CMSIS/Include</state>
-          <state>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP</state>
           <state>$PROJ_DIR$/../../../../../Drivers/BSP/S2868A2</state>
+          <state>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP</state>
+          <state>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/inc</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1063,6 +1064,9 @@
         <name>$PROJ_DIR$/../Src/main.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$/../Src/s2lp_management.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$/../Src/app_x-cube-subg2.c</name>
       </file>
       <file>
@@ -1081,6 +1085,63 @@
   </group>
   <group>
     <name>Drivers</name>
+    <group>
+      <name>BSP</name>
+      <group>
+        <name>Components</name>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Commands.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Csma.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Fifo.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_General.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Gpio.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PacketHandler.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktBasic.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktStack.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktWMbus.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Qi.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Radio.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer_ex.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Types.c</name>
+        </file>
+      </group>
+      <group>
+        <name>S2868A2</name>
+        <file>
+          <name>$PROJ_DIR$/../../../../../Drivers/BSP/S2868A2/s2868a2.c</name>
+        </file>
+      </group>
+    </group>
     <group>
       <name>STM32L1xx_HAL_Driver</name>
       <file>
@@ -1134,54 +1195,6 @@
       <file>
         <name>$PROJ_DIR$/../Src/system_stm32l1xx.c</name>
       </file>
-    </group>
-    <group>
-      <name>BSP</name>
-      <group>
-        <name>Components</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_commands.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_csma.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_fifo.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_gpio.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_packethandler.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_pktbasic.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_pktstack.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_pktwmbus.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_qi.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_radio.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/Components/S2LP/s2lp_timer.c</name>
-        </file>
-      </group>
-      <group>
-        <name>S2868A2</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../Drivers/BSP/S2868A2/s2868a2.c</name>
-        </file>
-      </group>
     </group>
   </group>
 </project>

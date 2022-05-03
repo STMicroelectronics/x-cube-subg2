@@ -1,23 +1,21 @@
 
 /**
   ******************************************************************************
-  * @file    p2p_demo.c
+  * @file    p2p_demo.c (-> app_x-cube-subg2.c)
   * @author  SRA Application Team
   * @brief   P2P demo applicative code.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under ODE Software License Agreement
-  * SLA0094, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0094
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
-
 #ifdef __cplusplus
  extern "C" {
 #endif
@@ -31,6 +29,10 @@
 #include "s2868a2.h"
 #include "s2lp.h"
 #include "p2p_demo_settings.h"
+
+#include "S2LP_PktBasic.h"
+#include "s2lp_sdkapi_mapping.h"
+#include "s2lp_management.h"
 
 /** @defgroup S2LP_Nucleo
   * @{
@@ -61,10 +63,6 @@ uint8_t RxLength = 0;
 uint8_t aTransmitBuffer[TX_BUFFER_SIZE] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,\
   16,17,18,19,20};
 uint8_t aReceiveBuffer[RX_BUFFER_SIZE] = {0x00};
-static S2LPCutType s_S2LPCut = S2LP_CUT_2_1;
-static RangeExtType xRangeExtType = RANGE_EXT_NONE;
-static int32_t s_RfModuleOffset=0;
-static uint8_t s_RfModuleBand = 0, s_Tcxo=0;
 
 extern SRadioInit xRadioInit;
 
@@ -179,8 +177,8 @@ S2LPCutType S2LP_ManagementGetCut(void);
 void S2LP_ManagementRangeExtInit(void);
 void S2LP_ManagementSetRangeExtender(RangeExtType xRangeType);
 RangeExtType S2LP_ManagementGetRangeExtender(void);
-void S2LPManagementIdentificationRFBoard(void);
-uint32_t S2LPManagementComputeXtalFrequency(void);
+void S2LP_ManagementIdentificationRFBoard(void);
+uint32_t S2LP_ManagementComputeXtalFrequency(void);
 uint8_t EepromIdentification(void);
 void S2LP_ManagementSetTcxo(uint8_t tcxo);
 void S2LP_PacketConfig(void);
@@ -1091,11 +1089,11 @@ void S2LPInterfaceInit(void)
   S2868A2_RADIO_EnterShutdown();
   S2868A2_RADIO_ExitShutdown();
 
-  S2LPManagementIdentificationRFBoard();
+  S2LP_ManagementIdentificationRFBoard();
 
-  /* if the board has eeprom, we can compensate the offset calling S2LPManagementGetOffset
+  /* if the board has eeprom, we can compensate the offset calling S2LP_ManagementGetOffset
   (if eeprom is not present this fcn will return 0) */
-  xRadioInit.lFrequencyBase = xRadioInit.lFrequencyBase + S2LP_ManagementGetOffset();
+  xRadioInit.lFrequencyBase = (uint32_t) BASE_FREQUENCY + S2LP_ManagementGetOffset();
 
   /* if needed this will set the range extender pins */
   S2LP_ManagementRangeExtInit();
@@ -1108,283 +1106,6 @@ void S2LPInterfaceInit(void)
 
   /* uC IRQ enable */
   S2868A2_RADIO_IoIrqEnable(GpioIrq);
-}
-
-/**
-* @brief  Sets the S2LP frequency band
-* @param  uint8_t value: RF FREQUENCY
-* @retval None
-*/
-void S2LP_ManagementSetBand(uint8_t value)
-{
-  s_RfModuleBand = value;
-}
-/**
-* @brief  returns the S2LP frequency band
-* @param  None
-* @retval uint8_t value: RF FREQUENCY
-*/
-uint8_t S2LP_ManagementGetBand(void)
-{
-  return s_RfModuleBand;
-}
-
-void S2LP_ManagementSetOffset(int32_t value)
-{
-  s_RfModuleOffset=value;
-}
-
-int32_t S2LP_ManagementGetOffset(void)
-{
-  return s_RfModuleOffset;
-}
-
-/**
-* @brief  Gets the S2LP Tcxo
-* @param  RangeExtType
-* @retval None
-*/
-uint8_t S2LP_ManagementGetTcxo(void)
-{
-  return s_Tcxo;
-}
-
-/**
-* @brief  Gets the S2LP cut
-* @param  RangeExtType
-* @retval None
-*/
-S2LPCutType S2LP_ManagementGetCut(void)
-{
-  return s_S2LPCut;
-}
-
-/**
-* @brief Init the RANGE EXTENSION SDK S2LP Management Range Extender Functions
-* @param  None
-* @retval None
-* @{
-*/
-void S2LP_ManagementRangeExtInit(void)
-{
-  RangeExtType range_type = S2LP_ManagementGetRangeExtender();
-  if(range_type==RANGE_EXT_SKYWORKS_868) {
-    /* CSD control */
-    S2LP_GPIO_Init(&(SGpioInit){S2LP_GPIO_0, S2LP_GPIO_MODE_DIGITAL_OUTPUT_HP, S2LP_GPIO_DIG_OUT_TX_RX_MODE});
-
-    /* CTX/BYP control */
-    S2LP_GPIO_Init(&(SGpioInit){S2LP_GPIO_1, S2LP_GPIO_MODE_DIGITAL_OUTPUT_HP, S2LP_GPIO_DIG_OUT_RX_STATE});
-
-    /* Vcont control */
-    S2LP_GPIO_Init(&(SGpioInit){S2LP_GPIO_2, S2LP_GPIO_MODE_DIGITAL_OUTPUT_HP, S2LP_GPIO_DIG_OUT_TX_STATE});
-  }
-}
-
-/**
-* @brief  Sets the S2LP range extender type
-* @param  RangeExtType
-* @retval None
-*/
-void S2LP_ManagementSetRangeExtender(RangeExtType xRangeType)
-{
-  xRangeExtType = xRangeType;
-}
-
-/**
-* @brief  returns the S2LP range extender type
-* @param  None
-* @retval RangeExtType
-*/
-RangeExtType S2LP_ManagementGetRangeExtender(void)
-{
-  return xRangeExtType;
-}
-
-void S2LPManagementIdentificationRFBoard(void)
-{
-  uint8_t tmp;
-  StatusBytes status;
-
-  do{
-    /* Delay for state transition */
-    for(volatile uint8_t i=0; i!=0xFF; i++);
-
-    /* Reads the MC_STATUS register */
-    status = S2LP_ReadRegister(0x8E, 1, &tmp);
-  }  while(status.MC_STATE!=MC_STATE_READY);
-
-  S2LP_ReadRegister(0xF1, 1, &tmp);
-
-  s_S2LPCut=(S2LPCutType)tmp;
-
-  if((s_S2LPCut==S2LP_CUT_2_0) || (s_S2LPCut==S2LP_CUT_2_1))
-  {
-    S2868A2_RADIO_EnterShutdown();
-  }
-
-   if(!EepromIdentification())  /* EEPROM is not present */
-  {
-    S2868A2_RADIO_ExitShutdown();
-    if(S2LPManagementComputeXtalFrequency()==0)
-    {
-      /* if it fails force it to 50MHz */
-      S2LP_RADIO_SetXtalFrequency(XTAL_FREQUENCY);
-    }
-  }
-  else  // EEPROM present
-  {
-    //read the memory and set the variable
-    uint8_t tmpBuffer[32];
-    /* EepromRead(0x0000, 32, tmpBuffer);*/
-    S2868A2_EEPROM_ReadPage(EEPROM_INSTANCE, 0x0000, 32, tmpBuffer);
-    uint32_t xtal;
-    float foffset=0;
-    if(tmpBuffer[0]==0 || tmpBuffer[0]==0xFF) {
-      /* this one happens in production where the E2PROM is here but blank */
-      S2868A2_RADIO_EnableTCXO();
-      if((s_S2LPCut==S2LP_CUT_2_0) || (s_S2LPCut==S2LP_CUT_2_1))
-      {
-        S2868A2_RADIO_ExitShutdown();
-      }
-      S2LPManagementComputeXtalFrequency();
-      return;
-    }
-    switch(tmpBuffer[1]) {
-    case 0:
-      xtal = 24000000;
-      S2LP_RADIO_SetXtalFrequency(xtal);
-      break;
-    case 1:
-      xtal = 25000000;
-      S2LP_RADIO_SetXtalFrequency(xtal);
-      break;
-    case 2:
-      xtal = 26000000;
-      S2LP_RADIO_SetXtalFrequency(xtal);
-      break;
-    case 3:
-      xtal = 48000000;
-      S2LP_RADIO_SetXtalFrequency(xtal);
-      break;
-    case 4:
-      xtal = 50000000;
-      S2LP_RADIO_SetXtalFrequency(xtal);
-      break;
-    case 5:
-      xtal = 52000000;
-      S2LP_RADIO_SetXtalFrequency(xtal);
-      break;
-    case 0xff:
-      /* XTAL freqeuncy is custom */
-      for(uint8_t i=0;i<4;i++)
-      {
-        ((uint8_t*)&xtal)[i]=tmpBuffer[30-i];
-      }
-      S2LP_RADIO_SetXtalFrequency(xtal);
-      break;
-    default:
-      S2LPManagementComputeXtalFrequency();
-      break;
-    }
-
-    /* TCXO field */
-    if(tmpBuffer[31]==1)
-    {
-      S2LP_ManagementSetTcxo(1);
-    }
-
-    S2LP_ManagementSetBand(tmpBuffer[3]);
-    S2LP_ManagementSetRangeExtender((RangeExtType)tmpBuffer[5]);
-
-  /*  EepromRead(0x0021,4,tmpBuffer); */
-
-    S2868A2_EEPROM_ReadPage(EEPROM_INSTANCE, 0x0021,4,tmpBuffer);
-
-    for(uint8_t i=0;i<4;i++)
-    {
-      ((uint8_t*)&foffset)[i]=tmpBuffer[3-i];
-    }
-
-    S2LP_ManagementSetOffset((int32_t)foffset);
-  }
-
-  if((s_S2LPCut==S2LP_CUT_2_0) || (s_S2LPCut==S2LP_CUT_2_1))
-  {
-    S2868A2_RADIO_ExitShutdown();
-  }
-
-}
-
-/**
-* @brief  This function can be used to automatically measure the XTAL frequency making use of the
-*         S2LP clock output to pin and an STM32L timer in compare mode.
-* @param  None.
-* @retval None.
-*/
-uint32_t S2LPManagementComputeXtalFrequency(void)
-{
-  uint32_t lMeasuredXtalFrequency;
-
-  lMeasuredXtalFrequency=50000000;
-
-  S2LP_RADIO_SetXtalFrequency(lMeasuredXtalFrequency);
-
-  return lMeasuredXtalFrequency;
-}
-
-/**
-* @brief  Read the status register.
-* @param  None
-* @retval Status
-*/
-uint8_t EepromIdentification(void)
-{
-  uint32_t status;
-  uint8_t eeprom_status;
-  /* try to get the status of the EEPROM */
- /* status = EepromStatus(); */
-  status = S2868A2_EEPROM_IsReady(EEPROM_INSTANCE);
-
-  if(status == 1) {
-    /* if it is EEPROM_STATUS_SRWD, ok the EEPROM is present and ready to work */
-    eeprom_status = 1;
-  }
-  else
-  {
-    /* EepromWriteEnable(); */
-    BSP_EEPROM_WriteEnable(EEPROM_INSTANCE);
-
-    HAL_Delay(1);
-    /* else the bit may be not set (first time we see this EEPROM), try to set it*/
-    eeprom_status = BSP_EEPROM_SetSrwd(EEPROM_INSTANCE);
-
-    HAL_Delay(1);
-
-    /* status = EepromStatus(); */
-    status = S2868A2_EEPROM_IsReady(EEPROM_INSTANCE);;
-
-    if(status == 1) { // 0xF0 mask [SRWD 0 0 0]
-      /* if it is EEPROM_STATUS_SRWD, ok the EEPROM is present and ready to work */
-      eeprom_status = 1;
-    }
-    else
-    {
-      /* else no EEPROM is present */
-      eeprom_status = 0;
-    }
-  }
-  return eeprom_status;
-}
-
-/**
-* @brief Set TCXO
-* @param  tcxo
-* @retval None
-* @{
-*/
-void S2LP_ManagementSetTcxo(uint8_t tcxo)
-{
-  s_Tcxo = tcxo;
 }
 
 /**
@@ -1578,5 +1299,3 @@ void S2LP_StartTx(uint8_t *buffer, uint8_t size )
 #ifdef __cplusplus
 }
 #endif
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

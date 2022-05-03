@@ -76,6 +76,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Src/s2lp_interface.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/s2lp_management.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Src/s2lp_management.c</locationURI>
+		</link>
+		<link>
 			<name>Application/User/stm32l1xx_hal_msp.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Src/stm32l1xx_hal_msp.c</locationURI>
@@ -201,134 +206,79 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/BSP/Components/S2LP_Commands.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Commands.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Csma.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Csma.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Fifo.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Fifo.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_General.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_General.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Gpio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Gpio.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_PacketHandler.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PacketHandler.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_PktBasic.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktBasic.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_PktStack.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktStack.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_PktWMbus.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktWMbus.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Qi.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Qi.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Radio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Radio.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Timer.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Timer_ex.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer_ex.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Types.c</name>
+			<type>1</type>
+			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Types.c</locationURI>
+		</link>
+		<link>
 			<name>Drivers/BSP/Components/s2lp.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_commands.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_commands.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_commands.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_commands.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_csma.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_csma.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_csma.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_csma.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_fifo.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_fifo.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_fifo.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_fifo.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_gpio.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_gpio.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_gpio.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_gpio.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_packethandler.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_packethandler.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_packethandler.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_packethandler.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktbasic.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktbasic.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktbasic.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktbasic.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktstack.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktstack.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktstack.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktstack.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktwmbus.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktwmbus.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktwmbus.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktwmbus.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_qi.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_qi.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_qi.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_qi.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_radio.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_radio.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_radio.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_radio.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_regs.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_regs.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_timer.c</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_timer.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_timer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_timer.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_types.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_types.h</locationURI>
 		</link>
 		<link>
 			<name>Drivers/BSP/S2915A1/s2915a1.c</name>
@@ -336,19 +286,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/S2915A1/s2915a1.c</locationURI>
 		</link>
 		<link>
-			<name>Drivers/BSP/S2915A1/s2915a1.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Drivers/BSP/S2915A1/s2915a1.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/aes-128.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/aes-128.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/aes-128.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/aes-128.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/assert.c</name>
@@ -356,19 +296,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/assert.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/assert.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/assert.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/atomic.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/atomic.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/atomic.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/atomic.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/autostart.c</name>
@@ -376,49 +306,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/autostart.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/autostart.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/autostart.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/battery-sensor.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/battery-sensor.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ble-hal.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/ble-hal.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/button-hal.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/button-hal.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/button-sensor.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/button-sensor.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/cc-gcc.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/cc-gcc.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/cc.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/cc.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ccm-star.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/ccm-star.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ccm-star.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/ccm-star.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/circular-list.c</name>
@@ -426,44 +316,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/circular-list.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/circular-list.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/circular-list.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/clock.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/clock.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/compower.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/compower.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/compower.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/compower.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/contiki-default-conf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/contiki-default-conf.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/contiki-lib.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/contiki-lib.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/contiki-net.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/contiki-net.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/contiki.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/contiki.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/crc16.c</name>
@@ -471,29 +326,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/crc16.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/crc16.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/crc16.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/critical.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/critical.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/csma-security.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/csma-security.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ctimer.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/ctimer.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ctimer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/ctimer.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/dbl-circ-list.c</name>
@@ -501,24 +336,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/dbl-circ-list.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/dbl-circ-list.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/dbl-circ-list.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/dbl-list.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/dbl-list.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/dbl-list.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/dbl-list.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/eeprom.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/eeprom.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/energest.c</name>
@@ -526,24 +346,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/energest.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/energest.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/energest.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/etimer.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/etimer.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/etimer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/etimer.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/gpio-hal.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/gpio-hal.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/heapmem.c</name>
@@ -551,44 +356,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/heapmem.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/heapmem.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/heapmem.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ifft.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/ifft.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ifft.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/ifft.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/int-master.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/int-master.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/lc-addrlabels.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/lc-addrlabels.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/lc-switch.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/lc-switch.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/lc.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/lc.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/leds.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/leds.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/link-stats.c</name>
@@ -596,19 +366,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/link-stats.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/link-stats.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/link-stats.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/linkaddr.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/linkaddr.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/linkaddr.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/linkaddr.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/list.c</name>
@@ -616,29 +376,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/list.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/list.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/list.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/llsec802154.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/llsec802154.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/log-conf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/log-conf.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/log.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/log.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/log.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/log.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/mac-sequence.c</name>
@@ -646,19 +386,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/mac-sequence.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/mac-sequence.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/mac-sequence.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/mac.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/mac.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/mac.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/mac.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/memb.c</name>
@@ -666,24 +396,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/memb.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/memb.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/memb.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/memory-barrier.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/memory-barrier.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/mutex.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/mutex.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/mutex.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/mutex.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/nbr-table.c</name>
@@ -691,19 +406,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/nbr-table.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/nbr-table.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/nbr-table.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/net-debug.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/net-debug.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/net-debug.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/net-debug.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/netstack.c</name>
@@ -711,19 +416,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/netstack.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/netstack.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/netstack.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/node-id.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/node-id.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/node-id.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/node-id.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/nullradio.c</name>
@@ -731,24 +426,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/nullradio.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/nullradio.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/nullradio.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/packetbuf.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/packetbuf.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/packetbuf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/packetbuf.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/platform.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/platform.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/process.c</name>
@@ -756,39 +436,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/process.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/process.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/process.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/pt-sem.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/pt-sem.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/pt.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/pt.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/queue.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/queue.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/queuebuf.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/queuebuf.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/queuebuf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/queuebuf.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/radio.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/radio.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/random.c</name>
@@ -796,19 +446,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/random.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/random.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/random.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ringbuf.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/ringbuf.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ringbuf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/ringbuf.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ringbufindex.c</name>
@@ -816,24 +456,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/ringbufindex.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/ringbufindex.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/ringbufindex.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/rom.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/rom.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/rtimer.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/rtimer.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/rtimer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/rtimer.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/sensors.c</name>
@@ -841,29 +466,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/sensors.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/sensors.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/sensors.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/serial-line.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/serial-line.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/serial-line.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/serial-line.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/stack-check.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/stack-check.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/stack.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/stack.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/stimer.c</name>
@@ -871,24 +476,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/stimer.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/stimer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/stimer.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/subprocess.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/subprocess.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/timer.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/timer.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/timer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/sys/timer.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/trickle-timer.c</name>
@@ -896,44 +486,14 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/trickle-timer.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/trickle-timer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/lib/trickle-timer.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/tsch-conf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-conf.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/watchdog.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/watchdog.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/Core/xmem.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/xmem.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_border_router_service/border-router-embedded.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/rpl-border-router/embedded/border-router-embedded.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_border_router_service/module-macros.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/rpl-border-router/module-macros.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_border_router_service/rpl-border-router.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/rpl-border-router/rpl-border-router.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_border_router_service/rpl-border-router.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/rpl-border-router/rpl-border-router.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_border_router_service/slip-bridge.c</name>
@@ -946,29 +506,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/slip.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_border_router_service/slip.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/dev/slip.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/deployment.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/deployment/deployment.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/module-macros.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/deployment/module-macros.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/serial-shell.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/shell/serial-shell.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/serial-shell.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/shell/serial-shell.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/shell-commands.c</name>
@@ -976,84 +516,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/shell/shell-commands.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/shell-commands.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/shell/shell-commands.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/shell.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/shell/shell.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/shell.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/shell/shell.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-adaptive-timesync.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-adaptive-timesync.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-asn.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-asn.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-const.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-const.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-log.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-log.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-packet.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-packet.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-queue.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-queue.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-rpl.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-rpl.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-schedule.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-schedule.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-security.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-security.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-slot-operation.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-slot-operation.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-stats.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-stats.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch-types.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-types.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_services/tsch.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG_STM32_Library/Core/clock.c</name>
@@ -1066,29 +531,14 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/ST/Contiki-NG_STM32_Library/Src/console.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG_STM32_Library/Core/console.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/ST/Contiki-NG_STM32_Library/Inc/console.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG_STM32_Library/Core/int-master.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/ST/Contiki-NG_STM32_Library/Src/int-master.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG_STM32_Library/Core/ip64-conf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/ST/Contiki-NG_STM32_Library/Inc/ip64-conf.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG_STM32_Library/Core/rtimer-arch.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/ST/Contiki-NG_STM32_Library/Src/rtimer-arch.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG_STM32_Library/Core/rtimer-arch.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/ST/Contiki-NG_STM32_Library/Inc/rtimer-arch.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG_STM32_Library/Core/slip-arch.c</name>
@@ -1116,29 +566,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/esmrf.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/esmrf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/esmrf.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/ip64-addr.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/ip64-addr.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/ip64-addr.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/ip64-addr.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/module-macros.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/resolv/module-macros.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/mpl.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/mpl.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/psock.c</name>
@@ -1146,19 +576,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/psock.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/psock.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/psock.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/resolv.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/resolv/resolv.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/resolv.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/services/resolv/resolv.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/roll-tm.c</name>
@@ -1166,24 +586,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/roll-tm.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/roll-tm.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/roll-tm.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/routing.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/routing.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/sicslowpan.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/sicslowpan.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/sicslowpan.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/sicslowpan.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/simple-udp.c</name>
@@ -1191,24 +596,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/simple-udp.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/simple-udp.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/simple-udp.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/smrf.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/smrf.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/smrf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/smrf.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/tcp-socket.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/tcp-socket.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/tcpip.c</name>
@@ -1216,29 +606,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/tcpip.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/tcpip.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/tcpip.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/udp-socket.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/udp-socket.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/udp-socket.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/udp-socket.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-arch.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-arch.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-debug.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-debug.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-ds6-nbr.c</name>
@@ -1246,19 +616,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6-nbr.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-ds6-nbr.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6-nbr.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-ds6-route.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6-route.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-ds6-route.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6-route.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-ds6.c</name>
@@ -1266,24 +626,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-ds6.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-icmp6.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-icmp6.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-icmp6.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-icmp6.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-mcast6-engines.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6-engines.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-mcast6-route.c</name>
@@ -1291,24 +636,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6-route.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-mcast6-route.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6-route.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-mcast6-stats.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6-stats.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-mcast6-stats.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6-stats.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-mcast6.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-nameserver.c</name>
@@ -1316,19 +646,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-nameserver.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-nameserver.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-nameserver.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-nd6.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-nd6.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-nd6.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-nd6.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-packetqueue.c</name>
@@ -1336,34 +656,14 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-packetqueue.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-packetqueue.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-packetqueue.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-sr.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-sr.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-sr.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-sr.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-udp-packet.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-udp-packet.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip-udp-packet.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-udp-packet.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uip6.c</name>
@@ -1376,24 +676,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uipbuf.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uipbuf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uipbuf.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uiplib.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uiplib.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uiplib.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uiplib.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_ip/IPv6/uipopt.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uipopt.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac/csma/anti-replay.c</name>
@@ -1401,24 +686,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/anti-replay.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac/csma/anti-replay.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/anti-replay.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac/csma/ccm-star-packetbuf.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/ccm-star-packetbuf.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac/csma/ccm-star-packetbuf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/ccm-star-packetbuf.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac/csma/csma-output.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/csma-output.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac/csma/csma-security.c</name>
@@ -1431,19 +701,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/csma.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac/csma/csma.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/csma.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/frame802154.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/frame802154.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/frame802154.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/frame802154.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/frame802154e-ie.c</name>
@@ -1451,44 +711,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/frame802154e-ie.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/frame802154e-ie.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/frame802154e-ie.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/framer-802154.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/framer-802154.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/framer-802154.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/framer-802154.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/framer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/framer.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/sixp-pkt.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/sixtop/sixp-pkt.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4/sixtop.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/sixtop/sixtop.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-conf.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-conf.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-const.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-const.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-dag-root.c</name>
@@ -1496,19 +721,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-dag-root.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-dag-root.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-dag-root.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-dag.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-dag.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-dag.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-dag.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-ext-header.c</name>
@@ -1516,19 +731,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-ext-header.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-ext-header.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-ext-header.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-icmp6.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-icmp6.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-icmp6.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-icmp6.h</locationURI>
 		</link>
 		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-mrhof.c</name>
@@ -1546,11 +751,6 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-neighbor.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-neighbor.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-neighbor.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-of0.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-of0.c</locationURI>
@@ -1561,24 +761,9 @@
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-timers.c</locationURI>
 		</link>
 		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-timers.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-timers.h</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl-types.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-types.h</locationURI>
-		</link>
-		<link>
 			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl.c</name>
 			<type>1</type>
 			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl.c</locationURI>
-		</link>
-		<link>
-			<name>Middlewares/X-CUBE-SUBG2/Network/Contiki-NG/OS_net_routing/rpl-lite/rpl.h</name>
-			<type>1</type>
-			<locationURI>PARENT-6-PROJECT_LOC/Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl.h</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

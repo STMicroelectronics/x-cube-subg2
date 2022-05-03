@@ -46,6 +46,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Src/main.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/s2lp_management.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Src/s2lp_management.c</locationURI>
+		</link>
+		<link>
 			<name>Application/User/stm32l0xx_hal_msp.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Src/stm32l0xx_hal_msp.c</locationURI>
@@ -156,144 +161,84 @@
 			<locationURI>PARENT-5-PROJECT_LOC/Drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_tim_ex.c</locationURI>
 		</link>
 		<link>
+			<name>Drivers/BSP/Components/S2LP_Commands.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Commands.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Csma.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Csma.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Fifo.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Fifo.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_General.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_General.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Gpio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Gpio.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_PacketHandler.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PacketHandler.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_PktBasic.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktBasic.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_PktStack.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktStack.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_PktWMbus.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktWMbus.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Qi.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Qi.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Radio.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Radio.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Timer.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Timer_ex.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer_ex.c</locationURI>
+		</link>
+		<link>
+			<name>Drivers/BSP/Components/S2LP_Types.c</name>
+			<type>1</type>
+			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Types.c</locationURI>
+		</link>
+		<link>
 			<name>Drivers/BSP/Components/s2lp.c</name>
 			<type>1</type>
 			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp.c</locationURI>
 		</link>
 		<link>
-			<name>Drivers/BSP/Components/s2lp.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_commands.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_commands.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_commands.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_commands.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_csma.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_csma.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_csma.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_csma.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_fifo.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_fifo.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_fifo.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_fifo.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_gpio.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_gpio.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_gpio.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_gpio.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_packethandler.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_packethandler.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_packethandler.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_packethandler.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktbasic.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktbasic.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktbasic.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktbasic.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktstack.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktstack.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktstack.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktstack.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktwmbus.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktwmbus.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_pktwmbus.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_pktwmbus.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_qi.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_qi.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_qi.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_qi.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_radio.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_radio.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_radio.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_radio.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_regs.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_regs.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_timer.c</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_timer.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_timer.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_timer.h</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/Components/s2lp_types.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/Components/S2LP/s2lp_types.h</locationURI>
-		</link>
-		<link>
 			<name>Drivers/BSP/S2915A1/s2915a1.c</name>
 			<type>1</type>
 			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/S2915A1/s2915a1.c</locationURI>
-		</link>
-		<link>
-			<name>Drivers/BSP/S2915A1/s2915a1.h</name>
-			<type>1</type>
-			<locationURI>PARENT-5-PROJECT_LOC/Drivers/BSP/S2915A1/s2915a1.h</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

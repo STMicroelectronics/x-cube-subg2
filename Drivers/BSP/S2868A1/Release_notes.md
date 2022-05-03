@@ -15,14 +15,6 @@ Copyright &copy; [2021]{style="background-color: yellow;"} STMicroelectronics\
 </center>
 
 
-# License
-
-This software component is
-licensed by ST under BSD 3-Clause, the "License"; You may not use this component except in compliance
-with the License. You may obtain a copy of the License at:
-
-[[BSD 3-Clause]{style="background-color: yellow;"}](https://opensource.org/licenses/BSD-3-Clause)
-
 # Purpose
 
 The S2868A1 BSP is a SW component for the STM32Cube. This software implements the BSP v2.0 specifications for the X-NUCLEO-S2868A1 Expansion Board on STM32 for STM's Radio S2-LP Low data rate and low power sub-1GHz transceiver devices. It is built on top of STM32Cube software technology that ease portability across different STM32 micro-controllers. 
@@ -37,10 +29,57 @@ Here is the list of references to user documents:
 
 ::: {.col-sm-12 .col-lg-8}
 # Update History
+::: {.collapse}
+<input type="checkbox" id="collapse-section10" checked aria-hidden="true">
+<label for="collapse-section10" aria-hidden="true">__4.1.0 / March 4th 2022__</label>
+<div>			
+
+## Main Changes
+
+### Maintenance release
+
+ - Multiple S2-LP GPIO are now supported.
+ - GPIOs settings are taken from configuration done via STM32CubeMX.
+ - Files headers have neutral license statement, LICENSE file is delivered at the root of the component.
+  
+
+## Known Limitations
+
+
+  Headline
+  ----------------------------------------------------------
+  No known limitations
+
+\
+
+## Development Toolchains and Compilers
+
+- IAR System Workbench v8.50.9
+- ARM Keil v5.32
+- STM32CubeIDE v1.9.0
+
+
+## Supported Devices and Boards
+
+- X-NUCLEO-S2868A1 rev. XS2868V1
+
+
+## Backward Compatibility
+
+N/A
+
+## Dependencies
+
+This software release is compatible with:
+
+- S2LP Component Driver v3.0.0
+
+</div>
+:::
 
 ::: {.collapse}
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__4.0.0 / June 21st 2021__</label>
+<input type="checkbox" id="collapse-section9" aria-hidden="true">
+<label for="collapse-section9" aria-hidden="true">__4.0.0 / June 21st 2021__</label>
 <div>			
 
 ## Main Changes
@@ -49,16 +88,6 @@ Here is the list of references to user documents:
 
  - Moved irq_disable_cnt variable in BSP to cope with "no application" usecase.
   
-
-## Contents
-
-<small>The components flagged by "[]{.icon-st-update}" have changed since the
-previous release. "[]{.icon-st-add}" are new.</small>
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V4.0.0 []{.icon-st-update}                        [[BSD 3-Clause]](https://opensource.org/licenses/BSD-3-Clause)                                                [release note](.\Release_Notes.html)
-
 
 ## Known Limitations
 
@@ -95,8 +124,8 @@ This software release is compatible with:
 :::
 
 ::: {.collapse}
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__3.0.1 / April 9th 2021__</label>
+<input type="checkbox" id="collapse-section8" aria-hidden="true">
+<label for="collapse-section8" aria-hidden="true">__3.0.1 / April 9th 2021__</label>
 <div>			
 
 ## Main Changes
@@ -106,16 +135,6 @@ This software release is compatible with:
  - Fixed a bug in s2868a1.c file that prevented different GPIO EXTI Lines to be used for the radio through STM32CubeMX.
  - Version number has been updated in order to simplify the versioning in STM32CubeMX.
   
-
-## Contents
-
-<small>The components flagged by "[]{.icon-st-update}" have changed since the
-previous release. "[]{.icon-st-add}" are new.</small>
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V3.0.1 []{.icon-st-update}                        [[BSD 3-Clause]](https://opensource.org/licenses/BSD-3-Clause)                                                [release note](.\Release_Notes.html)
-
 
 ## Known Limitations
 
@@ -152,8 +171,8 @@ This software release is compatible with:
 :::
 
 ::: {.collapse}
-<input type="checkbox" id="collapse-section6" checked aria-hidden="true">
-<label for="collapse-section6" aria-hidden="true">__2.2.0 / Sep 9th 2020__</label>
+<input type="checkbox" id="collapse-section7" aria-hidden="true">
+<label for="collapse-section7" aria-hidden="true">__2.2.0 / Sep 9th 2020__</label>
 <div>			
 
 ## Main Changes
@@ -173,16 +192,6 @@ This is a maintenance release of the S2868A1 BSP Driver, compliant with BSP v2.0
 
   : Fixed bugs list
   
-
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  S2868A1                                                     V2.2.0                                            [[BSD 3-Clause]](https://opensource.org/licenses/BSD-3-Clause)                                                [release note](.\Release_Notes.html)
-
-  : Components
-
 \
 
 
@@ -221,8 +230,10 @@ Compatible with S2LP Component Driver v2.1.1
 
 </div>
 :::
+
+
 ::: {.collapse}
-<input type="checkbox" id="collapse-section6" checked aria-hidden="true">
+<input type="checkbox" id="collapse-section6" aria-hidden="true">
 <label for="collapse-section6" aria-hidden="true">__2.1.0 / Feb 21st 2020__</label>
 <div>			
 
@@ -247,19 +258,6 @@ This is a maintenance release of the S2868A1 BSP Driver, compliant with BSP v2.0
   Fixed dependency between the Component Driver and the BSP 
   Fixed typos in the documentation
 
-
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V2.1.0                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
 
 ## Known Limitations
 
@@ -297,7 +295,6 @@ Compatible with S2LP Component Driver v2.1.0
 </div>
 :::
 
-
 ::: {.collapse}
 <input type="checkbox" id="collapse-section5"  aria-hidden="true">
 <label for="collapse-section5" aria-hidden="true">__2.0.0 / Dec 6th 2019__</label>
@@ -317,18 +314,6 @@ This is the first release of the S2868A1 BSP Driver, compliant with BSP v2.0.
 
   : Additional features
 
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V2.0.0                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
 
 ## Known Limitations
 
@@ -386,18 +371,6 @@ Retrieve Public Network handling in the radio driver
   : Additional features
 
 
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V1.0.4                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
-
 ## Known Limitations
 
 
@@ -453,18 +426,6 @@ SX1276 radio driver externalized as component
 
   : Additional features
 
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V1.0.3                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
 
 ## Known Limitations
 
@@ -522,18 +483,6 @@ Power settings now board dependent
 
   : Additional features
 
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V1.0.2                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
 
 ## Known Limitations
 
@@ -593,18 +542,6 @@ Interrupt handling
   : Additional features
 
 
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V1.0.1                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
-
 ## Known Limitations
 
 
@@ -659,19 +596,6 @@ First release
   
 
   : Additional features
-
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2868A1**                                                 V1.0.0                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
 
 ## Known Limitations
 

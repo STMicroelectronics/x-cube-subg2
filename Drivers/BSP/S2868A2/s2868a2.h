@@ -4,17 +4,16 @@
   * @author  SRA Team
   * @brief   driver S2868A2 header file
   ******************************************************************************
- * @attention
- *
- * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
- * All rights reserved.</center></h2>
- *
- * This software component is licensed by ST under BSD 3-Clause license,
- * the "License"; You may not use this file except in compliance with the
- * License. You may obtain a copy of the License at:
- *                        opensource.org/licenses/BSD-3-Clause
- *
- ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2021 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
  */
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __S2868A2_H__
@@ -48,7 +47,9 @@ typedef enum
     RADIO_MODE_GPIO_IN  = 0x00,   /*!< Work as GPIO input */
     RADIO_MODE_EXTI_IN,           /*!< Work as EXTI */
     RADIO_MODE_GPIO_OUT,          /*!< Work as GPIO output */
-}S2868A2_RADIO_GPIO_Mode;  
+}S2868A2_RADIO_GPIO_Mode;
+
+//Below type is currently unused with new implementation
 /* MCU GPIO pin Edge */
 typedef enum                                                                                          
 {
@@ -303,18 +304,18 @@ int32_t S2868A2_EEPROM_ReadPage(uint32_t Instance, uint16_t nAddress, uint16_t c
 int32_t S2868A2_EEPROM_IsReady(uint32_t Instance);
 
 /**
-  * @brief  FunctionDescription
+  * @brief  Legacy API to change settings at runtime
   * @param xGpio can be 4 different GPIO used in Radio of S2LP
   * @param  xGpioMode can be different Mode 
   * @param  xGpioEdge the edge for interrupt
   * @retval None
   */
-void S2868A2_RADIO_GPIO_Init( S2868A2_RADIO_GPIO_TypeDef xGpio, S2868A2_RADIO_GPIO_Mode xGpioMode, S2868A2_RADIO_GPIO_EDGE_Mode xGpioEdge);
+void S2868A2_RADIO_GPIO_Init_Update( S2868A2_RADIO_GPIO_TypeDef xGpio, S2868A2_RADIO_GPIO_Mode xGpioMode, S2868A2_RADIO_GPIO_EDGE_Mode xGpioEdge);
+
+void FEM_Operation(FEM_OperationType operation);
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __S2868A2_H__*/
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

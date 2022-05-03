@@ -8,20 +8,12 @@ header-includes: <link rel="icon" type="image/x-icon" href="_htmresc/favicon.png
 ::: {.col-sm-12 .col-lg-4}
 
 <center>
-# Release Notes for <mark>S2-LP</mark>
-Copyright &copy; [2020]{style="background-color: yellow;"} STMicroelectronics\
+# Release Notes for <mark>S2-LP Component Driver</mark>
+Copyright &copy; [2021]{style="background-color: yellow;"} STMicroelectronics\
     
 [![ST logo](_htmresc/st_logo_2020.png)](https://www.st.com){.logo}
 </center>
 
-
-# License
-
-This software component is
-licensed by ST under BSD 3-Clause, the "License"; You may not use this component except in compliance
-with the License. You may obtain a copy of the License at:
-
-[[BSD 3-Clause]{style="background-color: yellow;"}](https://opensource.org/licenses/BSD-3-Clause)
 
 # Purpose
 
@@ -38,8 +30,48 @@ Here is the list of references to user documents:
 ::: {.col-sm-12 .col-lg-8}
 # Update History
 ::: {.collapse}
-<input type="checkbox" id="collapse-section1" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__2.1.1 / Sep 9th 2020__</label>
+<input type="checkbox" id="collapse-section3" checked aria-hidden="true">
+<label for="collapse-section3" aria-hidden="true">__V3.0.0 / April 25th 2022__</label>
+<div>			
+
+## Main Changes
+
+
+### Product update
+
+  - S2LP_Library folder is aligned to official library from S2LP-DK 1.3.4 with an additional fix:
+	- removed STM32CubeIDE raised warning (S2LP_Library/src/S2LP_Gpio.c file, S2LPGpioIrqDeInit(...) function)
+ 
+
+## Known Limitations
+
+ - S2LPGeneralLibraryVersion() returns v1.3.0 but library version is 1.3.4
+  
+
+## Development Toolchains and Compilers
+
+- IAR System Workbench v8.50.9
+- ARM Keil v5.32
+- STM32CubeIDE v1.9.0
+
+
+## Supported Devices and Boards
+
+- X-NUCLEO-S2868A1 rev. XS2868V1
+- X-NUCLEO-S2868A2 rev. XS2868V2
+- X-NUCLEO-S2915A1 rev. XS2915V1
+
+
+## Backward Compatibility
+
+Compatibility with previous versions is granted by s2lp_sdkapi_mapping.h file.
+
+</div>
+:::
+
+::: {.collapse}
+<input type="checkbox" id="collapse-section2" aria-hidden="true">
+<label for="collapse-section2" aria-hidden="true">__V2.1.1 / 9-September-2020__</label>
 <div>			
 
 ## Main Changes
@@ -63,18 +95,6 @@ This is a maintenance release of the S2-LP Component Driver for BSP v2.0.
   Fixed Radio Refresh Status implementation
   Fixed Packet Basic Address Init
 
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2-LP**                                                   V2.1.1                                            [[BSD 3-Clause]](https://opensource.org/licenses/BSD-3-Clause)                                                [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
 
 ## Known Limitations
 
@@ -117,8 +137,8 @@ This software release is compatible with:
 :::
 
 ::: {.collapse}
-<input type="checkbox" id="collapse-section1" checked aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">__2.1.0 / Feb 21st 2020__</label>
+<input type="checkbox" id="collapse-section1" aria-hidden="true">
+<label for="collapse-section1" aria-hidden="true">__V2.1.0 / 21-February-2020__</label>
 <div>			
 
 ## Main Changes
@@ -144,18 +164,6 @@ This is the first release of the rework of S2-LP Component Driver for BSP v2.0.
   Moved S2LP_ConfigRangeExt() at app level
   Modifications to support also 915MHz board
 
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2-LP**                                                   V2.1.0                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
 
 ## Known Limitations
 
@@ -199,7 +207,7 @@ This software release is compatible with:
 
 ::: {.collapse}
 <input type="checkbox" id="collapse-section0" aria-hidden="true">
-<label for="collapse-section0" aria-hidden="true">__2.0.0 / Dec 6th 2019__</label>
+<label for="collapse-section0" aria-hidden="true">__V2.0.0 / 6-December-2019__</label>
 <div>			
 
 ## Main Changes
@@ -216,18 +224,6 @@ This is the first release of the rework of S2-LP Component Driver for BSP v2.0.
 
   : Additional features
 
-
-## Contents
-
-  Name                                                        Version                                           License                                                                                                       Release note
-  ----------------------------------------------------------- ------------------------------------------------- ------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------
-  **S2-LP**                                                   V2.0.0                                            [SLA0044](http://www.st.com/SLA0044)                                                                          [release note](.\Release_Notes.html)
-
-  : Components
-
-\
-
-Note: in the table above, components **highlighted** have changed since previous release.
 
 ## Known Limitations
 

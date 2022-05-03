@@ -26,14 +26,13 @@
 </p>
 <a href="https://www.st.com" class="logo"><img src="_htmresc/st_logo_2020.png" alt="ST logo" /></a>
 </center>
-<h1 id="license">License</h1>
-<p>This software package is licensed by ST under SLA0077, the “License”; You may not use this component except in compliance with the License. You may obtain a copy of the License at:</p>
-<p><a href="http://www.st.com/content/st_com/en/search.html#q=SLA0077-t=keywords-page=1"><span style="background-color: yellow;">SLA0077: SOFTWARE LICENSE AGREEMENT</span></a></p>
 <h1 id="purpose">Purpose</h1>
 <p>The X-CUBE-SUBG2 software package is an expansion for STM32Cube. This software provides drivers running on STM32 for STM’s Radio S2-LP Low data rate and low power sub-1GHz transceiver devices. It is built on top of STM32Cube software technology that ease portability across different STM32 micro-controllers. This Expansion Firmware is built over the X-NUCLEO-S2868A1, X-NUCLEO-S2868A2 or X-NUCLEO-S2915A1 Expansion Board. This Expansion Board can be plugged on the Arduino UNO R3 connectors of any STM32 Nucleo board. The user can mount the ST Morpho connectors if required. The Expansion Board can be easily stacked in order to evaluate different devices with Sub 1GHz communication.</p>
 <p><strong>X-CUBE-SUBG2 software features</strong>:</p>
 <ul>
 <li><p>Point-to-Point (P2P) communication example to transfer data from one node to another</p></li>
+<li><p>CLI Example to be used with S2-LP DK GUI in order to configure S2-LP radio.</p></li>
+<li><p>Multi-GPIOs usage demonstration in FIFO TX/RX examples.</p></li>
 <li><p>6LoWPAN communication using Contiki-NG middleware. Sample applications include:</p>
 <ul>
 <li>UDP Client to send messages to a Server</li>
@@ -60,161 +59,125 @@
 <div class="col-sm-12 col-lg-8">
 <h1 id="update-history">Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V4.2.0 / 23-June-2021</label>
+<input type="checkbox" id="collapse-section8" checked aria-hidden="true"> <label for="collapse-section8" aria-hidden="true">V5.0.0 / 25-April-2022</label>
 <div>
 <h2 id="main-changes">Main Changes</h2>
 <h3 id="product-update">Product update</h3>
 <ul>
-<li>Moved irq_disable_cnt semaphore variable from applicative code to BSP</li>
-<li>Renamed bsp_ip_conf.h in subg2_bsp_ip_conf.h</li>
-<li>Add support to Example Selector in STM32CubeMX (so new Projects folders names)</li>
+<li>Neutral License schema and collateral files.</li>
+<li>S2-LP Component Driver now includes the official S2-LP Library from S2-LP DK.</li>
+<li>Added Custom Board support.</li>
+<li>Added support for multiple S2-LP GPIOs.</li>
+<li>Added FIFO TX/RX examples for Custom Board.</li>
+<li>Added CLI example to configure the radio via S2-LP DK GUI.</li>
+<li>Moved common functions to new s2lp_management.c/h files.</li>
 </ul>
 <h2 id="contents">Contents</h2>
 <p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
-<p>Drivers</p>
+<p>Components</p>
 <table>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
 <th style="text-align: left;">Release note</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A1</strong></td>
-<td style="text-align: left;">V4.0.0 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2868A1 BSP</td>
+<td style="text-align: left;">V4.1.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2915A1</strong></td>
-<td style="text-align: left;">V4.0.0 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2915A1 BSP</td>
+<td style="text-align: left;">V4.1.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A2</strong></td>
-<td style="text-align: left;">V4.0.0 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2868A2 BSP</td>
+<td style="text-align: left;">V4.1.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2LP</strong></td>
-<td style="text-align: left;">V2.1.1</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2-LP Component Driver</td>
+<td style="text-align: left;">V3.0.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>STM32F4xx CMSIS</strong></td>
-<td style="text-align: left;">V2.6.6</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">V2.6.8 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32F4xx\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>STM32F4xx HAL</strong></td>
-<td style="text-align: left;">V1.7.12 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">V1.8.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\STM32F4xx_HAL_Driver\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>BSP STM32F4xx_NUCLEO</strong></td>
-<td style="text-align: left;">V1.2.7</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">BSP STM32F4xx_Nucleo</td>
+<td style="text-align: left;">V1.2.8 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\STM32F4xx-Nucleo\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>STM32L0xx CMSIS</strong></td>
-<td style="text-align: left;">V1.9.1</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">STM32L0xx CMSIS</td>
+<td style="text-align: left;">V1.9.2 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32L0xx\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>STM32L0xx HAL</strong></td>
-<td style="text-align: left;">V1.10.4</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">STM32L0xx HAL</td>
+<td style="text-align: left;">V1.10.5 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\STM32L0xx_HAL_Driver\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>BSP STM32L0xx_NUCLEO</strong></td>
+<td style="text-align: left;">BSP STM32L0xx_Nucleo</td>
 <td style="text-align: left;">V2.1.3</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\STM32L0xx_Nucleo\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>STM32L1xx CMSIS</strong></td>
-<td style="text-align: left;">V2.3.2 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">STM32L1xx CMSIS</td>
+<td style="text-align: left;">V2.3.2</td>
 <td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32L1xx\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>STM32L1xx HAL</strong></td>
-<td style="text-align: left;">V1.4.4 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">STM32L1xx HAL</td>
+<td style="text-align: left;">V1.4.4</td>
 <td style="text-align: left;"><a href="Drivers\STM32L1xx_HAL_Driver\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>BSP STM32L1xx_NUCLEO</strong></td>
+<td style="text-align: left;">BSP STM32L1xx_Nucleo</td>
 <td style="text-align: left;">V1.1.3</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\STM32L1xx_Nucleo\Release_Notes.html">release note</a></td>
 </tr>
-</tbody>
-</table>
-<p>Middlewares</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Contiki-NG_STM32_Library</strong></td>
-<td style="text-align: left;">V1.0.2 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0055">SLA0055</a></td>
+<tr class="even">
+<td style="text-align: left;">Contiki-NG_STM32_Library</td>
+<td style="text-align: left;">V1.0.3 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html">release note</a></td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Contiki-NG</strong></td>
-<td style="text-align: left;">V4.6.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\LICENSE.md">LICENSE</a></td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>TinyDTLS</strong> (deliverd in Contiki-NG)</td>
+<td style="text-align: left;">Contiki-NG</td>
 <td style="text-align: left;">V4.6.0</td>
-<td style="text-align: left;"><a href="http://www.eclipse.org/legal/epl-v10.html">EPL</a> and <a href="http://www.eclipse.org/org/documents/edl-v10.php">EDL</a></td>
-<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\os\net\security\tinydtls\LICENSE">LICENSE</a></td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
 </tr>
-</tbody>
-</table>
-<p>Utilities</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
+<tr class="even">
+<td style="text-align: left;">TinyDTLS (delivered in Contiki-NG)</td>
+<td style="text-align: left;">V4.6.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\os\net\security\tinydtls\README">readme</a></td>
 </tr>
-</thead>
-<tbody>
 <tr class="odd">
 <td style="text-align: left;">Serial Sniffer Tool</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\serialsniffer.readme">readme</a></td>
+<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\SERIALSNIFFER_README.md">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">wpcapslip6 Tool</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Utilities\PC_Software\wpcapslip6\wpcapslip6.readme">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">serial-io Tool (from Contiki-NG)</td>
+<td style="text-align: left;">V4.6.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
 </tr>
 </tbody>
 </table>
@@ -244,6 +207,18 @@
 <tr class="even">
 <td style="text-align: left;">When using STM32CubeMX SUBG2 pack, if a project has been generated for P2P, to modify it for a Contiki-NG based application that uses LED or Button, it is required to deselect any application and save the .ioc project file before choosing the new Application.</td>
 </tr>
+<tr class="odd">
+<td style="text-align: left;">With ARM KEIL IDE, projects generated by STM32CubeMX for some STM32L0 core may not flash with default configuration: open target configuration, Debug/Pack and un-check “Enable” checkbox.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">In MDK-ARM projects, mainly for STM32H7 series, if no log message is printed on the serial terminal, enable the Use MicroLib option in the project settings .</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO or X-NUCLEO information displayed by S2-LP GUI when using CLI Example might not be correct: only X-NUCLEO-* are supported and not STEVAL-FKI<em>, X-NUCLEO info is stored in EEPROM, a valid X-NUCLEO might be displayed as STEVAL-FKI</em> or “Unkonw”, GUI recognizes and displays only its “known” MCUs (L053R8, L152RE, F401RE) even for other MCU of the same family, other families will be displayed as “Unknown”.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">For platforms with very little FLASH memory it may happen that the generated binary does not fit into it. If using STM32CubeIDE try the Release configuration instead of the Debug one or enable -Os flag to optimize for size. This issue affects also the preconfigured CLI Application examples for NUCLEO-L053R8: STM32CubeIDE Debug projects have been modified to include -Os option to let them work. Other possibilities are to disable not required components (via STM32CubeMX) or to change some parameters at compile time (project-conf.h file and Contiki-NG configuration files).</td>
+</tr>
 </tbody>
 </table>
 <p><br />
@@ -252,7 +227,7 @@
 <ul>
 <li>IAR System Workbench v8.50.9</li>
 <li>ARM Keil v5.32</li>
-<li>STM32CubeIDE v1.6.1</li>
+<li>STM32CubeIDE v1.9.0</li>
 </ul>
 <h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
 <ul>
@@ -264,23 +239,20 @@
 <li>X-NUCLEO-S2868A2</li>
 </ul>
 <h2 id="backward-compatibility">Backward Compatibility</h2>
-<p>N/A</p>
+<p>Compatibility with previous versions is granted by s2lp_sdkapi_mapping.h file contained in the S2-LP Component Driver.</p>
 <h2 id="dependencies">Dependencies</h2>
-<p>N/A</p>
+<p>CLI Example connects to S2-LP DK GUI: <a href="https://www.st.com/en/embedded-software/stsw-s2lp-dk.html">STSW-S2LP-DK</a></p>
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V4.1.0 / 3-May-2021</label>
+<input type="checkbox" id="collapse-section7" aria-hidden="true"> <label for="collapse-section7" aria-hidden="true">V4.2.0 / 23-June-2021</label>
 <div>
 <h2 id="main-changes-1">Main Changes</h2>
 <h3 id="product-update-1">Product update</h3>
 <ul>
-<li>Fixed a issue of Contiki-NG based projects with STM32CubeIDE 1.6.0.</li>
-<li>Fixed a bug in the BSP that prevented different GPIO EXTI Lines to be used for the radio through STM32CubeMX.</li>
-<li>Fixed a problem of Contiki-NG based projects with regards to BUTTON and LED (applies to STM32CubeMX pack as well).</li>
-<li>Refactoring of internal functions of S2-LP radio driver interface for Contiki-NG.</li>
-<li>New versioning scheme for X-NUCLEO BSP Drivers (for better integration in STM32CubeMX)</li>
-<li>New versioning for Contiki-NG that now uses official package version (TinyDTLS is embedded in Contiki-NG so uses same version number).</li>
+<li>Moved irq_disable_cnt semaphore variable from applicative code to BSP</li>
+<li>Renamed bsp_ip_conf.h in subg2_bsp_ip_conf.h</li>
+<li>Add support to Example Selector in STM32CubeMX (so new Projects folders names)</li>
 </ul>
 <h2 id="contents-1">Contents</h2>
 <p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
@@ -290,94 +262,236 @@
 <tr class="header">
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
 <th style="text-align: left;">Release note</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A1</strong></td>
-<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2868A1 BSP</td>
+<td style="text-align: left;">V4.0.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2915A1</strong></td>
-<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2915A1 BSP</td>
+<td style="text-align: left;">V4.0.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A2</strong></td>
-<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2868A2 BSP</td>
+<td style="text-align: left;">V4.0.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2LP</strong></td>
+<td style="text-align: left;">S2-LP Component Driver</td>
 <td style="text-align: left;">V2.1.1</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
 </tr>
-</tbody>
-</table>
-<p>Middlewares</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>Contiki-NG_STM32_Library</strong></td>
-<td style="text-align: left;">V1.0.1 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0055">SLA0055</a></td>
-<td style="text-align: left;"><a href="Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html">release note</a></td>
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">V2.6.6</td>
+<td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32F4xx\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Contiki-NG</strong></td>
-<td style="text-align: left;">V4.6.0 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\LICENSE.md">LICENSE</a></td>
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">V1.7.12 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\STM32F4xx_HAL_Driver\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>TinyDTLS</strong> (deliverd in Contiki-NG)</td>
-<td style="text-align: left;">V4.6.0 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="http://www.eclipse.org/legal/epl-v10.html">EPL</a> and <a href="http://www.eclipse.org/org/documents/edl-v10.php">EDL</a></td>
-<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\os\net\security\tinydtls\LICENSE">LICENSE</a></td>
+<td style="text-align: left;">BSP STM32F4xx_Nucleo</td>
+<td style="text-align: left;">V1.2.7</td>
+<td style="text-align: left;"><a href="Drivers\BSP\STM32F4xx-Nucleo\Release_Notes.html">release note</a></td>
 </tr>
-</tbody>
-</table>
-<p>Utilities</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
+<tr class="even">
+<td style="text-align: left;">STM32L0xx CMSIS</td>
+<td style="text-align: left;">V1.9.1</td>
+<td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32L0xx\Release_Notes.html">release note</a></td>
 </tr>
-</thead>
-<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32L0xx HAL</td>
+<td style="text-align: left;">V1.10.4</td>
+<td style="text-align: left;"><a href="Drivers\STM32L0xx_HAL_Driver\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STM32L0xx_Nucleo</td>
+<td style="text-align: left;">V2.1.3</td>
+<td style="text-align: left;"><a href="Drivers\BSP\STM32L0xx_Nucleo\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L1xx CMSIS</td>
+<td style="text-align: left;">V2.3.2 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\CMSIS\Device\ST\STM32L1xx\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L1xx HAL</td>
+<td style="text-align: left;">V1.4.4 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\STM32L1xx_HAL_Driver\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STM32L1xx_Nucleo</td>
+<td style="text-align: left;">V1.1.3</td>
+<td style="text-align: left;"><a href="Drivers\BSP\STM32L1xx_Nucleo\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Contiki-NG_STM32_Library</td>
+<td style="text-align: left;">V1.0.2 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Contiki-NG</td>
+<td style="text-align: left;">V4.6.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TinyDTLS (delivered in Contiki-NG)</td>
+<td style="text-align: left;">V4.6.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\os\net\security\tinydtls\README">readme</a></td>
+</tr>
 <tr class="odd">
 <td style="text-align: left;">Serial Sniffer Tool</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\serialsniffer.readme">readme</a></td>
+<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\SERIALSNIFFER_README.md">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">wpcapslip6 Tool</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Utilities\PC_Software\wpcapslip6\wpcapslip6.readme">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">serial-io Tool (from Contiki-NG)</td>
+<td style="text-align: left;">V4.6.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
 </tr>
 </tbody>
 </table>
 <h2 id="known-limitations-1">Known Limitations</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">When using STM32CubeMX SUBG2 pack, the Contiki-NG based projects for STM32CubeIDE must use “Standard C” library instead of the default “Reduced C” (Properties, C/C++ Build, Settings, MCU Settings, Runtime library =&gt; Standard C).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">When using STM32CubeMX SUBG2 pack, do not use “Generate under root” option for STM32CubeIDE for Contiki-NG based projects.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">On dual-core STM32 series this expansion software can be used on both cores but exclusively</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">On some Windows PC the boards used to run the Border Router and Serial Sniffer applications may need to be connected to a Serial Terminal application (like Teraterm) before using the user space utilities, to work correctly.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">If using older IAR System Workbench version (8.32.*), “rtimer-arch.h” Contiki-NG file causes an error.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">When using STM32CubeMX SUBG2 pack, if a project has been generated for P2P, to modify it for a Contiki-NG based application that uses LED or Button, it is required to deselect any application and save the .ioc project file before choosing the new Application.</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.50.9</li>
+<li>ARM Keil v5.32</li>
+<li>STM32CubeIDE v1.6.1</li>
+</ul>
+<h2 id="supported-devices-and-boards-1">Supported Devices and Boards</h2>
+<ul>
+<li>NUCLEO-F401RE MB1136 rev.C</li>
+<li>NUCLEO-L152RE MB1136 rev.C</li>
+<li>NUCLEO-L053R8 MB1136 rev.C</li>
+<li>X-NUCLEO-S2868A1 rev. XS2868V1</li>
+<li>X-NUCLEO-S2915A1 rev. XS2915A1</li>
+<li>X-NUCLEO-S2868A2</li>
+</ul>
+<h2 id="backward-compatibility-1">Backward Compatibility</h2>
+<p>N/A</p>
+<h2 id="dependencies-1">Dependencies</h2>
+<p>N/A</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section6" aria-hidden="true"> <label for="collapse-section6" aria-hidden="true">V4.1.0 / 3-May-2021</label>
+<div>
+<h2 id="main-changes-2">Main Changes</h2>
+<h3 id="product-update-2">Product update</h3>
+<ul>
+<li>Fixed a issue of Contiki-NG based projects with STM32CubeIDE 1.6.0.</li>
+<li>Fixed a bug in the BSP that prevented different GPIO EXTI Lines to be used for the radio through STM32CubeMX.</li>
+<li>Fixed a problem of Contiki-NG based projects with regards to BUTTON and LED (applies to STM32CubeMX pack as well).</li>
+<li>Refactoring of internal functions of S2-LP radio driver interface for Contiki-NG.</li>
+<li>New versioning scheme for X-NUCLEO BSP Drivers (for better integration in STM32CubeMX)</li>
+<li>New versioning for Contiki-NG that now uses official package version (TinyDTLS is embedded in Contiki-NG so uses same version number).</li>
+</ul>
+<h2 id="contents-2">Contents</h2>
+<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Drivers</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">S2868A1 BSP</td>
+<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S2915A1 BSP</td>
+<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S2868A2 BSP</td>
+<td style="text-align: left;">V3.0.1 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S2-LP Component Driver</td>
+<td style="text-align: left;">V2.1.1</td>
+<td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Contiki-NG_STM32_Library</td>
+<td style="text-align: left;">V1.0.1 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Contiki-NG</td>
+<td style="text-align: left;">V4.6.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TinyDTLS (delivered in Contiki-NG)</td>
+<td style="text-align: left;">V4.6.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\os\net\security\tinydtls\README">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Serial Sniffer Tool</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\SERIALSNIFFER_README.md">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">wpcapslip6 Tool</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Utilities\PC_Software\wpcapslip6\wpcapslip6.readme">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">serial-io Tool (from Contiki-NG)</td>
+<td style="text-align: left;">V4.6.0 <span class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations-2">Known Limitations</h2>
 <table>
 <thead>
 <tr class="header">
@@ -407,162 +521,11 @@
 </table>
 <p><br />
 </p>
-<h2 id="development-toolchains-and-compilers-1">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR System Workbench v8.50.9</li>
 <li>ARM Keil v5.32</li>
 <li>STM32CubeIDE v1.6.1</li>
-</ul>
-<h2 id="supported-devices-and-boards-1">Supported Devices and Boards</h2>
-<ul>
-<li>NUCLEO-F401RE MB1136 rev.C</li>
-<li>NUCLEO-L152RE MB1136 rev.C</li>
-<li>NUCLEO-L053R8 MB1136 rev.C</li>
-<li>X-NUCLEO-S2868A1 rev. XS2868V1</li>
-<li>X-NUCLEO-S2915A1 rev. XS2915A1</li>
-<li>X-NUCLEO-S2868A2</li>
-</ul>
-<h2 id="backward-compatibility-1">Backward Compatibility</h2>
-<ul>
-<li>compatbile with version 4.0.0</li>
-<li>ioc files generated with versions up to 3.0.1 (STM32CubeMX 6.1.x) are not compatible with this release.</li>
-</ul>
-<h2 id="dependencies-1">Dependencies</h2>
-<p>This software release is compatible with:</p>
-<ul>
-<li>STM32CubeHAL F4 V1.26.0</li>
-<li>STM32CubeHAL L0 V1.12.0</li>
-<li>STM32CubeHAL L1 V1.10.2</li>
-</ul>
-</div>
-</div>
-<div class="collapse">
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V4.0.0 / 22-February-2021</label>
-<div>
-<h2 id="main-changes-2">Main Changes</h2>
-<h3 id="product-update-2">Product update</h3>
-<ul>
-<li>Aligned to STMicroelectronics.X-CUBE-SUBG2.4.0.0.pack for STM32CubeMX (minimum required version V6.2.0)</li>
-<li>SPI DMA APIs are now generated by STM32CubeMX.</li>
-</ul>
-<h2 id="contents-2">Contents</h2>
-<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
-<p>Drivers</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>S2868A1</strong></td>
-<td style="text-align: left;">V2.2.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>S2915A1</strong></td>
-<td style="text-align: left;">V1.1.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>S2868A2</strong></td>
-<td style="text-align: left;">V1.1.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>S2LP</strong></td>
-<td style="text-align: left;">V2.1.1</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
-</tr>
-</tbody>
-</table>
-<p>Middlewares</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Contiki-NG_STM32_Library</strong></td>
-<td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0055">SLA0055</a></td>
-<td style="text-align: left;"><a href="Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html">release note</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Contiki-NG</strong></td>
-<td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\LICENSE.md">LICENSE</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>TinyDTLS</strong> (deliverd in Contiki-NG)</td>
-<td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="http://www.eclipse.org/legal/epl-v10.html">EPL</a> and <a href="http://www.eclipse.org/org/documents/edl-v10.php">EDL</a></td>
-<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\os\net\security\tinydtls\LICENSE">LICENSE</a></td>
-</tr>
-</tbody>
-</table>
-<p>Utilities</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Serial Sniffer Tool</td>
-<td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\serialsniffer.readme">readme</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">wpcapslip6 Tool</td>
-<td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Utilities\PC_Software\wpcapslip6\wpcapslip6.readme">readme</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="known-limitations-2">Known Limitations</h2>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Headline</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">On some Windows PC the boards used to run the Border Router and Serial Sniffer applications may need to be connected to a Serial Terminal application (like Teraterm) before using the user space utilities, to work correctly.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">If using older IAR System Workbench version (8.32.*), “rtimer-arch.h” Contiki-NG file causes an error.</td>
-</tr>
-</tbody>
-</table>
-<p><br />
-</p>
-<h2 id="development-toolchains-and-compilers-2">Development Toolchains and Compilers</h2>
-<ul>
-<li>IAR System Workbench v8.50.5</li>
-<li>ARM Keil v5.31</li>
-<li>STM32CubeIDE v1.5.1</li>
 </ul>
 <h2 id="supported-devices-and-boards-2">Supported Devices and Boards</h2>
 <ul>
@@ -575,6 +538,7 @@
 </ul>
 <h2 id="backward-compatibility-2">Backward Compatibility</h2>
 <ul>
+<li>compatbile with version 4.0.0</li>
 <li>ioc files generated with versions up to 3.0.1 (STM32CubeMX 6.1.x) are not compatible with this release.</li>
 </ul>
 <h2 id="dependencies-2">Dependencies</h2>
@@ -587,12 +551,13 @@
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V3.0.1 / 15-December-2020</label>
+<input type="checkbox" id="collapse-section5" aria-hidden="true"> <label for="collapse-section5" aria-hidden="true">V4.0.0 / 22-February-2021</label>
 <div>
 <h2 id="main-changes-3">Main Changes</h2>
 <h3 id="product-update-3">Product update</h3>
 <ul>
-<li>Bugfixes in the STM32CubeMX pack (G4 and MP1 platforms).</li>
+<li>Aligned to STMicroelectronics.X-CUBE-SUBG2.4.0.0.pack for STM32CubeMX (minimum required version V6.2.0)</li>
+<li>SPI DMA APIs are now generated by STM32CubeMX.</li>
 </ul>
 <h2 id="contents-3">Contents</h2>
 <p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
@@ -602,84 +567,59 @@
 <tr class="header">
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
 <th style="text-align: left;">Release note</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A1</strong></td>
+<td style="text-align: left;">S2868A1 BSP</td>
 <td style="text-align: left;">V2.2.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2915A1</strong></td>
+<td style="text-align: left;">S2915A1 BSP</td>
 <td style="text-align: left;">V1.1.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A2</strong></td>
+<td style="text-align: left;">S2868A2 BSP</td>
 <td style="text-align: left;">V1.1.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2LP</strong></td>
+<td style="text-align: left;">S2-LP Component Driver</td>
 <td style="text-align: left;">V2.1.1</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
 </tr>
-</tbody>
-</table>
-<p>Middlewares</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>Contiki-NG_STM32_Library</strong></td>
+<td style="text-align: left;">Contiki-NG_STM32_Library</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0055">SLA0055</a></td>
 <td style="text-align: left;"><a href="Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Contiki-NG</strong></td>
+<td style="text-align: left;">Contiki-NG</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\LICENSE.md">LICENSE</a></td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
 </tr>
-</tbody>
-</table>
-<p>Utilities</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td style="text-align: left;">Serial Sniffer Tool</td>
+<td style="text-align: left;">TinyDTLS (delivered in Contiki-NG)</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\serialsniffer.readme">readme</a></td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\os\net\security\tinydtls\README">readme</a></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Serial Sniffer Tool</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\SERIALSNIFFER_README.md">readme</a></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">wpcapslip6 Tool</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
 <td style="text-align: left;"><a href="Utilities\PC_Software\wpcapslip6\wpcapslip6.readme">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">serial-io Tool (from Contiki-NG)</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
 </tr>
 </tbody>
 </table>
@@ -705,7 +645,7 @@
 <ul>
 <li>IAR System Workbench v8.50.5</li>
 <li>ARM Keil v5.31</li>
-<li>STM32CubeIDE v1.4.2</li>
+<li>STM32CubeIDE v1.5.1</li>
 </ul>
 <h2 id="supported-devices-and-boards-3">Supported Devices and Boards</h2>
 <ul>
@@ -717,24 +657,25 @@
 <li>X-NUCLEO-S2868A2</li>
 </ul>
 <h2 id="backward-compatibility-3">Backward Compatibility</h2>
-<p>N/A</p>
+<ul>
+<li>ioc files generated with versions up to 3.0.1 (STM32CubeMX 6.1.x) are not compatible with this release.</li>
+</ul>
 <h2 id="dependencies-3">Dependencies</h2>
 <p>This software release is compatible with:</p>
 <ul>
-<li>STM32CubeHAL F4 V1.25.2</li>
+<li>STM32CubeHAL F4 V1.26.0</li>
 <li>STM32CubeHAL L0 V1.12.0</li>
 <li>STM32CubeHAL L1 V1.10.2</li>
 </ul>
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V3.0.0 / 15-November-2020</label>
+<input type="checkbox" id="collapse-section4" aria-hidden="true"> <label for="collapse-section4" aria-hidden="true">V3.0.1 / 15-December-2020</label>
 <div>
 <h2 id="main-changes-4">Main Changes</h2>
 <h3 id="product-update-4">Product update</h3>
 <ul>
-<li>Align to STMicroelectronics.X-CUBE-SUBG2.3.0.0.pack for STM32CubeMX (minimum required version V6.1.0)</li>
-<li>Added Contiki-NG Middleware and related applications, for 6LoWPAN communication.</li>
+<li>Bugfixes in the STM32CubeMX pack (G4 and MP1 platforms).</li>
 </ul>
 <h2 id="contents-4">Contents</h2>
 <p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
@@ -744,84 +685,54 @@
 <tr class="header">
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
 <th style="text-align: left;">Release note</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A1</strong></td>
-<td style="text-align: left;">V2.2.0 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2868A1 BSP</td>
+<td style="text-align: left;">V2.2.0</td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2915A1</strong></td>
-<td style="text-align: left;">V1.1.0 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2915A1 BSP</td>
+<td style="text-align: left;">V1.1.0</td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A2</strong></td>
-<td style="text-align: left;">V1.1.0 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2868A2 BSP</td>
+<td style="text-align: left;">V1.1.0</td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2LP</strong></td>
-<td style="text-align: left;">V2.1.1 <span class="icon-st-update"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">S2-LP Component Driver</td>
+<td style="text-align: left;">V2.1.1</td>
 <td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
 </tr>
-</tbody>
-</table>
-<p>Middlewares</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>Contiki-NG_STM32_Library</strong></td>
-<td style="text-align: left;">V1.0.0 <span class="icon-st-add"></span></td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0055">SLA0055</a></td>
+<td style="text-align: left;">Contiki-NG_STM32_Library</td>
+<td style="text-align: left;">V1.0.0</td>
 <td style="text-align: left;"><a href="Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Contiki-NG</strong></td>
-<td style="text-align: left;">V1.0.0 <span class="icon-st-add"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\LICENSE.md">LICENSE</a></td>
+<td style="text-align: left;">Contiki-NG</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
 </tr>
-</tbody>
-</table>
-<p>Utilities</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
-<th style="text-align: left;">Release note</th>
-</tr>
-</thead>
-<tbody>
 <tr class="odd">
 <td style="text-align: left;">Serial Sniffer Tool</td>
-<td style="text-align: left;">V1.0.0 <span class="icon-st-add"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
-<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\serialsniffer.readme">readme</a></td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\SERIALSNIFFER_README.md">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">wpcapslip6 Tool</td>
-<td style="text-align: left;">V1.0.0 <span class="icon-st-add"></span></td>
-<td style="text-align: left;"><a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a></td>
+<td style="text-align: left;">V1.0.0</td>
 <td style="text-align: left;"><a href="Utilities\PC_Software\wpcapslip6\wpcapslip6.readme">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">serial-io Tool (from Contiki-NG)</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
 </tr>
 </tbody>
 </table>
@@ -870,74 +781,75 @@
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section4" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V2.0.0 / 9-July-2020</label>
+<input type="checkbox" id="collapse-section3" aria-hidden="true"> <label for="collapse-section3" aria-hidden="true">V3.0.0 / 15-November-2020</label>
 <div>
 <h2 id="main-changes-5">Main Changes</h2>
 <h3 id="product-update-5">Product update</h3>
-<p>Update to support STM32CubeMX 6.0.</p>
-<table>
-<caption>Additional features</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Headline</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">STM32CubeMX configuration files (ioc) are available for example projects</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">BSP v2 compliance</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">BSP RADIO APIs implementation for X-NUCLEO-S2868A1, X-NUCLEO-S2915A1 and X-NUCLEO-S2868A2</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>Align to STMicroelectronics.X-CUBE-SUBG2.3.0.0.pack for STM32CubeMX (minimum required version V6.1.0)</li>
+<li>Added Contiki-NG Middleware and related applications, for 6LoWPAN communication.</li>
+</ul>
 <h2 id="contents-5">Contents</h2>
+<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p>Drivers</p>
 <table>
-<caption>Components</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
 <th style="text-align: left;">Release note</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A1</strong></td>
-<td style="text-align: left;">V2.1.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: left;">S2868A1 BSP</td>
+<td style="text-align: left;">V2.2.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2915A1</strong></td>
-<td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: left;">S2915A1 BSP</td>
+<td style="text-align: left;">V1.1.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A2</strong></td>
-<td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: left;">S2868A2 BSP</td>
+<td style="text-align: left;">V1.1.0 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2LP</strong></td>
-<td style="text-align: left;">V2.1.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
+<td style="text-align: left;">S2-LP Component Driver</td>
+<td style="text-align: left;">V2.1.1 <span class="icon-st-update"></span></td>
 <td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Contiki-NG_STM32_Library</td>
+<td style="text-align: left;">V1.0.0 <span class="icon-st-add"></span></td>
+<td style="text-align: left;"><a href="Middlewares\ST\Contiki-NG_STM32_Library\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Contiki-NG</td>
+<td style="text-align: left;">V1.0.0 <span class="icon-st-add"></span></td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Serial Sniffer Tool</td>
+<td style="text-align: left;">V1.0.0 <span class="icon-st-add"></span></td>
+<td style="text-align: left;"><a href="Utilities\PC_Software\SerialSniffer\SERIALSNIFFER_README.md">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">wpcapslip6 Tool</td>
+<td style="text-align: left;">V1.0.0 <span class="icon-st-add"></span></td>
+<td style="text-align: left;"><a href="Utilities\PC_Software\wpcapslip6\wpcapslip6.readme">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">serial-io Tool (from Contiki-NG)</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Middlewares\Third_Party\Contiki-NG\README.md">readme</a></td>
 </tr>
 </tbody>
 </table>
-<p><br />
-</p>
-<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
 <h2 id="known-limitations-5">Known Limitations</h2>
 <table>
-<caption>Requirements not met or planned in a forthcoming release</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Headline</th>
@@ -945,10 +857,10 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">ContikiOS and WM-Bus integration postponed to a next release</td>
+<td style="text-align: left;">On some Windows PC the boards used to run the Border Router and Serial Sniffer applications may need to be connected to a Serial Terminal application (like Teraterm) before using the user space utilities, to work correctly.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Not compatible with case-sensitive file systems (Linux)</td>
+<td style="text-align: left;">If using older IAR System Workbench version (8.32.*), “rtimer-arch.h” Contiki-NG file causes an error.</td>
 </tr>
 </tbody>
 </table>
@@ -956,9 +868,9 @@
 </p>
 <h2 id="development-toolchains-and-compilers-5">Development Toolchains and Compilers</h2>
 <ul>
-<li>IAR System Workbench v8.32.3</li>
-<li>ARM Keil v5.29</li>
-<li>STM32CubeIDE v1.3.0</li>
+<li>IAR System Workbench v8.50.5</li>
+<li>ARM Keil v5.31</li>
+<li>STM32CubeIDE v1.4.2</li>
 </ul>
 <h2 id="supported-devices-and-boards-5">Supported Devices and Boards</h2>
 <ul>
@@ -974,19 +886,18 @@
 <h2 id="dependencies-5">Dependencies</h2>
 <p>This software release is compatible with:</p>
 <ul>
-<li>STM32CubeHAL F4 V1.25.0</li>
-<li>STM32CubeHAL L0 V1.11.2</li>
-<li>STM32CubeHAL L1 V1.10.0</li>
+<li>STM32CubeHAL F4 V1.25.2</li>
+<li>STM32CubeHAL L0 V1.12.0</li>
+<li>STM32CubeHAL L1 V1.10.2</li>
 </ul>
 </div>
 </div>
 <div class="collapse">
-<input type="checkbox" id="collapse-section1" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V1.1.0 / 21-Feb-2020</label>
+<input type="checkbox" id="collapse-section2" aria-hidden="true"> <label for="collapse-section2" aria-hidden="true">V2.0.0 / 9-July-2020</label>
 <div>
 <h2 id="main-changes-6">Main Changes</h2>
 <h3 id="product-update-6">Product update</h3>
-<p>This release add support for two new Expansion Boards. The <a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2915a1.html">X-NUCLEO-S2915A1</a> is an Expansion Board for the 915MHz (US). The <a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2868a2.html">X-NUCLEO-S2868A2</a> is an Expansion Board that will supersede the <a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2868a1.html">X-NUCLEO-S2868A1</a>.</p>
-<p>The boards are supported through STM32CubeMX.</p>
+<p>Update to support STM32CubeMX 6.0.</p>
 <table>
 <caption>Additional features</caption>
 <thead>
@@ -1013,33 +924,28 @@
 <tr class="header">
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
 <th style="text-align: left;">Release note</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A1</strong></td>
+<td style="text-align: left;">S2868A1 BSP</td>
 <td style="text-align: left;">V2.1.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2915A1</strong></td>
+<td style="text-align: left;">S2915A1 BSP</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A2</strong></td>
+<td style="text-align: left;">S2868A2 BSP</td>
 <td style="text-align: left;">V1.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2LP</strong></td>
+<td style="text-align: left;">S2-LP Component Driver</td>
 <td style="text-align: left;">V2.1.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
 </tr>
 </tbody>
@@ -1069,8 +975,8 @@
 <h2 id="development-toolchains-and-compilers-6">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR System Workbench v8.32.3</li>
-<li>ARM Keil v5.27</li>
-<li>STM32CubeIDE v1.1.0</li>
+<li>ARM Keil v5.29</li>
+<li>STM32CubeIDE v1.3.0</li>
 </ul>
 <h2 id="supported-devices-and-boards-6">Supported Devices and Boards</h2>
 <ul>
@@ -1086,6 +992,113 @@
 <h2 id="dependencies-6">Dependencies</h2>
 <p>This software release is compatible with:</p>
 <ul>
+<li>STM32CubeHAL F4 V1.25.0</li>
+<li>STM32CubeHAL L0 V1.11.2</li>
+<li>STM32CubeHAL L1 V1.10.0</li>
+</ul>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V1.1.0 / 21-Feb-2020</label>
+<div>
+<h2 id="main-changes-7">Main Changes</h2>
+<h3 id="product-update-7">Product update</h3>
+<p>This release add support for two new Expansion Boards. The <a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2915a1.html">X-NUCLEO-S2915A1</a> is an Expansion Board for the 915MHz (US). The <a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2868a2.html">X-NUCLEO-S2868A2</a> is an Expansion Board that will supersede the <a href="https://www.st.com/content/st_com/en/products/ecosystems/stm32-open-development-environment/stm32-nucleo-expansion-boards/stm32-ode-connect-hw/x-nucleo-s2868a1.html">X-NUCLEO-S2868A1</a>.</p>
+<p>The boards are supported through STM32CubeMX.</p>
+<table>
+<caption>Additional features</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32CubeMX configuration files (ioc) are available for example projects</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP v2 compliance</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP RADIO APIs implementation for X-NUCLEO-S2868A1, X-NUCLEO-S2915A1 and X-NUCLEO-S2868A2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contents-7">Contents</h2>
+<table>
+<caption>Components</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">S2868A1 BSP</td>
+<td style="text-align: left;">V2.1.0</td>
+<td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S2915A1 BSP</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Drivers\BSP\S2915A1\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S2868A2 BSP</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a href="Drivers\BSP\S2868A2\Release_Notes.html">release note</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S2-LP Component Driver</td>
+<td style="text-align: left;">V2.1.0</td>
+<td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
+<h2 id="known-limitations-7">Known Limitations</h2>
+<table>
+<caption>Requirements not met or planned in a forthcoming release</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Headline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ContikiOS and WM-Bus integration postponed to a next release</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Not compatible with case-sensitive file systems (Linux)</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<ul>
+<li>IAR System Workbench v8.32.3</li>
+<li>ARM Keil v5.27</li>
+<li>STM32CubeIDE v1.1.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-7">Supported Devices and Boards</h2>
+<ul>
+<li>NUCLEO-F401RE MB1136 rev.C</li>
+<li>NUCLEO-L152RE MB1136 rev.C</li>
+<li>NUCLEO-L053R8 MB1136 rev.C</li>
+<li>X-NUCLEO-S2868A1 rev. XS2868V1</li>
+<li>X-NUCLEO-S2915A1 rev. XS2915A1</li>
+<li>X-NUCLEO-S2868A2</li>
+</ul>
+<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<p>N/A</p>
+<h2 id="dependencies-7">Dependencies</h2>
+<p>This software release is compatible with:</p>
+<ul>
 <li>STM32CubeHAL F4 V1.24.1</li>
 <li>STM32CubeHAL L0 V1.11.2</li>
 <li>STM32CubeHAL L1 V1.9.0</li>
@@ -1095,7 +1108,7 @@
 <div class="collapse">
 <input type="checkbox" id="collapse-section0"  aria-hidden="true"> <label for="collapse-section0" aria-hidden="true">V1.0.0 / 6-Dec-2019</label>
 <div>
-<h2 id="main-changes-7">Main Changes</h2>
+<h2 id="main-changes-8">Main Changes</h2>
 <h3 id="first-release">First release</h3>
 <p>This is the first release of the X-CUBE-SUBG2 package, a redesign of the X-CUBE-SUBG1 that is integrated with STM32CubeMX and compliant with BSP v2 specifications.</p>
 <table>
@@ -1117,28 +1130,25 @@
 </tr>
 </tbody>
 </table>
-<h2 id="contents-7">Contents</h2>
+<h2 id="contents-8">Contents</h2>
 <table>
 <caption>Components</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Name</th>
 <th style="text-align: left;">Version</th>
-<th style="text-align: left;">License</th>
 <th style="text-align: left;">Release note</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>S2868A1</strong></td>
+<td style="text-align: left;">S2868A1 BSP</td>
 <td style="text-align: left;">V2.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\S2868A1\Release_Notes.html">release note</a></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>S2LP</strong></td>
+<td style="text-align: left;">S2-LP Component Driver</td>
 <td style="text-align: left;">V2.0.0</td>
-<td style="text-align: left;"><a href="http://www.st.com/SLA0044">SLA0044</a></td>
 <td style="text-align: left;"><a href="Drivers\BSP\Components\S2LP\Release_Notes.html">release note</a></td>
 </tr>
 </tbody>
@@ -1146,7 +1156,7 @@
 <p><br />
 </p>
 <p>Note: in the table above, components <strong>highlighted</strong> have changed since previous release.</p>
-<h2 id="known-limitations-7">Known Limitations</h2>
+<h2 id="known-limitations-8">Known Limitations</h2>
 <table>
 <caption>Requirements not met or planned in a forthcoming release</caption>
 <thead>
@@ -1165,22 +1175,22 @@
 </table>
 <p><br />
 </p>
-<h2 id="development-toolchains-and-compilers-7">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers-8">Development Toolchains and Compilers</h2>
 <ul>
 <li>IAR System Workbench v8.32</li>
 <li>ARM Keil v5.27</li>
 <li>STM32CubeIDE v1.1.0</li>
 </ul>
-<h2 id="supported-devices-and-boards-7">Supported Devices and Boards</h2>
+<h2 id="supported-devices-and-boards-8">Supported Devices and Boards</h2>
 <ul>
 <li>NUCLEO-F401RE MB1136 rev.C</li>
 <li>NUCLEO-L152RE MB1136 rev.C</li>
 <li>NUCLEO-L053R8 MB1136 rev.C</li>
 <li>X-NUCLEO-S2868A1 rev. XS2868V1</li>
 </ul>
-<h2 id="backward-compatibility-7">Backward Compatibility</h2>
+<h2 id="backward-compatibility-8">Backward Compatibility</h2>
 <p>N/A</p>
-<h2 id="dependencies-7">Dependencies</h2>
+<h2 id="dependencies-8">Dependencies</h2>
 <p>This software release is compatible with:</p>
 <ul>
 <li>STM32CubeHAL F4 V1.24.1</li>

@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under ODE Software License Agreement
-  * SLA0094, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0094
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -32,10 +31,11 @@
 #include <stdio.h>
 #include "main.h"
 #include "s2lp_interface.h"
+#include "s2lp_management.h"
 #include "s2lp.h"
-#include "s2lp_types.h"
+#include "S2LP_Types.h"
 
-#include "s2lp_pktbasic.h"
+#include "S2LP_PktBasic.h"
 
 #if RADIO_ADDRESS_FILTERING
 #define ACK_LEN 3
@@ -69,7 +69,7 @@ do {                                                                   \
 } while(0)
 /*---------------------------------------------------------------------------*/
 /* The buffer which holds incoming data. */
-static uint32_t rx_num_bytes =0;
+static uint16_t rx_num_bytes =0;
 static uint8_t radio_rxbuf[PACKETBUF_SIZE];
 /*---------------------------------------------------------------------------*/
 #define CLEAR_RXBUF()           (rx_num_bytes = 0)
@@ -90,7 +90,7 @@ static packetbuf_attr_t last_packet_lqi = 0 ;
 static int interrupt_callback_in_progress = 0;
 static int interrupt_callback_wants_poll = 0;
 /*---------------------------------------------------------------------------*/
-static volatile uint32_t last_packet_timestamp = 0;
+static volatile rtimer_clock_t last_packet_timestamp = 0;
 /*---------------------------------------------------------------------------*/
 static int csma_tx_threshold = RSSI_TX_THRESHOLD;
 /* Poll mode disabled by default */
@@ -1000,7 +1000,11 @@ static rtimer_clock_t
 radio_get_packet_timestamp(void)
 {
 //@TODO: This is to be validated.
-  LOG_DBG("radio_get_packet_timestamp: %u\r\n", last_packet_timestamp);
+#if (RTIMER_CLOCK_SIZE < 8)
+  LOG_DBG("radio_get_packet_timestamp: %u\r\n", (unsigned int) last_packet_timestamp);
+#else
+  LOG_DBG("radio_get_packet_timestamp: %llu\r\n", (unsigned long long) last_packet_timestamp);
+#endif
 
   return last_packet_timestamp;
 }
@@ -1182,7 +1186,7 @@ static int Radio_read_from_fifo (uint8_t* buf, unsigned short bufsize)
     retval = rx_bytes;
     last_packet_timestamp = RTIMER_NOW() ; //@TODO: validate
     last_packet_rssi = (radio_value_t) S2LP_RADIO_QI_GetRssidBm();
-    last_packet_lqi  = (packetbuf_attr_t) S2LP_RADIO_QI_GetLqi();
+    //last_packet_lqi  = (packetbuf_attr_t) S2LP_RADIO_QI_GetLqi();
     packetbuf_set_attr(PACKETBUF_ATTR_RSSI, (packetbuf_attr_t) last_packet_rssi);
     packetbuf_set_attr(PACKETBUF_ATTR_LINK_QUALITY, last_packet_lqi);
   } else {
@@ -1285,4 +1289,3 @@ Radio_interrupt_callback(void)
 /** @} */
 /** @} */
 
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

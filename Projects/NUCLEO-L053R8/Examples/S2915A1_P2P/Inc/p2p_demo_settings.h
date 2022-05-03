@@ -7,13 +7,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under ODE Software License Agreement
-  * SLA0094, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0094
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -84,7 +83,7 @@ extern "C" {
 #endif
 
 #ifdef CSMA_ENABLE
-#include "s2lp_csma.h"
+#include "S2LP_Csma.h"
 /* CSMA configuration parameters */
 #define PERSISTENT_MODE_EN                                  S_DISABLE
 #define CS_PERIOD                                           CSMA_PERIOD_64TBIT
@@ -183,6 +182,3 @@ extern RadioCsmaInit xCsmaInit;
 #endif
 
 #endif /* P2P_DEMO_SETTINGS_H__*/
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-

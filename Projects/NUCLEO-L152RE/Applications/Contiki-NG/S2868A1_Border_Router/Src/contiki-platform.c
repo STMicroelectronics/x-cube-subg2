@@ -171,7 +171,7 @@ void MX_SUBG2_Contiki_NG_Init(void)
   leds_arch_init();
 #endif /*PLATFORM_HAS_LEDS*/
 
-  BSP_IP_TIM_Init();
+  SUBG2_RTIMER_TIM_Init();
   Stack_6LoWPAN_Init();
 }
 /*----------------------------------------------------------------------------*/

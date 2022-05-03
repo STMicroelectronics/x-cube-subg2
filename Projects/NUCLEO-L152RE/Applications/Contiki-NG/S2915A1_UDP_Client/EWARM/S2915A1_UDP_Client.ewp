@@ -356,14 +356,19 @@
           <state>$PROJ_DIR$/../../../../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Include</state>
-          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/BSP/S2915A1</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/inc</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/sixtop</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/deployment</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/simple-energest</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib</state>
@@ -377,7 +382,6 @@
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/ST/Contiki-NG_STM32_Library/Inc</state>
-          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/simple-energest</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1083,6 +1087,9 @@
         <name>$PROJ_DIR$/../Src/main.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$/../Src/s2lp_management.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$/../Src/contiki-platform.c</name>
       </file>
       <file>
@@ -1119,6 +1126,63 @@
   </group>
   <group>
     <name>Drivers</name>
+    <group>
+      <name>BSP</name>
+      <group>
+        <name>Components</name>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Commands.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Csma.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Fifo.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_General.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Gpio.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PacketHandler.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktBasic.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktStack.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktWMbus.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Qi.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Radio.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer_ex.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Types.c</name>
+        </file>
+      </group>
+      <group>
+        <name>S2915A1</name>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/S2915A1/s2915a1.c</name>
+        </file>
+      </group>
+    </group>
     <group>
       <name>STM32L1xx_HAL_Driver</name>
       <file>
@@ -1182,99 +1246,6 @@
         <name>$PROJ_DIR$/../Src/system_stm32l1xx.c</name>
       </file>
     </group>
-    <group>
-      <name>BSP</name>
-      <group>
-        <name>Components</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_commands.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_csma.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_fifo.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_gpio.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_packethandler.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktbasic.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktstack.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktwmbus.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_qi.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_radio.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_regs.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_timer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_types.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_commands.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_csma.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_fifo.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_gpio.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_packethandler.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktbasic.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktstack.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktwmbus.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_qi.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_radio.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_timer.c</name>
-        </file>
-      </group>
-      <group>
-        <name>S2915A1</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/S2915A1/s2915a1.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/S2915A1/s2915a1.c</name>
-        </file>
-      </group>
-    </group>
   </group>
   <group>
     <name>Middlewares</name>
@@ -1282,24 +1253,6 @@
       <name>X-CUBE-SUBG2</name>
       <group>
         <name>Network/Contiki-NG/OS_net_mac_framer/framer_802_15_4</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/frame802154.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/frame802154e-ie.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/framer-802154.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/framer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/sixtop/sixtop.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/sixtop/sixp-pkt.h</name>
-        </file>
         <file>
           <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/frame802154.c</name>
         </file>
@@ -1312,21 +1265,6 @@
       </group>
       <group>
         <name>Network/Contiki-NG/OS_net_mac/csma</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/anti-replay.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/ccm-star-packetbuf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/csma-output.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/csma-security.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/csma.h</name>
-        </file>
         <file>
           <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/anti-replay.c</name>
         </file>
@@ -1343,69 +1281,6 @@
       <group>
         <name>Network/Contiki-NG/OS_services</name>
         <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/deployment/deployment.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/deployment/module-macros.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell/module-macros.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell/serial-shell.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell/shell-commands.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell/shell.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/simple-energest/simple-energest.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-adaptive-timesync.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-asn.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-conf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-const.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-log.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-packet.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-queue.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-rpl.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-schedule.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-security.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-slot-operation.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-stats.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-types.h</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell/serial-shell.c</name>
         </file>
         <file>
@@ -1417,276 +1292,6 @@
       </group>
       <group>
         <name>Network/Contiki-NG/Core</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/battery-sensor.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/ble-hal.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/button-hal.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/button-sensor.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/eeprom.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/gpio-hal.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/leds.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/nullradio.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/radio.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/rom.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/serial-line.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/watchdog.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/xmem.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/aes-128.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/assert.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/ccm-star.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/circular-list.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/crc16.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/dbl-circ-list.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/dbl-list.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/heapmem.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/ifft.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/list.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/memb.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/queue.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/random.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/ringbuf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/ringbufindex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/sensors.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/stack.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib/trickle-timer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/atomic.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/autostart.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/cc-gcc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/cc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/clock.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/compower.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/critical.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/ctimer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/energest.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/etimer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/int-master.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/lc-addrlabels.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/lc-switch.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/lc.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/log-conf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/log.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/memory-barrier.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/mutex.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/node-id.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/platform.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/process.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/pt-sem.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/pt.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/rtimer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/stack-check.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/stimer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/subprocess.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys/timer.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/link-stats.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/linkaddr.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/nbr-table.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/net-debug.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/netstack.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/packetbuf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/queuebuf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/llsec802154.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/mac-sequence.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/mac.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/contiki.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/contiki-default-conf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/contiki-lib.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/contiki-net.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma/csma-security.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/tsch-conf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/ip64-addr.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/tcpip.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uipbuf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-debug.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6-nbr.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-icmp6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-nd6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uipopt.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-packetqueue.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6-route.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uiplib.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/frame802154.h</name>
-        </file>
         <file>
           <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev/nullradio.c</name>
         </file>
@@ -1811,105 +1416,6 @@
       <group>
         <name>Network/Contiki-NG/OS_net_ip/IPv6</name>
         <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/ip64-addr.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/esmrf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/roll-tm.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/smrf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6-engines.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6-route.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6-stats.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/uip-mcast6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/psock.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/sicslowpan.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/simple-udp.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/tcp-socket.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/tcpip.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/udp-socket.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-arch.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-debug.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6-nbr.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6-route.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-ds6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-icmp6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-nameserver.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-nd6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-packetqueue.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-sr.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip-udp-packet.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uip.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uipbuf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uiplib.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/uipopt.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/resolv/module-macros.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/resolv/resolv.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast/mpl.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/routing.h</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/ip64-addr.c</name>
         </file>
         <file>
@@ -1985,36 +1491,6 @@
       <group>
         <name>Network/Contiki-NG/OS_net_routing/rpl-lite</name>
         <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-conf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-const.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-dag-root.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-dag.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-ext-header.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-icmp6.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-neighbor.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-timers.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-types.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl.h</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite/rpl-dag-root.c</name>
         </file>
         <file>
@@ -2053,15 +1529,6 @@
       </group>
       <group>
         <name>Network/Contiki-NG_STM32_Library/Core</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/ST/Contiki-NG_STM32_Library/Inc/console.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/ST/Contiki-NG_STM32_Library/Inc/ip64-conf.h</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Middlewares/ST/Contiki-NG_STM32_Library/Inc/rtimer-arch.h</name>
-        </file>
         <file>
           <name>$PROJ_DIR$/../../../../../../Middlewares/ST/Contiki-NG_STM32_Library/Src/clock.c</name>
         </file>

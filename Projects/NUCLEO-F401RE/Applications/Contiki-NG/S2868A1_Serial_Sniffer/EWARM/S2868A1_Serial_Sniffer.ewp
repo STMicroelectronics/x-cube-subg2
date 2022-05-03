@@ -66,7 +66,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>8.32.3.20186</state>
+          <state>8.50.1.24770</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -116,7 +116,7 @@
         </option>
         <option>
           <name>GBECoreSlave</name>
-          <version>27</version>
+          <version>28</version>
           <state>39</state>
         </option>
         <option>
@@ -133,8 +133,8 @@
         </option>
         <option>
           <name>CoreVariant</name>
-          <version>27</version>
-          <state>59</state>
+          <version>28</version>
+          <state>39</state>
         </option>
         <option>
           <name>GFPUDeviceSlave</name>
@@ -156,8 +156,8 @@
         </option>
         <option>
           <name>GFPUCoreSlave2</name>
-          <version>27</version>
-          <state>59</state>
+          <version>28</version>
+          <state>39</state>
         </option>
         <option>
           <name>OGCMSISPackSelectDevice</name>
@@ -215,7 +215,7 @@
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>35</version>
+        <version>36</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -287,7 +287,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>11111110</state>
+          <state>00000000</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -356,13 +356,18 @@
           <state>$PROJ_DIR$/../../../../../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Device/ST/STM32F4xx/Include</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Include</state>
-          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/BSP/S2868A1</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/inc</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/nullnet</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/deployment</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell</state>
+          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/simple-energest</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib</state>
@@ -375,7 +380,6 @@
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing</state>
           <state>$PROJ_DIR$/../../../../../../Middlewares/ST/Contiki-NG_STM32_Library/Inc</state>
-          <state>$PROJ_DIR$/../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/simple-energest</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -492,6 +496,10 @@
         <option>
           <name>OICompilerExtraOption</name>
           <state>1</state>
+        </option>
+        <option>
+          <name>CCStackProtection</name>
+          <state>0</state>
         </option>
       </data>
     </settings>
@@ -625,7 +633,7 @@
         </option>
         <option>
           <name>AOutputFile</name>
-          <state>$FILE_BNAME$.o</state>
+          <state></state>
         </option>
         <option>
           <name>ALimitErrorsCheck</name>
@@ -713,7 +721,7 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>22</version>
+        <version>23</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -1033,6 +1041,22 @@
           <name>OILinkExtraOption</name>
           <state>1</state>
         </option>
+        <option>
+          <name>IlinkRawBinaryFile2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinarySymbol2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinarySegment2</name>
+          <state></state>
+        </option>
+        <option>
+          <name>IlinkRawBinaryAlign2</name>
+          <state></state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1081,6 +1105,9 @@
         <name>$PROJ_DIR$/../Src/main.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$/../Src/s2lp_management.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$/../Src/contiki-platform.c</name>
       </file>
       <file>
@@ -1117,6 +1144,63 @@
   </group>
   <group>
     <name>Drivers</name>
+    <group>
+      <name>BSP</name>
+      <group>
+        <name>Components</name>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Commands.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Csma.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Fifo.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_General.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Gpio.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PacketHandler.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktBasic.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktStack.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktWMbus.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Qi.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Radio.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer_ex.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Types.c</name>
+        </file>
+      </group>
+      <group>
+        <name>S2868A1</name>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/S2868A1/s2868a1.c</name>
+        </file>
+      </group>
+    </group>
     <group>
       <name>STM32F4xx_HAL_Driver</name>
       <file>
@@ -1183,59 +1267,17 @@
         <name>$PROJ_DIR$/../Src/system_stm32f4xx.c</name>
       </file>
     </group>
-    <group>
-      <name>BSP</name>
-      <group>
-        <name>Components</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_commands.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_csma.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_fifo.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_gpio.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_packethandler.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktbasic.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktstack.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktwmbus.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_qi.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_radio.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/S2LP/s2lp_timer.c</name>
-        </file>
-      </group>
-      <group>
-        <name>S2868A1</name>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/S2868A1/s2868a1.c</name>
-        </file>
-      </group>
-    </group>
   </group>
   <group>
     <name>Middlewares</name>
     <group>
       <name>X-CUBE-SUBG2</name>
+      <group>
+        <name>Documentation</name>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/S2868A1/readme.txt</name>
+        </file>
+      </group>
       <group>
         <name>Network/Contiki-NG/OS_net_ip/Nullnet</name>
         <file>

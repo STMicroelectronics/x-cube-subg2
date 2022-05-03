@@ -6,13 +6,12 @@
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
-  * All rights reserved.</center></h2>
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
   *
-  * This software component is licensed by ST under Software License Agreement
-  * SLA0055, the "License"; You may not use this file except in compliance with
-  * the License. You may obtain a copy of the License at:
-  *                             www.st.com/SLA0055
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
   *
   ******************************************************************************
   */
@@ -62,6 +61,7 @@ uint8_t uart_receive_char(void)
 }
 /*---------------------------------------------------------------------------*/
 #if defined (__IAR_SYSTEMS_ICC__)
+#if (USE_COM_LOG == 0)
 size_t __write(int Handle, const unsigned char * Buf, size_t Bufsize);
 size_t __read(int Handle, unsigned char *Buf, size_t Bufsize);
 
@@ -107,6 +107,7 @@ size_t __write(int handle, const unsigned char * buf, size_t bufsize)
   }  
   return retval;
 }
+#endif /*(USE_COM_LOG == 0)*/
 /*---------------------------------------------------------------------------*/
 #elif defined (__CC_ARM)
 #if (USE_COM_LOG == 0)
@@ -156,6 +157,3 @@ int __io_getchar(void)
 #error "Toolchain not supported"
 #endif /*__IAR_SYSTEMS_ICC__ || __CC_ARM || __GNUC__*/
 /*---------------------------------------------------------------------------*/
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
-

@@ -8,6 +8,10 @@ The X-CUBE-SUBG2 software package is an expansion for STM32Cube. This software p
 
 - Point-to-Point (P2P) communication example to transfer data from one node to another
 
+- CLI Example to be used with S2-LP DK GUI in order to configure S2-LP radio.
+
+- Multi-GPIOs usage demonstration in FIFO TX/RX examples.
+
 - 6LoWPAN communication using Contiki-NG middleware. Sample applications include:
 
   - UDP Client to send messages to a Server

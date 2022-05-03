@@ -1,46 +1,39 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="project_projx.xsd">
   <SchemaVersion>2.1</SchemaVersion>
-
   <Header>### uVision Project, (C) Keil Software</Header>
-
   <Targets>
     <Target>
       <TargetName>S2868A1_Border_Router</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::ARMCC</pCCUsed>
-      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F401RETx</Device>
           <Vendor>STMicroelectronics</Vendor>
-          <PackID>Keil.STM32F4xx_DFP.2.12.0</PackID>
-          <PackURL>http://www.keil.com/pack</PackURL>
           <Cpu>IRAM(0x20000000-0x20017FFF) IROM(0x8000000-0x807FFFF) CLOCK(25000000) FPU2 CPUTYPE("Cortex-M4") TZ</Cpu>
-          <FlashUtilSpec></FlashUtilSpec>
-          <StartupFile></StartupFile>
-          <FlashDriverDll></FlashDriverDll>
+          <FlashUtilSpec />
+          <StartupFile />
+          <FlashDriverDll />
           <DeviceId>0</DeviceId>
-          <RegisterFile></RegisterFile>
-          <MemoryEnv></MemoryEnv>
-          <Cmp></Cmp>
-          <Asm></Asm>
-          <Linker></Linker>
-          <OHString></OHString>
-          <InfinionOptionDll></InfinionOptionDll>
-          <SLE66CMisc></SLE66CMisc>
-          <SLE66AMisc></SLE66AMisc>
-          <SLE66LinkerMisc></SLE66LinkerMisc>
-          <SFDFile>$$Device:STM32F401RETx$CMSIS\SVD\STM32F401xE.svd</SFDFile>
+          <RegisterFile />
+          <MemoryEnv />
+          <Cmp />
+          <Asm />
+          <Linker />
+          <OHString />
+          <InfinionOptionDll />
+          <SLE66CMisc />
+          <SLE66AMisc />
+          <SLE66LinkerMisc />
+          <SFDFile />
           <bCustSvd>0</bCustSvd>
           <UseEnv>0</UseEnv>
-          <BinPath></BinPath>
-          <IncludePath></IncludePath>
-          <LibPath></LibPath>
-          <RegisterFilePath></RegisterFilePath>
-          <DBRegisterFilePath></DBRegisterFilePath>
+          <BinPath />
+          <IncludePath />
+          <LibPath />
+          <RegisterFilePath />
+          <DBRegisterFilePath />
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -55,15 +48,15 @@
           <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath></ListingPath>
+          <ListingPath>./S2868A1_Border_Router/</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <UserProg1Name />
+            <UserProg2Name />
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopU1X>0</nStopU1X>
@@ -72,8 +65,8 @@
           <BeforeMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <UserProg1Name />
+            <UserProg2Name />
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopB1X>0</nStopB1X>
@@ -82,15 +75,15 @@
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
-            <UserProg2Name></UserProg2Name>
+            <UserProg1Name />
+            <UserProg2Name />
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
             <nStopA2X>0</nStopA2X>
           </AfterMake>
           <SelectedForBatchBuild>1</SelectedForBatchBuild>
-          <SVCSIdString></SVCSIdString>
+          <SVCSIdString />
         </TargetCommonOption>
         <CommonProperty>
           <UseCPPCompiler>0</UseCPPCompiler>
@@ -104,8 +97,8 @@
           <AssembleAssemblyFile>0</AssembleAssemblyFile>
           <PublicsOnly>0</PublicsOnly>
           <StopOnExitCode>3</StopOnExitCode>
-          <CustomArgument></CustomArgument>
-          <IncludeLibraryModules></IncludeLibraryModules>
+          <CustomArgument />
+          <IncludeLibraryModules />
           <ComprImg>0</ComprImg>
         </CommonProperty>
         <DllOption>
@@ -138,11 +131,11 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2V8M.DLL</Flash2>
-          <Flash3></Flash3>
-          <Flash4></Flash4>
-          <pFcarmOut></pFcarmOut>
-          <pFcarmGrp></pFcarmGrp>
-          <pFcArmRoot></pFcArmRoot>
+          <Flash3 />
+          <Flash4 />
+          <pFcarmOut />
+          <pFcarmGrp />
+          <pFcArmRoot />
           <FcArmLst>0</FcArmLst>
         </Utilities>
         <TargetArmAds>
@@ -175,7 +168,7 @@
             <RvctClst>0</RvctClst>
             <GenPPlst>0</GenPPlst>
             <AdsCpuType>"Cortex-M4"</AdsCpuType>
-            <RvctDeviceName></RvctDeviceName>
+            <RvctDeviceName />
             <mOS>0</mOS>
             <uocRom>0</uocRom>
             <uocRam>0</uocRam>
@@ -187,9 +180,9 @@
             <RvdsMve>0</RvdsMve>
             <RvdsCdeCp>0</RvdsCdeCp>
             <hadIRAM2>0</hadIRAM2>
-            <hadIROM2>0</hadIROM2>
+            <hadIROM2>1</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>1</useUlib>
+            <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -206,7 +199,7 @@
             <Ro2Chk>0</Ro2Chk>
             <Ro3Chk>0</Ro3Chk>
             <Ir1Chk>1</Ir1Chk>
-            <Ir2Chk>0</Ir2Chk>
+            <Ir2Chk>1</Ir2Chk>
             <Ra1Chk>0</Ra1Chk>
             <Ra2Chk>0</Ra2Chk>
             <Ra3Chk>0</Ra3Chk>
@@ -245,13 +238,13 @@
               </Ocm6>
               <IRAM>
                 <Type>0</Type>
-                <StartAddress>0x20000000</StartAddress>
-                <Size>0x18000</Size>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </IRAM>
               <IROM>
                 <Type>1</Type>
-                <StartAddress>0x8000000</StartAddress>
-                <Size>0x80000</Size>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </IROM>
               <XRAM>
                 <Type>0</Type>
@@ -275,8 +268,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x8000000</StartAddress>
-                <Size>0x80000</Size>
+                <StartAddress />
+                <Size />
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -300,8 +293,8 @@
               </OCR_RVCT8>
               <OCR_RVCT9>
                 <Type>0</Type>
-                <StartAddress>0x20000000</StartAddress>
-                <Size>0x18000</Size>
+                <StartAddress>0x0</StartAddress>
+                <Size>0x0</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
@@ -309,7 +302,7 @@
                 <Size>0x0</Size>
               </OCR_RVCT10>
             </OnChipMemories>
-            <RvctStartVector></RvctStartVector>
+            <RvctStartVector />
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
@@ -336,10 +329,10 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls />
               <Define>USE_HAL_DRIVER,STM32F401xE</Define>
-              <Undefine></Undefine>
-              <IncludePath>../Inc;../../../../../../Drivers/STM32F4xx_HAL_Driver/Inc;../../../../../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../../../../../../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/BSP/Components/S2LP;../../../../../../Drivers/BSP/S2868A1;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/sixtop;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/rpl-border-router;../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/deployment;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch;../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib;../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac;../../../../../../Middlewares/Third_Party/Contiki-NG/os;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/resolv;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite;../../../../../../Middlewares/ST/Contiki-NG_STM32_Library/Inc</IncludePath>
+              <Undefine />
+              <IncludePath>../Inc;../../../../../../Drivers/STM32F4xx_HAL_Driver/Inc;../../../../../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../../../../../../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/BSP/S2868A1;../../../../../../Drivers/BSP/Components/S2LP;../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/inc;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer/;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/framer;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch/sixtop;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/rpl-border-router;../../../../../../Middlewares/Third_Party/Contiki-NG/os/dev;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/csma;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/deployment;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/shell;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/simple-energest;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac/tsch;../../../../../../Middlewares/Third_Party/Contiki-NG/os/lib;../../../../../../Middlewares/Third_Party/Contiki-NG/os/sys;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/mac;../../../../../../Middlewares/Third_Party/Contiki-NG/os;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/ipv6/multicast;../../../../../../Middlewares/Third_Party/Contiki-NG/os/services/resolv;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing;../../../../../../Middlewares/Third_Party/Contiki-NG/os/net/routing/rpl-lite;../../../../../../Middlewares/ST/Contiki-NG_STM32_Library/Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -352,12 +345,12 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <ClangAsOpt>4</ClangAsOpt>
+            <ClangAsOpt>1</ClangAsOpt>
             <VariousControls>
-              <MiscControls></MiscControls>
-              <Define></Define>
-              <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <MiscControls />
+              <Define />
+              <Undefine />
+              <IncludePath />
             </VariousControls>
           </Aads>
           <LDads>
@@ -367,15 +360,15 @@
             <noStLib>0</noStLib>
             <RepFail>1</RepFail>
             <useFile>0</useFile>
-            <TextAddressRange></TextAddressRange>
-            <DataAddressRange></DataAddressRange>
-            <pXoBase></pXoBase>
-            <ScatterFile></ScatterFile>
-            <IncludeLibs></IncludeLibs>
-            <IncludeLibsPath></IncludeLibsPath>
-            <Misc></Misc>
-            <LinkerInputFile></LinkerInputFile>
-            <DisabledWarnings></DisabledWarnings>
+            <TextAddressRange />
+            <DataAddressRange />
+            <pXoBase />
+            <ScatterFile />
+            <IncludeLibs />
+            <IncludeLibsPath />
+            <Misc />
+            <LinkerInputFile />
+            <DisabledWarnings />
           </LDads>
         </TargetArmAds>
       </TargetOption>
@@ -397,6 +390,11 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/main.c</FilePath>
+            </File>
+            <File>
+              <FileName>s2lp_management.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/s2lp_management.c</FilePath>
             </File>
             <File>
               <FileName>contiki-platform.c</FileName>
@@ -474,59 +472,74 @@
               <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_commands.c</FileName>
+              <FileName>S2LP_Commands.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_commands.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Commands.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_csma.c</FileName>
+              <FileName>S2LP_Csma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_csma.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Csma.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_fifo.c</FileName>
+              <FileName>S2LP_Fifo.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_fifo.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Fifo.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_gpio.c</FileName>
+              <FileName>S2LP_General.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_gpio.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_General.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_packethandler.c</FileName>
+              <FileName>S2LP_Gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_packethandler.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Gpio.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_pktbasic.c</FileName>
+              <FileName>S2LP_PacketHandler.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktbasic.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PacketHandler.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_pktstack.c</FileName>
+              <FileName>S2LP_PktBasic.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktstack.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktBasic.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_pktwmbus.c</FileName>
+              <FileName>S2LP_PktStack.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_pktwmbus.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktStack.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_qi.c</FileName>
+              <FileName>S2LP_PktWMbus.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_qi.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_PktWMbus.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_radio.c</FileName>
+              <FileName>S2LP_Qi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_radio.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Qi.c</FilePath>
             </File>
             <File>
-              <FileName>s2lp_timer.c</FileName>
+              <FileName>S2LP_Radio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/s2lp_timer.c</FilePath>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Radio.c</FilePath>
+            </File>
+            <File>
+              <FileName>S2LP_Timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>S2LP_Timer_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Timer_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>S2LP_Types.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/BSP/Components/S2LP/S2LP_Library/src/S2LP_Types.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -647,6 +660,16 @@
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/system_stm32f4xx.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Middlewares/X-CUBE-SUBG2/Documentation</GroupName>
+          <Files>
+            <File>
+              <FileName>readme.txt</FileName>
+              <FileType>5</FileType>
+              <FilePath>../../../../../../Drivers/BSP/S2868A1/readme.txt</FilePath>
             </File>
           </Files>
         </Group>
@@ -1180,24 +1203,20 @@
             </File>
           </Files>
         </Group>
-        <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
       </Groups>
     </Target>
   </Targets>
-
   <RTE>
-    <apis/>
+    <apis />
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0" />
         <targetInfos>
-          <targetInfo name="S2868A1_Border_Router"/>
+          <targetInfo name="S2868A1_Border_Router" />
         </targetInfos>
       </component>
     </components>
-    <files/>
+    <files />
   </RTE>
-
 </Project>
+
