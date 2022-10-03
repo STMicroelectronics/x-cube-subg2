@@ -17,7 +17,7 @@
 | TinyDTLS (delivered in Contiki-NG)    | Olaf Bergmann (TZI) and others          | EPL v1.0 and EDL v1.0|
 | Rijndael v.30 (delivered in TinyDTLS) | V. Rijmen, A. Bosselaers and P. Barreto | Public domain from OpenBSD |
 | SHA-256 (delivered in TinyDTLS)       | Aaron D. Gifford                        | BSD-3-Clause |
-| secp256r1 ECC (delivered in TinyDTLS) | Chris K Cockrum  and others             | MIT License |
+| secp256r1 ECC (delivered in TinyDTLS) | Chris K Cockrum  and others             | MIT |
 | STM32 Applications Projects           | STMicroelectronics                      | SLA0094 |
 | STM32 Examples Projects               | STMicroelectronics                      | BSD-3-Clause |
 | STM32 Examples S2LP DK Projects       | STMicroelectronics                      | SLA0072 |
