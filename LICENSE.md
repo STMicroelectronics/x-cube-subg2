@@ -14,7 +14,7 @@
 | S2-LP Component Driver                | STMicroelectronics                      | SLA0072 |
 | Contiki-NG_STM32_Library              | STMicroelectronics                      | SLA0094      |
 | Contiki-NG                            | Contiki-NG                              | BSD-3-Clause |
-| TinyDTLS (delivered in Contiki-NG)    | Olaf Bergmann (TZI) and others          | EPL v1.0 and EDL v1.0|
+| TinyDTLS (delivered in Contiki-NG)    | Olaf Bergmann (TZI) and others          | EPL-1.0 and BSD-3-Clause (Eclipse Distribution License v1.0) |
 | Rijndael v.30 (delivered in TinyDTLS) | V. Rijmen, A. Bosselaers and P. Barreto | Public domain from OpenBSD |
 | SHA-256 (delivered in TinyDTLS)       | Aaron D. Gifford                        | BSD-3-Clause |
 | secp256r1 ECC (delivered in TinyDTLS) | Chris K Cockrum  and others             | MIT |
