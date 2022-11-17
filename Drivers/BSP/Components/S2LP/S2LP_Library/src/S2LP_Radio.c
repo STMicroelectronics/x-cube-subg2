@@ -444,7 +444,7 @@ uint32_t S2LPRadioComputeSynthWord(uint32_t frequency, uint8_t refdiv)
 * @retval uint8_t The channel spacing register value .
 */
 uint8_t S2LPRadioComputeChannelSpacingRegValue(uint32_t lChannelSpace)
-{
+{  
   return (uint8_t)((((uint64_t)lChannelSpace)<<15)/s_lXtalFrequency);
 }
 
@@ -868,7 +868,7 @@ SFunctionalState S2LPRadioGetDigDiv(void)
 /**
 * @brief  Set the channel space factor in channel space register.
 *         The channel spacing step is computed as F_Xo/32768.
-* @param  fChannelSpace the channel space expressed in Hz.
+* @param  lChannelSpace the channel space expressed in Hz.
 * @retval None.
 */
 void S2LPRadioSetChannelSpace(uint32_t lChannelSpace)
