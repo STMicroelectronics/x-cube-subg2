@@ -361,7 +361,7 @@
  * \code
  * Read and Write
  * Default value: 0x28
- * 7:0 RSSI_TH: Signal detect threshold in 0.5 dB steps, default -120 dBm corresponds to 0x28.
+ * 7:0 RSSI_TH: Signal detect threshold in 1 dB steps, default -106 dBm corresponds to 0x28.
  * \endcode
  */
 #define RSSI_TH_ADDR			((uint8_t)0x18)
