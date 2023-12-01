@@ -176,7 +176,7 @@ typedef struct {
  *         This parameter can be any value of @ref StackSyncLength.
  * @retval None.
  */
-#define S2LPPktStackSetSyncLength(xSyncLength)                                S2LPSetSyncLength((PktSyncLength)xSyncLength)
+#define S2LPPktStackSetSyncLength(xSyncLength)                                S2LPSetSyncLength(xSyncLength)
 
 
 /**
