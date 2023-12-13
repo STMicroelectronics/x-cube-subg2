@@ -204,7 +204,7 @@ typedef struct {
  *         This parameter can be S_ENABLE or S_DISABLE.
  * @retval None.
  */
-#define S2LPPktStackWhitening(xNewState)                                     S2LPWhitening(xNewState)
+#define S2LPPktStackWhitening(xNewState)                                     S2LPPacketHandlerWhitening(xNewState)
 
 
 /**
@@ -213,7 +213,7 @@ typedef struct {
  *         This parameter can be S_ENABLE or S_DISABLE.
  * @retval None.
  */
-#define S2LPPktStackFec(xNewState)                                            S2LPFec(xNewState)
+#define S2LPPktStackFec(xNewState)                                            S2LPPacketHandlerFec(xNewState)
 
 
 /**
